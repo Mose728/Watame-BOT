@@ -1218,6 +1218,26 @@ const sosGay = checkATMuser(sender)
 *╟ ❒ ${prefix}ranklindo*
 *╟ ❒ ${prefix}ranksexy*
 *╟X* ‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎
+*┠━➣CREADOR*
+*╟X* ‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎
+*╟ ❒ ${prefix}ice*
+*╟ ❒ ${prefix}box*
+*╟ ❒ ${prefix}love*
+*╟ ❒ ${prefix}toxic*
+*╟ ❒ ${prefix}love2*
+*╟ ❒ ${prefix}blood*
+*╟ ❒ ${prefix}luxury*
+*╟ ❒ ${prefix}dance*
+*╟ ❒ ${prefix}bokeh*
+*╟ ❒ ${prefix}text3d*
+*╟ ❒ ${prefix}blood2*
+*╟ ❒ ${prefix}warrior*
+*╟ ❒ ${prefix}codetxt*
+*╟ ❒ ${prefix}express*
+*╟ ❒ ${prefix}vampire*
+*╟ ❒ ${prefix}blackbird*
+*╟ ❒ ${prefix}halloween*
+*╟X* ‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎
 *┠━➣OTROS*
 *╟X* ‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎
 *╟ ❒ ${prefix}perfil* ‏‏‎‎ ‏‏‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎
@@ -2213,7 +2233,7 @@ case prefix+'halloween':
 if (isBanned) return  reply(mess.banned)
 if (!isRegistered) return reply(ind.noregis())		
 
-if (!isGroupAdmins) return reply(mess.only.admin)				  
+	  
  const loluaangkauuuuuu = checkATMuser(sender)
 const loljñññño = [`${loluaangkauuuuuu}`]
 if (loljñññño < 30) return reply(`Lo siento, coins insuficientes`)
@@ -2230,7 +2250,7 @@ reply('Se te cobraron 30 coins')
       if (isBanned) return  reply(mess.banned)
       if (!isRegistered) return reply(ind.noregis())		
       	  
-      if (!isGroupAdmins) return reply(mess.only.admin)			
+      
       const tuaangkauuuuuuu = checkATMuser(sender)
       const tjññññño = [`${tuaangkauuuuuuu}`]
       if (tjññññño < 30) return reply(`Lo siento, coins insuficientes`)
@@ -2248,7 +2268,7 @@ reply('Se te cobraron 30 coins')
       if (isBanned) return  reply(mess.banned)   	        
       if (!isRegistered) return reply(ind.noregis())		
       	 
-      if (!isGroupAdmins) return reply(mess.only.admin)			 
+       
       const wuaangkauuuuuuuu = checkATMuser(sender)
       const wjñññññño = [`${wuaangkauuuuuuuu}`]
       if (wjñññññño < 30) return reply(`𝐋𝐨 𝐬𝐢𝐞𝐧𝐭𝐨 𝐜𝐨𝐢𝐧𝐬 𝐢𝐧𝐬𝐮𝐟𝐢??𝐢𝐞𝐧𝐭𝐞𝐬.`)
@@ -2265,7 +2285,7 @@ reply('Se te cobraron 30 coins')
 	  if (isBanned) return  reply(mess.banned)
       if (!isRegistered) return reply(ind.noregis())		
       	  
-      if (!isGroupAdmins) return reply(mess.only.admin)			
+      
       const uaangkauuuumuuu = checkATMuser(sender)
       const jññññmño = [`${uaangkauuuumuuu}`]
       if (jññññmño < 30) return reply(`Lo siento, coins insuficientes`)
@@ -2282,7 +2302,7 @@ reply('Se te cobraron 30 coins')
 	  if (isBanned) return  reply(mess.banned)            
       if (!isRegistered) return reply(ind.noregis())	
       	
-      if (!isGroupAdmins) return reply(mess.only.admin)				  
+      	  
       const uaangkauuuuiuuu = checkATMuser(sender)
       const jñññññuo = [`${uaangkauuuuiuuu}`]
       if (jñññññuo < 30) return reply(`Lo siento, coins insuficientes`)
@@ -2299,7 +2319,7 @@ reply('Se te cobraron 30 coins')
 	  if (isBanned) return  reply(mess.banned)        
       if (!isRegistered) return reply(ind.noregis())		
       	
-      if (!isGroupAdmins) return reply(mess.only.admin)			  
+        
       const uaangkauuuuuussu = checkATMuser(sender)
       const jññññssño = [`${uaangkauuuuuussu}`]
       if (jññññssño < 30) return reply(`Lo siento, coins insuficientes`)
@@ -2316,7 +2336,7 @@ reply('Se te cobraron 30 coins')
 	  if (isBanned) return  reply(mess.banned)
       if (!isRegistered) return reply(ind.noregis())		
       	  
-      if (!isGroupAdmins) return reply(mess.only.admin)			
+      
       const uaangkauuyuuuuu = checkATMuser(sender)
       const jñññññzo = [`${uaangkauuyuuuuu}`]
       if (jñññññzo < 30) return reply(`Lo siento, coins insuficientes`)
@@ -2333,7 +2353,7 @@ reply('Se te cobraron 30 coins')
       if (isBanned) return  reply(mess.banned)           
       if (!isRegistered) return reply(ind.noregis())		
       
-      if (!isGroupAdmins) return reply(mess.only.admin)				  
+      	  
       const uaangkapouuuuuuu = checkATMuser(sender)
       const jñññklñño = [`${uaangkapouuuuuuu}`]
       if (jñññklñño < 30) return reply(`Lo siento, coins insuficientes`)
@@ -3091,6 +3111,7 @@ const kime =['https://i.ibb.co/BBrmWyn/99.jpg',
 'https://i.ibb.co/TbbGHzd/14.jpg',
 'https://i.ibb.co/n8T9z6K/140.jpg',
 'https://i.ibb.co/FBKywXk/141.jpg',
+'https://i.ibb.co/PYwFjpg/142.jpg',
 'https://i.ibb.co/vYjG9wS/143.jpg',
 'https://i.ibb.co/LCR9MF9/144.jpg',
 'https://i.ibb.co/q0r0wBF/145.jpg',
@@ -6743,7 +6764,7 @@ ganadorxd = `*[💲] [ 𝗔𝗣𝗨𝗘𝗦𝗧𝗔𝗦 ] [💲]*
 ᭕- Jugador :
 ᭕- ${pushname}
 
-*{💲}---𝐑𝐄𝐒??𝐋𝐓𝐀𝐃𝐎--{-💲}*
+*{💲}---𝐑𝐄𝐒????𝐓𝐀𝐃𝐎--{-💲}*
         ༊     GANADOR     ༊
 *{💲}---𝐑𝐄𝐒𝐔𝐋𝐓𝐀𝐃𝐎--{-💲}*
 
@@ -6788,7 +6809,7 @@ case prefix+'blood':
 if (isBanned) return  reply(mess.banned)  
 if (!isRegistered) return reply(ind.noregis())			  
 
-if (!isGroupAdmins) return reply(mess.only.admin)			        
+        
 const apis9 =['7c6c9a9e1138b473e6c64388','ff8508e71c332b870c1e8a1b','b57c69801b7b3e63b3b3e94c','e07d2ff8ff95d995809ec7b3','99ae3d189586081a2be37357','8cd8a7918eab2510afd496c0']
  const nepe9 = apis9[Math.floor(Math.random() * apis9.length)]
                 bpp = `${body.slice(7)}`
@@ -6804,7 +6825,7 @@ case prefix+'blood2':
 if (isBanned) return  reply(mess.banned)
 if (!isRegistered) return reply(ind.noregis())		
 	  
-if (!isGroupAdmins) return reply(mess.only.admin)			
+
            const apis8 =['7c6c9a9e1138b473e6c64388','ff8508e71c332b870c1e8a1b','b57c69801b7b3e63b3b3e94c','e07d2ff8ff95d995809ec7b3','99ae3d189586081a2be37357','8cd8a7918eab2510afd496c0']
  const nepe8 = apis8[Math.floor(Math.random() * apis8.length)]     
                 bpp1 = `${body.slice(8)}`
@@ -6821,7 +6842,7 @@ case prefix+'bokeh':
 if (isBanned) return  reply(mess.banned)
 if (!isRegistered) return reply(ind.noregis())			  
 
-if (!isGroupAdmins) return reply(mess.only.admin)			
+
            const apis7 =['7c6c9a9e1138b473e6c64388','ff8508e71c332b870c1e8a1b','b57c69801b7b3e63b3b3e94c','e07d2ff8ff95d995809ec7b3','99ae3d189586081a2be37357','8cd8a7918eab2510afd496c0']
  const nepe7 = apis7[Math.floor(Math.random() * apis7.length)]     
                 bpp2 = `${body.slice(7)}`
@@ -6838,7 +6859,7 @@ case prefix+'toxic':
 if (isBanned) return  reply(mess.banned)      
 if (!isRegistered) return reply(ind.noregis())	
 	
-if (!isGroupAdmins) return reply(mess.only.admin)				  
+	  
 const tox = checkATMuser(sender)
 const toxx = [`${tox}`]
 if (toxx < 30) return reply(`Lo siento, coins insuficientes`)
@@ -6858,7 +6879,7 @@ case prefix+'ice':
 if (isBanned) return  reply(mess.banned)     
 if (!isRegistered) return reply(ind.noregis())		
 
-if (!isGroupAdmins) return reply(mess.only.admin)				  
+	  
  const icee = checkATMuser(sender)
 const icce = [`${icee}`]
 if (icce < 30) return reply(`Lo siento, coins insuficientes`)
@@ -6879,7 +6900,7 @@ case prefix+'box':
 if (isBanned) return  reply(mess.banned)      
 if (!isRegistered) return reply(ind.noregis())		
 	  
-if (!isGroupAdmins) return reply(mess.only.admin)			
+
  const boxx = checkATMuser(sender)
 const boox = [`${boxx}`]
 if (boox < 30) return reply(`Lo siento, coins insuficientes`)
@@ -6900,7 +6921,6 @@ case prefix+'love':
 if (isBanned) return  reply(mess.banned)      
 if (!isRegistered) return reply(ind.noregis())	
 
-if (!isGroupAdmins) return reply(mess.only.admin)			
  const loove = checkATMuser(sender)
 const lovee = [`${loove}`]
 if (lovee < 30) return reply(`𝐋𝐨 𝐬𝐢𝐞𝐧??𝐨 𝐜𝐨𝐢𝐧𝐬 𝐢𝐧𝐬𝐮𝐟𝐢𝐜𝐢𝐞𝐧𝐭𝐞𝐬.`)
@@ -6921,7 +6941,7 @@ case prefix+'luxury':
 if (isBanned) return  reply(mess.banned)      
 if (!isRegistered) return reply(ind.noregis())		
 	  
-if (!isGroupAdmins) return reply(mess.only.admin)			
+
  const luux = checkATMuser(sender)
 const luxx = [`${luux}`]
 if (luxx < 30) return reply(`Lo siento, coins insuficientes`)
@@ -6942,7 +6962,7 @@ case prefix+'love2':
 if (isBanned) return  reply(mess.banned)
 if (!isRegistered) return reply(ind.noregis())
 
-if (!isGroupAdmins) return reply(mess.only.admin)						  
+			  
  const loovee = checkATMuser(sender)
 const lovvve = [`${loovee}`]
 if (lovvve < 30) return reply(`Lo siento, coins insuficientes`)
