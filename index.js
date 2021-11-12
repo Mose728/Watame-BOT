@@ -3531,7 +3531,7 @@ const kann =['https://i.ibb.co/0yR8qjT/1632630264748.jpg',
 'https://i.ibb.co/WKTXQPD/d2dea171748817b185cb872ba0613def.jpg',
 'https://i.ibb.co/1GgsPfq/11.jpg']
 let elm = kann[Math.floor(Math.random() * kann.length)]
-      dragon = await getBuffer(drs)
+      dragon = await getBuffer(elm)
 cnf.sendMessage(from, dragon, image, {quote: mek, caption: 'Se te cobraron 50 coins'})
 addFilter(from)
           break
