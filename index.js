@@ -2439,7 +2439,7 @@ const ura =['https://i.ibb.co/tB75Z6G/20210517-133604-auto-x2-optimized.jpg',
 'https://i.ibb.co/hc5fXCn/1629871877823-optimized.jpg']
 let dek = ura[Math.floor(Math.random() * ura.length)]
       hero = await getBuffer(dek)
-cnf.sendMessage(from, hero, image, {quote: mek, caption: 'Se te cobraron 50 coins'})
+cnf.sendMessage(from, hero, image, {quote: mek, caption: 'Aquí tienes 💕🦈'})
 addFilter(from)
           break
 
