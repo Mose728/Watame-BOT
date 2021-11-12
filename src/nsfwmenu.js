@@ -27,6 +27,7 @@ const nsfwmenu = (prefix, pushname) => {
 │๛ ${prefix}kimetsu
 │๛ ${prefix}cosplay 
 │๛ ${prefix}hero
+│๛ ${prefix}dragonmaid
 │
 ╰❏`
 
