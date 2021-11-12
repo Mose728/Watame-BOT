@@ -30,7 +30,6 @@ const imageToBase64 = require('image-to-base64')
 const lolis = require('lolis.life')
 const loli = new lolis()
 const chalk = require('chalk');
-
 const { removeBackgroundFromImageFile } = require('remove.bg')
 const { color, bgcolor } = require('./lib/color')
 const { wait, getBuffer, h2k, generateMessageID, getGroupAdmins, getRandom, banner, start, info, success, close } = require('./lib/functions')
@@ -40,8 +39,6 @@ const { exec } = require('child_process')
 const { addMetadata } = require('./lib/exif.js')
 const Exif = require('./exif.js')
 const exif = new Exif()
-
-
 const welkom = JSON.parse(fs.readFileSync('./src/welkom.json'))
 const nsfw = JSON.parse(fs.readFileSync('./src/nsfw.json'))
 const trava = JSON.parse(fs.readFileSync('./src/trava.json'))
@@ -62,12 +59,10 @@ const _leveling = JSON.parse(fs.readFileSync('./database/group/leveling.json'))
 const _level = JSON.parse(fs.readFileSync('./database/user/level.json'))
 const _registered = JSON.parse(fs.readFileSync('./database/bot/registered.json'))
 const event = JSON.parse(fs.readFileSync('./database/bot/event.json'))
-
 const _limit = JSON.parse(fs.readFileSync('./database/user/limit.json'))
 const uang = JSON.parse(fs.readFileSync('./database/user/uang.json'))
 const settingan = JSON.parse(fs.readFileSync('./admin/set.json'))
 const tictactoe = JSON.parse(fs.readFileSync("./database/tictactoe.json"))
-
 const {
 	limitawal,
 	memberlimit,
@@ -84,6 +79,7 @@ const sleep = async (ms) => {
 
 ConfuMods = [`51931655706@s.whatsapp.net`] 
 prefix = '#'
+hardi = 'hardianto'
 blocked = []
 fake = '🌸Watame-BOT🌸'
 fakeimage = fs.readFileSync(`./media/confu.jpeg`)
@@ -1533,13 +1529,11 @@ const jmokiuo = [`${uaangkakoiurru}`]
 if (jmokiuo < 30) return reply(`Lo siento, coins insuficientes`)
 confirmATM(sender, 30)
 
-			yuriz = await axios.get('https://nekos.life/api/v2/img/yuri')
-			bupyuri = await getBuffer(yuriz.data.url)
-			cnf.sendMessage(from, bupyuri, image, { quoted: mek, caption: 'Se te cobraron 30 coins'})
-			.catch(err => {
-			return('E-error ⊙﹏⊙')
-			})
-			addFilter(from)
+kon = await getBuffer(`https://hardianto-chan.herokuapp.com/api/anime/random?nsfw=yuri&apikey=${hardi}`)
+              imageMsg = (await cnf.prepareMessageMedia(kon, "imageMessage", { thumbnail: kon, })).imageMessage
+              prep = await cnf.prepareMessageFromContent(from,{buttonsMessage},{quoted: ftrol})
+              cnf.relayWAMessage(prep)
+			
           break
 
 case prefix+'futa':
