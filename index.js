@@ -3220,7 +3220,7 @@ if (!isBotGroupAdmins) return reply(mess.only.Badmin)
       const thr = [`${drs}`]
       if (thr < 50) return reply(`Lo siento, coins insuficientes`)
       confirmATM(sender, 50)
-const kann =['https://i.ibb.co/0yR8qjT/1632630264748.jpg',
+const kann1 =['https://i.ibb.co/0yR8qjT/1632630264748.jpg',
 'https://i.ibb.co/PZ7nM6h/77d3be4913e0ad95a1cf49c9feb5b37d.jpg',
 'https://i.ibb.co/qpgPV2k/1628371218735.jpg',
 'https://i.ibb.co/0Vx5BTS/1629768987771.jpg',
@@ -3530,7 +3530,7 @@ const kann =['https://i.ibb.co/0yR8qjT/1632630264748.jpg',
 'https://i.ibb.co/F3QCHnx/12.jpg',
 'https://i.ibb.co/WKTXQPD/d2dea171748817b185cb872ba0613def.jpg',
 'https://i.ibb.co/1GgsPfq/11.jpg']
-let elm = kann[Math.floor(Math.random() * kann.length)]
+let elm = kann1[Math.floor(Math.random() * kann1.length)]
       dragon = await getBuffer(elm)
 cnf.sendMessage(from, dragon, image, {quote: mek, caption: 'Se te cobraron 50 coins'})
 addFilter(from)
