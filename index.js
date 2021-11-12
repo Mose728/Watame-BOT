@@ -1,4 +1,4 @@
-//Bot By ConfuMods
+//WATAME-BOT
 
 
 const {
