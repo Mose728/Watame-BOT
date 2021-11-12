@@ -1520,20 +1520,19 @@ confirmATM(sender, 30)
 			})
 			addFilter(from)
           break
+					
 case prefix+'yuri':
 if (isBanned) return  reply(mess.banned)
 if (!isRegistered) return reply(ind.noregis())
 if (!isBotGroupAdmins) return reply(mess.only.Badmin)
- const uaangkakoiurru = checkATMuser(sender)
-const jmokiuo = [`${uaangkakoiurru}`]
-if (jmokiuo < 30) return reply(`Lo siento, coins insuficientes`)
-confirmATM(sender, 30)
 
-kon = await getBuffer(`https://hardianto-chan.herokuapp.com/api/anime/random?nsfw=yuri&apikey=${hardi}`)
-              imageMsg = (await cnf.prepareMessageMedia(kon, "imageMessage", { thumbnail: kon, })).imageMessage
-              prep = await cnf.prepareMessageFromContent(from,{buttonsMessage},{quoted: ftrol})
-              cnf.relayWAMessage(prep)
-			
+			yuriz = await axios.get('https://nekos.life/api/v2/img/yuri')
+			bupyuri = await getBuffer(yuriz.data.url)
+			cnf.sendMessage(from, bupyuri, image)
+			.catch(err => {
+			return('E-error ⊙﹏⊙')
+			})
+			addFilter(from)
           break
 
 case prefix+'futa':
