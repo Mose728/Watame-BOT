@@ -2397,9 +2397,6 @@ case prefix+'hero':
 	if (isBanned) return  reply(mess.banned) 
     if (!isRegistered) return reply(ind.noregis())	
     if (!isBotGroupAdmins) return reply(mess.only.Badmin)		  
-      const her = checkATMuser(sender)
-      if (her < 50) return reply(`Lo siento, coins insuficientes`)
-      confirmATM(sender, 50)
 const ura =['https://i.ibb.co/tB75Z6G/20210517-133604-auto-x2-optimized.jpg',
 'https://i.ibb.co/02g1X3v/20210517-133814-auto-x2-optimized.jpg',
 'https://i.ibb.co/5BR13nv/1630024494794-optimized.jpg',
