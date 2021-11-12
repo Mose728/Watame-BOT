@@ -2451,10 +2451,6 @@ addFilter(from)
 	if (isBanned) return  reply(mess.banned) 
     if (!isRegistered) return reply(ind.noregis())	
     if (!isBotGroupAdmins) return reply(mess.only.Badmin)		  
-      const sas = checkATMuser(sender)
-      const sask = [`${sas}`]
-      if (sask < 50) return reply(`Lo siento, coins insuficientes`)
-      confirmATM(sender, 50)
 const sasu =['https://i.ibb.co/YbjHKFf/00920db54d5fe37caa98118c5cb9153d.jpg',
 'https://i.ibb.co/pPCLvLc/039587a8587395a8833bf05ec5cde9a0.jpg',
 'https://i.ibb.co/QNXtJG6/07969dfeb0ebee81d0266f9a8e804146.jpg',
@@ -2722,7 +2718,7 @@ const sasu =['https://i.ibb.co/YbjHKFf/00920db54d5fe37caa98118c5cb9153d.jpg',
 'https://i.ibb.co/Z2DDmTv/yande-re-484816-sample-bowsette-cleavage-heels-horns-kido-airaku-new-super-mario-bros-u-deluxe-point.jpg']
 let ke = sasu[Math.floor(Math.random() * sasu.length)]
       ninte = await getBuffer(ke)
-cnf.sendMessage(from, ninte, image, {quote: mek, caption: 'Se te cobraron 50 coins'})
+cnf.sendMessage(from, ninte, image, {quote: mek, caption: 'Aquí tienes 💕🦈'})
 addFilter(from)
           break
 
