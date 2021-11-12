@@ -2397,46 +2397,7 @@ case prefix+'hero':
 	if (isBanned) return  reply(mess.banned) 
     if (!isRegistered) return reply(ind.noregis())	
     if (!isBotGroupAdmins) return reply(mess.only.Badmin)		  
-const ura =['https://i.ibb.co/tB75Z6G/20210517-133604-auto-x2-optimized.jpg',
-'https://i.ibb.co/02g1X3v/20210517-133814-auto-x2-optimized.jpg',
-'https://i.ibb.co/5BR13nv/1630024494794-optimized.jpg',
-'https://i.ibb.co/KwzmRM7/20210517-133822-auto-x2-optimized.jpg',
-'https://i.ibb.co/4KKZ7jR/1629871878128-optimized.jpg',
-'https://i.ibb.co/RbhVGFS/20210517-133816-auto-x2-optimized.jpg',
-'https://i.ibb.co/NW7xgf1/20211008-150708-optimized.jpg',
-'https://i.ibb.co/p0Ck9KH/20210517-133915-auto-x2-optimized.jpg',
-'https://i.ibb.co/KDdZmQv/1630100028938-optimized.jpg',
-'https://i.ibb.co/Vt4KwHW/20211008-151037-optimized.jpg',
-'https://i.ibb.co/ZVx5PxP/1630100028948-optimized.jpg',
-'https://i.ibb.co/L9Mvn4k/20210920-215151-optimized.jpg',
-'https://i.ibb.co/FxzLN5s/20210517-133826-auto-x2-optimized.jpg',
-'https://i.ibb.co/pXrFzXW/1629871878161-optimized.jpg',
-'https://i.ibb.co/27R7FMZ/1630024494783-optimized.jpg',
-'https://i.ibb.co/cch1VzV/20211008-151017-optimized.jpg',
-'https://i.ibb.co/fDWP74V/20211008-151041-optimized.jpg',
-'https://i.ibb.co/Tt775GN/20210517-133824-auto-x2-optimized.jpg',
-'https://i.ibb.co/FbvD79Q/1629871878139-optimized.jpg',
-'https://i.ibb.co/qWXGf4Y/1630083935874-optimized.jpg',
-'https://i.ibb.co/yYyvys4/3462-optimized.jpg',
-'https://i.ibb.co/HxwGCB4/1630100028957-optimized.jpg',
-'https://i.ibb.co/hKDMHxF/20210517-133917-auto-x2-optimized.jpg',
-'https://i.ibb.co/26zTYwp/20211008-150418-optimized.jpg',
-'https://i.ibb.co/0n7GY71/20210517-133600-auto-x2-optimized.jpg',
-'https://i.ibb.co/qY84Qnw/20210517-133820-auto-x2-optimized.jpg',
-'https://i.ibb.co/k4vWrkZ/20210517-133606-auto-x2-optimized.jpg',
-'https://i.ibb.co/vDpP9cv/20210517-133559-auto-x2-optimized.jpg',
-'https://i.ibb.co/GtjNN3W/1629871878150-optimized.jpg',
-'https://i.ibb.co/c2WbZ8R/1629871877835-optimized.jpg',
-'https://i.ibb.co/T4NjfPJ/1629871877915-optimized.jpg',
-'https://i.ibb.co/4WWB01z/1629871878082-optimized.jpg',
-'https://i.ibb.co/pK1NGpF/1629871877927-optimized.jpg',
-'https://i.ibb.co/GC2QGPC/1629871877797-optimized.jpg',
-'https://i.ibb.co/vBJt4bZ/1629871878115-optimized.jpg',
-'https://i.ibb.co/JdPgYtz/1629871877810-optimized.jpg',
-'https://i.ibb.co/bs4t7V2/1629871877783-optimized.jpg',
-'https://i.ibb.co/Nj01XTZ/1629871878104-optimized.jpg',
-'https://i.ibb.co/hFbZPsw/1629871878093-optimized.jpg',
-'https://i.ibb.co/hc5fXCn/1629871877823-optimized.jpg']
+const ura =['https://i.ibb.co/RbYgpVw/1636740912730.png']
 let dek = ura[Math.floor(Math.random() * ura.length)]
       hero = await getBuffer(dek)
 cnf.sendMessage(from, hero, image, {quote: mek, caption: 'Aquí tienes 💕🦈'})
