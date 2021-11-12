@@ -1525,10 +1525,14 @@ case prefix+'yuri':
 if (isBanned) return  reply(mess.banned)
 if (!isRegistered) return reply(ind.noregis())
 if (!isBotGroupAdmins) return reply(mess.only.Badmin)
+ const uaangkakoiurru = checkATMuser(sender)
+const jmokiuo = [`${uaangkakoiurru}`]
+if (jmokiuo < 30) return reply(`Lo siento, coins insuficientes`)
+confirmATM(sender, 30)
 
 			yuriz = await axios.get('https://nekos.life/api/v2/img/yuri')
 			bupyuri = await getBuffer(yuriz.data.url)
-			cnf.sendMessage(from, bupyuri, image)
+			cnf.sendMessage(from, bupyuri, image, { quoted: mek, caption: 'Se te cobraron 30 coins'})
 			.catch(err => {
 			return('E-error ⊙﹏⊙')
 			})
