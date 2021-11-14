@@ -5225,7 +5225,10 @@ if (!isBotGroupAdmins) return reply(mess.only.Badmin)
       if (shin < 20) return reply(`Lo siento, coins insuficientes`)
       confirmATM(sender, 20)
 const gen1 =['https://thumbs2.imgbox.com/66/5f/fqCRm7pf_t.png',
-'https://thumbs2.imgbox.com/65/04/rK9B88IY_t.jpg']
+'https://thumbs2.imgbox.com/65/04/rK9B88IY_t.jpg',
+'https://thumbs2.imgbox.com/d0/4d/hsiR61bM_t.jpg',
+'https://thumbs2.imgbox.com/eb/e5/4dfK0BKr_t.jpg',
+'https://thumbs2.imgbox.com/53/33/WYsBZ99V_t.jpg']
 let imp = gen1[Math.floor(Math.random() * gen1.length)]
       genshin = await getBuffer(imp)
 cnf.sendMessage(from, genshin, image, {quote: mek, caption: 'Se te cobraron 20 coins'})
