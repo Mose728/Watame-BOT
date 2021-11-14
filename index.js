@@ -424,25 +424,25 @@ isPlayer11 = isGroup ? players11.includes(sender) : false
 			const perl = peri-getLevelingXp(sender) 
 			const resl = Math.round(100-((perl/getLevelingXp(sender))*100))
 			if (resl <= 10) {
-				per = `*[█▒▒▒▒▒▒▒▒▒] ${resl}%*`
+				per = '*[█▒▒▒▒▒▒▒▒▒] ${resl}%*'
 			} else if (resl <= 20) {
-				per = `*[██▒▒▒▒▒▒▒▒] ${resl}%*`
+				per = '*[██▒▒▒▒▒▒▒▒] ${resl}%*'
 			} else if (resl <= 30) {
-				per = `*[███▒▒▒▒▒▒▒] ${resl}%*`
+				per = '*[███▒▒▒▒▒▒▒] ${resl}%*'
 			} else if (resl <= 40) {
-				per = `*[████▒▒▒▒▒▒] ${resl}%*`
+				per = '*[████▒▒▒▒▒▒] ${resl}%*'
 			} else if (resl <= 50) {
-				per = `*[█████▒▒▒▒▒] ${resl}%*`
+				per = '*[█████▒▒▒▒▒] ${resl}%*'
 			} else if (resl <= 60) {
-				per = `*[██████▒▒▒▒] ${resl}%*`
+				per = '*[██████▒▒▒▒] ${resl}%*'
 			} else if (resl <= 70) {
-				per = `*[███████▒▒▒] ${resl}%*`
+				per = '*[███████▒▒▒] ${resl}%*'
 			} else if (resl <= 80) {
-				per = `*[████████▒▒] ${resl}%*`
+				per = '*[████████▒▒] ${resl}%*'
 			} else if (resl <= 90) {
-				per = `*[█████████▒] ${resl}%*`
+				per = '*[█████████▒] ${resl}%*'
 			} else if (resl <= 100) {
-				per = `*[██████████] ${resl}%*`
+				per = '*[██████████] ${resl}%*'
 			} 
 				
 					
