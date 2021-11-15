@@ -1495,7 +1495,7 @@ reply('Se te cobraron 30 coins')
 fs.unlinkSync(rano)
 })
 addFilter(from)
-          break
+break
 					
 case prefix+'yuri':
 if (isBanned) return  reply(mess.banned)
@@ -1510,24 +1510,19 @@ return('E-error ⊙﹏⊙')
 addFilter(from)
 break
 
-case prefix+'futa':
+case prefix+'futanari':
 if (isBanned) return  reply(mess.banned)
 if (!isRegistered) return reply(ind.noregis())
 if (!isBotGroupAdmins) return reply(mess.only.Badmin)
- const futanari = checkATMuser(sender)
-const futas = [`${futanari}`]
-if (futas < 30) return reply(`Lo siento, coins insuficientes`)
-confirmATM(sender, 30)
-
-			futa1 = await axios.get('https://nekos.life/api/v2/img/futanari')
-			futa2 = await getBuffer(futa1.data.url)
-			cnf.sendMessage(from, futa2, image, { quoted: mek, caption: 'Se te cobraron 30 coins'})
-			.catch(err => {
-			return('E-error ⊙﹏⊙')
-			})
-			addFilter(from)
-          break
-
+futa1 = await axios.get('https://nekos.life/api/v2/img/futanari')
+futa2 = await getBuffer(futa1.data.url)
+cnf.sendMessage(from, futa2, image, { quoted: mek, caption: 'Se te cobraron 30 coins'})
+.catch(err => {
+return('E-error ⊙﹏⊙')
+})
+addFilter(from)
+break
+					
 case prefix+'oppai':
 if (isBanned) return  reply(mess.banned)
 if (!isRegistered) return reply(ind.noregis())
@@ -1860,15 +1855,6 @@ buffer = fs.readFileSync(rano)
 cnf.sendMessage(from, buffer, MessageType.sticker, {quoted: mek})
 fs.unlinkSync(rano)
 })
-addFilter(from)
-break
-					
-case  'futanari':       
-if (isBanned) return  reply(mess.banned)
-if (!isRegistered) return reply(ind.noregis())
-futan = await axios.get('https://nekos.life/api/v2/img/futanari')
-futanz = await getBuffer(futan.data.url)
-cnf.sendMessage(from, futanz, image, { quoted: mek, caption: 'Se te cobraron 30 coins'})
 addFilter(from)
 break
 					
