@@ -2238,6 +2238,9 @@ const ura =['https://thumbs2.imgbox.com/e2/5c/E2E0AOKu_t.jpg','https://thumbs2.i
 let dek = ura[Math.floor(Math.random() * ura.length)]
 hero = await getBuffer(dek)
 cnf.sendMessage(from, hero, image, {quote: mek, caption: 'Aquí tienes 💕🦈'})
+.catch(err => {
+return('E-error ⊙﹏⊙')
+})
 addFilter(from)
 break
 					
