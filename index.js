@@ -1222,7 +1222,6 @@ const sosGay = checkATMuser(sender)
 *╟ ❒ ${prefix}love2*
 *╟ ❒ ${prefix}blood*
 *╟ ❒ ${prefix}luxury*
-*╟ ❒ ${prefix}dance*
 *╟ ❒ ${prefix}bokeh*
 *╟ ❒ ${prefix}text3d*
 *╟ ❒ ${prefix}blood2*
@@ -2138,19 +2137,8 @@ reply('Se te cobraron 30 coins')
 	  reply('Se te cobraron 30 coins')
 	  addFilter(from)
           break
-				
-	  case prefix+'dance':
-	  if (isBanned) return  reply(mess.banned)            
-      if (!isRegistered) return reply(ind.noregis())		
-	  confu = args.join(' ')
-	if (args.length < 1) return reply('En dónde está el texto?')
-    if (args.length > 10) return reply('Maximo 10 letras')
-	  sendMediaURL(from, `https://bx-hunter.herokuapp.com/api/flamingtext/dance?text=${confu}&apikey=Ikyy69`)
-	  reply('Aquí tienes 💕🦈')	
-	  addFilter(from)
-          break
-				
-	  case prefix+'blackbird':
+
+case prefix+'blackbird':
 	  if (isBanned) return  reply(mess.banned)        
       if (!isRegistered) return reply(ind.noregis())
       const uaangkauuuuuussu = checkATMuser(sender)
