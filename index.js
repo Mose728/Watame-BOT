@@ -29,7 +29,6 @@ const ffmpeg = require('fluent-ffmpeg')
 const imageToBase64 = require('image-to-base64')
 const lolis = require('lolis.life')
 const loli = new lolis()
-const hx = require("hxz-api")
 const chalk = require('chalk');
 const { removeBackgroundFromImageFile } = require('remove.bg')
 const { color, bgcolor } = require('./lib/color')
