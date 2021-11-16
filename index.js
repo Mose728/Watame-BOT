@@ -32,6 +32,7 @@ const loli = new lolis()
 const chalk = require('chalk');
 const { removeBackgroundFromImageFile } = require('remove.bg')
 const { color, bgcolor } = require('./lib/color')
+const hx = require("hxz-api")
 const { wait, getBuffer, h2k, generateMessageID, getGroupAdmins, getRandom, banner, start, info, success, close } = require('./lib/functions')
 const { fetchJson, fetchText } = require('./lib/fetcher')
 const { recognize } = require('./lib/ocr')
