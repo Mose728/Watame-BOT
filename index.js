@@ -2146,7 +2146,7 @@ reply('Se te cobraron 30 coins')
 	if (args.length < 1) return reply('En dónde está el texto?')
     if (args.length > 10) return reply('Maximo 10 letras')
 	  sendMediaURL(from, `https://bx-hunter.herokuapp.com/api/flamingtext/dance?text=${confu}&apikey=Ikyy69`)
-	  reply('Aquí tienes 💕🦈)	
+	  reply('Aquí tienes 💕🦈')	
 	  addFilter(from)
           break
 				
