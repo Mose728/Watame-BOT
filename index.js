@@ -1,4 +1,4 @@
-/WATAME-BOT
+//WATAME-BOT
 
 
 const {
