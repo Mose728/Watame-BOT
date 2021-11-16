@@ -1445,6 +1445,16 @@ console.log(error);
 addFilter(from)
 break
 
+case prefix+'twitter':
+        if (!isUrl(args[0]) && !args[0].includes("twitter.com"))
+          return reply(mess.Iv);
+        if (!q) return fakegroup("Donde esta el link?");
+        ten = args[0];
+        var res = await hx.twitter(`${ten}`);
+        ren = `${g.HD}`;
+        sendMediaURL(from, ren, "Listo");
+        break
+					
 case prefix+'pussy':
 if (isBanned) return  reply(mess.banned)
 if (!isRegistered) return reply(ind.noregis())
