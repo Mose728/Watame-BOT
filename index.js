@@ -48,7 +48,6 @@ const setiker = JSON.parse(fs.readFileSync('./temp/stik.json'))
 const audionye = JSON.parse(fs.readFileSync('./temp/vn.json'))
 const { nsfwmenu } = require('./src/nsfwmenu')
 const { idiomas } = require('./src/idiomas')
-const hx = require("hxz-api");
 const { isFiltered, addFilter } = require('./lib/antispam')
 const imagenye = JSON.parse(fs.readFileSync('./temp/image.json'))
 const videonye = JSON.parse(fs.readFileSync('./temp/video.json'))
