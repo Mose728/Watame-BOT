@@ -2141,16 +2141,12 @@ reply('Se te cobraron 30 coins')
 				
 	  case prefix+'dance':
 	  if (isBanned) return  reply(mess.banned)            
-      if (!isRegistered) return reply(ind.noregis())
-      const uaangkauuuuiuuu = checkATMuser(sender)
-      const jñññññuo = [`${uaangkauuuuiuuu}`]
-      if (jñññññuo < 30) return reply(`Lo siento, coins insuficientes`)
-      confirmATM(sender, 30) 		
+      if (!isRegistered) return reply(ind.noregis())		
 	  confu = args.join(' ')
 	if (args.length < 1) return reply('En dónde está el texto?')
     if (args.length > 10) return reply('Maximo 10 letras')
 	  sendMediaURL(from, `https://bx-hunter.herokuapp.com/api/flamingtext/dance?text=${confu}&apikey=Ikyy69`)
-	  reply('Se te cobraron 30 coins')	
+	  reply('Aquí tienes 💕🦈)	
 	  addFilter(from)
           break
 				
