@@ -1158,7 +1158,6 @@ const sosGay = checkATMuser(sender)
 *╟ ❒ ${prefix}anime*
 *╟ ❒ ${prefix}sakura*
 *╟ ❒ ${prefix}naruto*
-*╟ ❒ ${prefix}waifu2*
 *╟X* ‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎
 *┠━➣REACCIONES*
 *╟X* ‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎
@@ -2197,15 +2196,6 @@ lolihentai = await getBuffer(petan)
 cnf.sendMessage(from, lolihentai, image, {quote: mek, caption: 'Aquí tienes 💕🦈'})
 addFilter(from)
 break
-
-case prefix+'waifu':
-if (isBanned) return  reply(mess.banned)
-if (!isRegistered) return reply(ind.noregis())		
-if (!isBotGroupAdmins) return reply(mess.only.Badmin)	  
-sendMediaURL(from, `https://bx-hunter.herokuapp.com/api/sfw/neko?apikey=Ikyy69`)
-reply('Aquí tienes 💕🦈')
-addFilter(from)
-break
 		
 case prefix+'sakura':
 if (isBanned) return  reply(mess.banned)
@@ -2354,7 +2344,7 @@ cnf.sendMessage(from, kana, image, {quote: mek, caption: 'Aquí tienes 💕🦈'
 addFilter(from)
 break
 					
-case prefix+'waifu2':
+case prefix+'waifu':
 if (isBanned) return  reply(mess.banned) 
 if (!isRegistered) return reply(ind.noregis())		
 if (!isBotGroupAdmins) return reply(mess.only.Badmin)
