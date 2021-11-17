@@ -18,6 +18,7 @@ const {
   mentionedJid,
   processTime
 } = require('@adiwajshing/baileys')
+const gis = require('g-i-s')
 const fs = require('fs')
 const axios = require("axios")
 const speed = require('performance-now')
