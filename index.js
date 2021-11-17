@@ -2876,8 +2876,7 @@ if (!isRegistered) return reply(ind.noregis())
 				addFilter(from)
           break 
           
-          case 'gimage':
-case 'googleimage':
+case prefix+'gimage':
 if (args.length < 1) return reply('¿Qué quieres buscar?')
 reply(mess.wait)
 teks = args.join(' ')
