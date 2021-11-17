@@ -2876,21 +2876,24 @@ if (!isRegistered) return reply(ind.noregis())
 				addFilter(from)
           break 
           
-case prefix+'gimage':
-if (args.length < 1) return reply('¿Qué quieres buscar?')
-reply(mess.wait)
-teks = args.join(' ')
-res = await googleImage(teks, google)
-function google(error, result){
-if (error){ return reply('_[ ! ] Ocurre un error o no se encuentran resultados_')}
-else {
-var gugIm = result
-var random =  gugIm[Math.floor(Math.random() * gugIm.length)].url
-sendFileFromUrl(random, image, {quoted: mek, caption: `*Resultados de búsqueda de :* ${teks}`})
-}
-}
-break
-
+case prefix+'googleimage':
+        if (args.length < 1) return reply("¿Qué quieres buscar??");
+        reply(mess.wait);
+        teks = args.join(" ");
+        res = await gis(teks, google);
+        function google(error, result) {
+          if (error) {
+            return reply(
+              "_[ ! ] Error, no encontrado"
+            );
+          } else {
+            gugIm = result;
+            random = gugIm[Math.floor(Math.random() * gugIm.length)].url;
+            sendMediaURL(from, random);
+          }
+        }
+        break
+					
 				case prefix+'yo':
 				if (isBanned) return  reply(mess.banned)
                 if (!isRegistered) return reply(ind.noregis())
