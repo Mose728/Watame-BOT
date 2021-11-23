@@ -1536,7 +1536,6 @@ fs.unlinkSync(ranp)
 if (err) return reply('E-error ⊙﹏⊙')
 buffer = fs.readFileSync(rano)
 cnf.sendMessage(from, buffer, MessageType.sticker, {quoted: mek})
-reply('Aquí tienes 💕🦈')
 fs.unlinkSync(rano)
 })
 addFilter(from)
@@ -1950,7 +1949,9 @@ if (!isRegistered) return reply(ind.noregis())
 if (!isBotGroupAdmins) return reply(mess.only.Badmin)		  
 res = await fetchJson(`https://meme-api.herokuapp.com/gimme/animefeets`, {method: 'get'})
 buffer = await getBuffer(res.url)
-cnf.sendMessage(from, buffer, image, {quoted: mek, caption: 'Aquí tienes 💕🦈'})
+const lklk =['Aquí tienes 💕🦈','¿Linda foto no?','Pedido entregado 🕊']
+const fkfk = lklk[Math.floor(Math.random() * lklk.length)]
+cnf.sendMessage(from, buffer, image, { caption: fkfk, quoted: mek })
 addFilter(from)
 break
 					
