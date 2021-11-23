@@ -1983,7 +1983,9 @@ if (!isRegistered) return reply(ind.noregis())
 if (!isBotGroupAdmins) return reply(mess.only.Badmin)		  
 res = await fetchJson(`https://meme-api.herokuapp.com/gimme/animethighss`, {method: 'get'})
 buffer = await getBuffer(res.url)
-cnf.sendMessage(from, buffer, image, {quoted: mek, caption: 'Aquí tienes 💕🦈'})					
+const lll =['Aquí tienes 💕🦈','¿Linda foto no?','Pedido entregado 🕊']
+const frse = lll[Math.floor(Math.random() * lll.length)]
+cnf.sendMessage(from, buffer, image, { caption: frse, quoted: mek })					
 addFilter(from)
 break
 
