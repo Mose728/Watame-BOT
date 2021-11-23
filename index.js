@@ -1584,7 +1584,9 @@ if (!isRegistered) return reply(ind.noregis())
 if (!isBotGroupAdmins) return reply(mess.only.Badmin)
 eronz = await axios.get('https://nekos.life/api/v2/img/eron')
 buferon = await getBuffer(eronz.data.url)
-cnf.sendMessage(from, buferon, image, { quoted: mek, caption: 'Aquí tienes 💕🦈'})
+const deci =['Aquí tienes 💕🦈','¿Linda foto no?','Pedido entregado 🕊']
+const fr = deci[Math.floor(Math.random() * deci.length)]
+cnf.sendMessage(from, buferon, image, { caption: fr, quoted: mek })
 .catch(err => {
 return('E-error ⊙﹏⊙')
 })
