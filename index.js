@@ -1935,7 +1935,9 @@ if (!isRegistered) return reply(ind.noregis())
 if (!isBotGroupAdmins) return reply(mess.only.Badmin)
 h100 = await axios.get('https://nekos.life/api/v2/img/hentai')
 rule34 = await getBuffer(h100.data.url)
-cnf.sendMessage(from, rule34, image, { quoted: mek, caption: 'Aquí tienes 💕🦈'})
+const tai =['Aquí tienes 💕🦈','¿Linda foto no?','Pedido entregado 🕊']
+const hent = tai[Math.floor(Math.random() * tai.length)]
+cnf.sendMessage(from, rule34, image, { caption: hent, quoted: mek })
 .catch(err => {
 return('E-error ⊙﹏⊙')
 })
