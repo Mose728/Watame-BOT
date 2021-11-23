@@ -2376,8 +2376,8 @@ const pokemss = ['https://thumbs2.imgbox.com/9c/2f/Wx8tQUkf_t.jpg','https://thum
 let pokes = pokemss[Math.floor(Math.random() * pokemss.length)]
 pokemon = await getBuffer(pokes)
 const decir =['Aquí tienes 💕🦈','¿Linda foto no?','Pedido entregado 🕊']
-const frase =[Math.floor(Math.random() * decir.length)]
-cnf.sendMessage(from, pokemon, image, { caption: ' '+ frase, quoted: mek })
+const frase = decir[Math.floor(Math.random() * decir.length)]
+cnf.sendMessage(from, pokemon, image, { caption: frase, quoted: mek })
 addFilter(from)
 break
 					
