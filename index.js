@@ -2003,10 +2003,10 @@ if (!isRegistered) return reply(ind.noregis())
 					if (!isBotGroupAdmins) return reply(mess.only.Badmin)
 							     if (!isGroupAdmins) return reply(mess.only.admin)		
 					if (args[0] === 'abrir') {
-					    reply(`\`\`\`✓abierto con éxito\`\`\` *${groupMetadata.subject}*`)
+					    reply(`\`\`\`✓Abierto con éxito\`\`\` *${groupMetadata.subject}*`)
 						cnf.groupSettingChange(from, GroupSettingChange.messageSend, false)
 					} else if (args[0] === 'cerrar') {
-						reply(`\`\`\`✓cerrado con éxito\`\`\` *${groupMetadata.subject}*`)
+						reply(`\`\`\`✓Chat deshabilitado temporalmente en\`\`\` *${groupMetadata.subject}*`)
 						cnf.groupSettingChange(from, GroupSettingChange.messageSend, true)
 					}
 					addFilter(from)
