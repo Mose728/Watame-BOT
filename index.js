@@ -1555,7 +1555,6 @@ fs.unlinkSync(ranp)
 if (err) return reply('E-error ⊙﹏⊙')
 buffer = fs.readFileSync(rano)
 cnf.sendMessage(from, buffer, MessageType.sticker, {quoted: mek})
-reply('Aquí tienes 💕🦈')
 fs.unlinkSync(rano)
 })
 addFilter(from)
@@ -2966,7 +2965,9 @@ if (!isBotGroupAdmins) return reply(mess.only.Badmin)
 const yao = ['https://i.ibb.co/6ttzZjP/16.jpg','https://i.ibb.co/Sy2xc1P/12.jpg','https://i.ibb.co/8d2m1gF/15.jpg','https://i.ibb.co/BsYb0xN/36.jpg','https://i.ibb.co/dtgLh00/2.jpg','https://i.ibb.co/GHz2Qdx/25.jpg','https://i.ibb.co/sFVs1bt/1.jpg','https://i.ibb.co/d2J2KDj/24.jpg','https://i.ibb.co/NVHpkWp/23.jpg','https://i.ibb.co/KxVB3wY/22.jpg','https://i.ibb.co/t3ytyh6/21.jpg','https://i.ibb.co/GVrKbYD/20.jpg','https://i.ibb.co/WDttFJK/19.jpg','https://i.ibb.co/517JFnF/18.jpg','https://i.ibb.co/zGRdbtZ/4.jpg','https://i.ibb.co/WVYF9JL/3.jpg','https://i.ibb.co/ZN7zsbk/5.jpg','https://i.ibb.co/WDDgvTq/28.jpg','https://i.ibb.co/vxfVSzy/27.jpg','https://i.ibb.co/RSkfN6D/26.jpg','https://i.ibb.co/wLzRyr2/13.jpg','https://i.ibb.co/HBpxR3v/17.jpg','https://i.ibb.co/1m19qTS/35.jpg','https://i.ibb.co/6vXpDm0/11.jpg','https://i.ibb.co/myvQCmx/34.jpg','https://i.ibb.co/pRPyw6Q/33.jpg','https://i.ibb.co/gZmRKNC/10.jpg','https://i.ibb.co/pJpcWtw/32.jpg','https://i.ibb.co/vH7DBc9/9.jpg','https://i.ibb.co/fCMMBt4/31.jpg','https://i.ibb.co/p49wLDJ/8.jpg','https://i.ibb.co/3Cft0R5/30.jpg','https://i.ibb.co/qYQgGQZ/7.jpg','https://i.ibb.co/0s5x61M/6.jpg','https://i.ibb.co/C8Nngyq/29.jpg','https://i.ibb.co/Np0VTVw/14.jpg']
 let yaoii  = yao[Math.floor(Math.random() * yao.length)]   
 yaoiii = await getBuffer(yaoii)           
-cnf.sendMessage(from, yaoiii, image, {quote: mek, caption: 'Aquí tienes 💕🦈'})		       
+const dsds =['Aquí tienes 💕🦈','¿Linda foto no?','Pedido entregado 🕊']
+const frfr = dsds[Math.floor(Math.random() * dsds.length)]
+cnf.sendMessage(from, yaoiii, image, { caption: frfr, quoted: mek })	       
 addFilter(from)
 break
 					
