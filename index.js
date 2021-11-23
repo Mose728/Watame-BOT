@@ -1460,7 +1460,6 @@ fs.unlinkSync(ranp)
 if (err) return reply('error')
 buffer = fs.readFileSync(rano)
 cnf.sendMessage(from, buffer, MessageType.sticker, {quoted: mek})
-reply('Aquí tienes 💕🦈')
 fs.unlinkSync(rano)
 })
 addFilter(from)
@@ -2235,7 +2234,9 @@ const sasu =['https://thumbs2.imgbox.com/03/93/aA0eqnSu_t.jpg','https://thumbs2.
 	     'https://thumbs2.imgbox.com/56/48/OFWvCYZN_t.jpg','https://thumbs2.imgbox.com/e0/b0/WrejPrB9_t.png','https://thumbs2.imgbox.com/e6/7f/MIrF9aXn_t.png','https://thumbs2.imgbox.com/72/62/kNml4ICv_t.png','https://thumbs2.imgbox.com/81/b6/DnbbcD1u_t.png','https://thumbs2.imgbox.com/87/9b/KWf1XxpT_t.png','https://thumbs2.imgbox.com/77/3b/fPibg1Wl_t.png','https://thumbs2.imgbox.com/4f/32/wam0jgsh_t.png','https://thumbs2.imgbox.com/ac/1a/7PBM0Kl6_t.png','https://thumbs2.imgbox.com/94/cc/zaQwi7zq_t.png','https://thumbs2.imgbox.com/44/00/E1NpW9rC_t.png','https://thumbs2.imgbox.com/13/d1/F8Kbv603_t.png','https://thumbs2.imgbox.com/08/c0/YimfHKO3_t.png','https://thumbs2.imgbox.com/20/b6/cruJgjtK_t.png','https://thumbs2.imgbox.com/9b/d6/Abwp90Fv_t.png','https://thumbs2.imgbox.com/ca/76/ZduaD2DD_t.png','https://thumbs2.imgbox.com/44/f6/ed3KYFsz_t.png','https://thumbs2.imgbox.com/e2/96/FZcgwTsY_t.png','https://thumbs2.imgbox.com/c3/71/0wXPBSRw_t.png','https://thumbs2.imgbox.com/11/72/R6LTfNZq_t.png','https://thumbs2.imgbox.com/a1/d5/N4cm3pfW_t.png','https://thumbs2.imgbox.com/37/f9/y4wN99lN_t.png','https://thumbs2.imgbox.com/c0/fc/MYn62UH3_t.jpg','https://thumbs2.imgbox.com/81/d8/SLwk0iM5_t.png','https://thumbs2.imgbox.com/9d/49/IY2Jw6hi_t.jpg','https://thumbs2.imgbox.com/45/84/caeVLgwa_t.jpg','https://thumbs2.imgbox.com/75/2b/3xxGK1N7_t.jpg','https://thumbs2.imgbox.com/64/56/Ie9YK9Cq_t.jpg','https://thumbs2.imgbox.com/bb/5a/MgXJdvZN_t.jpg','https://thumbs2.imgbox.com/dc/90/6oqagY1D_t.jpg','https://thumbs2.imgbox.com/a5/d2/ILMwtKAp_t.jpg','https://thumbs2.imgbox.com/af/bd/rEp9dwRD_t.jpg','https://thumbs2.imgbox.com/57/84/CnG4GzIi_t.jpeg','https://thumbs2.imgbox.com/7a/d0/jWOT4uvL_t.jpg','https://thumbs2.imgbox.com/00/fa/942cmE4I_t.jpg','https://thumbs2.imgbox.com/f7/a8/ByIN50YF_t.jpg','https://thumbs2.imgbox.com/51/c9/X6BVZ4At_t.jpg','https://thumbs2.imgbox.com/26/ac/e7zn6Yf4_t.jpeg','https://thumbs2.imgbox.com/7a/39/IrTtOgY6_t.jpg','https://thumbs2.imgbox.com/0e/4c/OaSvGE5O_t.png','https://thumbs2.imgbox.com/79/49/Mo3jRTqx_t.png','https://thumbs2.imgbox.com/e9/76/LU9EE3MH_t.jpg','https://thumbs2.imgbox.com/ce/18/jX7HaNiy_t.jpg','https://thumbs2.imgbox.com/b6/6f/F9Ofqu9M_t.png','https://thumbs2.imgbox.com/99/c5/Mjn4R272_t.jpg','https://thumbs2.imgbox.com/79/a0/7jze3h4o_t.jpg','https://thumbs2.imgbox.com/b8/7c/dh7SmjUZ_t.jpg','https://thumbs2.imgbox.com/80/8e/oKaPD2zS_t.jpg','https://thumbs2.imgbox.com/45/93/i9bDwnH8_t.jpg','https://thumbs2.imgbox.com/12/81/MRaW87wt_t.jpg','https://thumbs2.imgbox.com/f7/87/vBVD6rnf_t.jpg','https://thumbs2.imgbox.com/64/da/SrqpxKSC_t.png','https://thumbs2.imgbox.com/55/81/8Ev9zREP_t.png','https://thumbs2.imgbox.com/88/e5/qOztlD2p_t.jpg','https://thumbs2.imgbox.com/20/95/9I5YAaMu_t.png','https://thumbs2.imgbox.com/d6/70/ArDz2V8F_t.jpg','https://thumbs2.imgbox.com/85/33/vDMlCbVm_t.jpg','https://thumbs2.imgbox.com/0c/71/bPqH2CRw_t.jpg']
 let ke = sasu[Math.floor(Math.random() * sasu.length)]
 ninte = await getBuffer(ke)
-cnf.sendMessage(from, ninte, image, {quote: mek, caption: 'Aquí tienes 💕🦈'})
+const sic =['Aquí tienes 💕🦈','¿Linda foto no?','Pedido entregado 🕊']
+const sese = sic[Math.floor(Math.random() * sic.length)]
+cnf.sendMessage(from, ninte, image, { caption: sese, quoted: mek })
 addFilter(from)
 break
 					
