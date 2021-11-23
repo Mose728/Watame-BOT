@@ -1600,7 +1600,7 @@ if (!isBotGroupAdmins) return reply(mess.only.Badmin)
 ranp = getRandom('.gif')
 rano = getRandom('.webp')
 anu = await axios.get('https://nekos.life/api/v2/img/cum')
-exec(`wget ${anu.data.url} -O ${ranp} && ffmpeg -i ${ranp} -vcodec libwebp -filter:v fps=fps=20 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512:512 ${rano}`, (err) => {
+exec(`wget ${anu.data.url} -O ${ranp} && ffmpeg -i ${ranp} -vcodec libwebp -filter:v fps=fps=10 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512:512 ${rano}`, (err) => {
 fs.unlinkSync(ranp)
 if (err) return reply('error')
 buffer = fs.readFileSync(rano)
