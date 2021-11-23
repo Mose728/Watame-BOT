@@ -1503,7 +1503,9 @@ if (!isRegistered) return reply(ind.noregis())
 if (!isBotGroupAdmins) return reply(mess.only.Badmin)
 yuriz = await axios.get('https://nekos.life/api/v2/img/yuri')
 bupyuri = await getBuffer(yuriz.data.url)
-cnf.sendMessage(from, bupyuri, image, { quoted: mek, caption: 'Aquí tienes 💕🦈'})
+const yurix =['Aquí tienes 💕🦈','¿Linda foto no?','Pedido entregado 🕊']
+const bpyuri = yurix[Math.floor(Math.random() * yurix.length)]
+cnf.sendMessage(from, bupyuri, image, { caption: bpyuri, quoted: mek })
 .catch(err => {
 return('E-error ⊙﹏⊙')
 })
