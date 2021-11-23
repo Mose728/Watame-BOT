@@ -2218,7 +2218,9 @@ const ura =['https://thumbs2.imgbox.com/e2/5c/E2E0AOKu_t.jpg','https://thumbs2.i
 	    'https://thumbs2.imgbox.com/59/95/mIOtRAqJ_t.png','https://thumbs2.imgbox.com/db/e0/egPaGb36_t.png','https://thumbs2.imgbox.com/6a/56/0s6cL304_t.png','https://thumbs2.imgbox.com/d0/31/lysEnN1R_t.jpg','https://thumbs2.imgbox.com/14/de/BIK1VClx_t.jpg','https://thumbs2.imgbox.com/86/c9/bmVF6tSI_t.png','https://thumbs2.imgbox.com/18/f5/NsHchamq_t.png','https://thumbs2.imgbox.com/af/6f/9YRE4aaf_t.png','https://thumbs2.imgbox.com/57/3f/yseZFvZr_t.jpg','https://thumbs2.imgbox.com/d3/2b/EpGhivEQ_t.jpg','https://thumbs2.imgbox.com/f9/99/jbAJ1hG5_t.jpg','https://thumbs2.imgbox.com/9a/a4/fxx3c2x1_t.jpg','https://thumbs2.imgbox.com/f1/1d/HfG7EBfk_t.jpg','https://thumbs2.imgbox.com/0d/d2/pImaizZF_t.jpg','https://thumbs2.imgbox.com/0a/37/NkyuiuBY_t.jpg','https://thumbs2.imgbox.com/84/f0/3Znhd14Z_t.png','https://thumbs2.imgbox.com/4e/f3/gN8uGtJE_t.jpg','https://thumbs2.imgbox.com/ae/86/r9XP61A5_t.jpg']
 let dek = ura[Math.floor(Math.random() * ura.length)]
 hero = await getBuffer(dek)
-cnf.sendMessage(from, hero, image, {quote: mek, caption: 'Aquí tienes 💕🦈'})
+const dkk =['Aquí tienes 💕🦈','¿Linda foto no?','Pedido entregado 🕊']
+const fsfs = dkk[Math.floor(Math.random() * dkk.length)]
+cnf.sendMessage(from, hero, image, { caption: fsfs, quoted: mek })
 .catch(err => {
 return('E-error ⊙﹏⊙')
 })
