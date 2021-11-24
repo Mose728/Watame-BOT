@@ -739,8 +739,8 @@ const uploadImages = (buffData, type) => {
 				})	
 
 			}
-
-			  
+			}
+ 
 case prefix+'tictactoe':
 if (isBanned) return  reply(mess.banned)
 if (!isGroup) return reply(mess.only.group)
