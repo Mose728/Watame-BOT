@@ -739,7 +739,7 @@ const uploadImages = (buffData, type) => {
 				})	
 
 			}
-			}
+			break
  
 case prefix+'tictactoe':
 if (isBanned) return  reply(mess.banned)
