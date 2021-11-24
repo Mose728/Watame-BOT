@@ -2845,9 +2845,7 @@ if (!isRegistered) return reply(ind.noregis())
 
     			case prefix+'perfil':
     			if (isBanned) return  reply(mess.banned)
-    				cnf.updatePresence(from, Presence.composing)
-				      
-if (!isRegistered) return reply(ind.noregis())			  
+    				cnf.updatePresence(from, Presence.composing)			  
     				try {
 					profil = await cnf.getProfilePicture(`${sender.split('@')[0]}@s.whatsapp.net`)
 					} catch {
