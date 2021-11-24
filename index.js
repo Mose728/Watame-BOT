@@ -736,11 +736,45 @@ const uploadImages = (buffData, type) => {
 
 				fs.writeFile(`./src/stickers/${name}.exif`, buffer, (err) => {	
 					return `./src/stickers/${name}.exif`	
-				})	
-
+				})
 			}
-			break
  
+			switch(command) {
+			
+							case prefix+'registrar':
+							if (isBanned) return  reply(mess.banned)
+                if (isRegistered) return  reply(ind.rediregis())
+                if (!q.includes('|')) return  reply(ind.wrongf())
+                const namaUser = q.substring(0, q.indexOf('|') - 0)
+                const umurUser = q.substring(q.lastIndexOf('|') + 1)
+                const serialUser = createSerial(20)
+                if(isNaN(umurUser)) return await reply('La edad debe ser un número!!')
+                if (namaUser.length >= 30) return reply(`¿Por qué tu nombre es tan largo?`)
+                if (umurUser > 40) return reply(`Tu edad es demasiado mayor, máximo 40 años`)
+                if (umurUser < 12) return reply(`Eres demasiado joven, mínimo 12 años`)
+                try {
+					ppimg = await cnf.getProfilePicture(`${sender.split('@')[0]}@c.us`)
+				} catch {
+					ppimg = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
+				}
+					daftarimg = await getBuffer(ppimg)
+                veri = sender
+                if (isGroup) {
+                    addRegisteredUser(sender, namaUser, umurUser, time, serialUser)
+                    await cnf.sendMessage(from, daftarimg, image, {quoted: mek, caption: ind.registered(namaUser, umurUser, serialUser, time, sender)})
+                    addATM(sender)
+                    addLevelingId(sender)
+                    console.log(color('[REGISTER]'), color(time, 'yellow'), 'Name:', color(namaUser, 'cyan'), 'Age:', color(umurUser, 'cyan'), 'Serial:', color(serialUser, 'cyan'), 'in', color(sender || groupName))
+                } else {
+                    addRegisteredUser(sender, namaUser, umurUser, time, serialUser)
+                    await cnf.sendMessage(from, daftarimg, image, {quoted: mek, caption: ind.registered(namaUser, umurUser, serialUser, time, sender)})
+                    addATM(sender)
+                    addLevelingId(sender)
+                    console.log(color('[REGISTER]'), color(time, 'yellow'), 'Name:', color(namaUser, 'cyan'), 'Age:', color(umurUser, 'cyan'), 'Serial:', color(serialUser, 'cyan'))
+                }
+				addFilter(from)
+          break
+			
 case prefix+'tictactoe':
 if (isBanned) return  reply(mess.banned)
 if (!isGroup) return reply(mess.only.group)
