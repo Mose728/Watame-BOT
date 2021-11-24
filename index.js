@@ -2845,7 +2845,8 @@ if (!isRegistered) return reply(ind.noregis())
 
     			case prefix+'perfil':
     			if (isBanned) return  reply(mess.banned)
-    				cnf.updatePresence(from, Presence.composing)			  
+    				cnf.updatePresence(from, Presence.composing)
+				if (!isRegistered) return reply(ind.noregis())
     				try {
 					profil = await cnf.getProfilePicture(`${sender.split('@')[0]}@s.whatsapp.net`)
 					} catch {
@@ -2890,7 +2891,6 @@ if (!isRegistered) return reply(ind.noregis())
 				case prefix+'yo':
 				if (isBanned) return  reply(mess.banned)
                 if (!isRegistered) return reply(ind.noregis())
-                
                 if (!isLevelingOn) return reply(ind.lvlnoon())
 			     if (!isGroup) return reply(mess.only.group)			     
                 const userLevel = getLevelingLevel(sender)
