@@ -2,21 +2,21 @@
 
 
 const {
-    WAConnection,
-  MessageType,
-  Presence, 
-  MessageOptions,
-  Mimetype,
-  WALocationMessage,
-  WA_MESSAGE_STUB_TYPES,
-  ReconnectMode,
-  ProxyAgent,
-  GroupSettingChange,
-  ChatModification,
-  waChatKey,
-  WA_DEFAULT_EPHEMERAL,
-  mentionedJid,
-  processTime
+WAConnection,
+MessageType,
+Presence, 
+MessageOptions,
+Mimetype,
+WALocationMessage,
+WA_MESSAGE_STUB_TYPES,
+ReconnectMode,
+ProxyAgent,
+GroupSettingChange,
+ChatModification,
+waChatKey,
+WA_DEFAULT_EPHEMERAL,
+mentionedJid,
+processTime
 } = require('@adiwajshing/baileys')
 const fs = require('fs')
 const axios = require("axios")
@@ -874,14 +874,7 @@ lzain = ` ‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ �
 *╟ ❒ ${prefix}blood*
 *╟ ❒ ${prefix}luxury*
 *╟ ❒ ${prefix}bokeh*
-*╟ ❒ ${prefix}text3d*
 *╟ ❒ ${prefix}blood2*
-*╟ ❒ ${prefix}warrior*
-*╟ ❒ ${prefix}codetxt*
-*╟ ❒ ${prefix}express*
-*╟ ❒ ${prefix}vampire*
-*╟ ❒ ${prefix}blackbird*
-*╟ ❒ ${prefix}halloween*
 *╟X* ‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎
 *┠━➣OTROS*
 *╟X* ‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎
