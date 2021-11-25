@@ -2722,6 +2722,7 @@ reply('「 ❗ 」 1 Para Habilitar Y 0 Para Desactivar')
 break
 
 default:
+}
 		if (isTTT && isPlayer2){
 if (budy.startsWith('Y')){
   tto = ky_ttt.filter(ghg => ghg.id.includes(from))
