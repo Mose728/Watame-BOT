@@ -131,10 +131,6 @@ const {
 	addwaifu,
 	limitAdd
 } = require('./lib/limitatm.js')
-
-
-
-
 const BarBarKey = 'IDxO1TFYnKADlX4pxcHa'
 const VhtearKey = '1BlnApiIkyPake'
 const XteamKey = 'd39b4b3fc7dba'
@@ -169,8 +165,6 @@ myMonths = ["Enero","Febrero","marzo","Abril","Mayo","Junio","Julio","Agosto","S
 function monospace(string) {
 return '```' + string + '```'
 }
-
-
 async function starts() {
 	const cnf = new WAConnection()
 	cnf.version = [2, 2143, 3]
@@ -189,9 +183,6 @@ async function starts() {
 	})
 	await cnf.connect({timeoutMs: 30*1000})
         fs.writeFileSync('./cnf.json', JSON.stringify(cnf.base64EncodedAuthInfo(), null, '\t'))
-
-
-
 cnf.on('CB:action,,call', async json => {
     const callerId = json[2][0][1].from;
     console.log("call dari "+ callerId)
@@ -300,11 +291,6 @@ Es grato para nosotros darte la bienvenida y agradecerte por preferir ser parte 
 					Badmin: 'Sin permisos 😟'
 				}
 			}
-
-
-
-				
-			
 			const botNumber = cnf.user.jid			
 			const isGroup = from.endsWith('@g.us')
 			const tescuk = ["0@s.whatsapp.net"]
@@ -356,10 +342,6 @@ const groupDesc = isGroup ? groupMetadata.desc : ''
 			const costumimg = ( pesan , tipe, target , caption) => {
 			cnf.sendMessage(from, pesan , tipe , {quoted: { key: { fromMe: false, participant: `${target}`, ...(from ? { remoteJid: from } : {}) }, message: {"imageMessage":{url: 'https://mmg.whatsapp.net/d/f/Ahj0ACnTjSHHm6-HjqAUBYiCu2-85zMZp_-EhiXlsd6A.enc',mimetype: 'image/jpeg',caption: `${caption}`,fileSha256: '0Pk0qJyQFn9FCtslZrydJHRQDKryjYcdP7I3CmRrHRs=',fileLength: '20696',height: 360,width: 382,mediaKey: 'N43d/3GY7GYQpgBymb9qFY5O9iNDXuBirXsNZk+X61I=',fileEncSha256: 'IdFM58vy8URV+IUmOqAY3OZsvCN6Px8gaJlRCElqhd4=',directPath: '/v/t62.7118-24/35174026_475909656741093_8174708112574209693_n.enc?oh=2a690b130cf8f912a9ca35f366558743&oe=6061F0C6',mediaKeyTimestamp: '1614240917',jpegThumbnail: '/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEABsbGxscGx4hIR4qLSgtKj04MzM4PV1CR0JHQl2NWGdYWGdYjX2Xe3N7l33gsJycsOD/2c7Z//////////////8BGxsbGxwbHiEhHiotKC0qPTgzMzg9XUJHQkdCXY1YZ1hYZ1iNfZd7c3uXfeCwnJyw4P/Zztn////////////////CABEIAEMASAMBIgACEQEDEQH/xAAwAAADAAMBAAAAAAAAAAAAAAAABAUBAwYCAQADAQEAAAAAAAAAAAAAAAABAgMABP/aAAwDAQACEAMQAAAAoy6kcWS2eH8miq17B553Thh1BgyTY9iULYfndGBmbSwNEV3eWXpjwZElG09WJckXCj8sWBVc1ZKXj2ZYaoWHnc67K3PbKwtZOqzLrzdQAg5fWFRUeCNTQG2pEKJ0wCD/xAAoEAACAgIBAQkAAwEAAAAAAAABAgADBBEScQUQEyEiMTJBYSNRYmP/2gAIAQEAAT8AaZzfEdwWcGMTE1jNv3M1ozDb+SD2jTO+Yigk6A3KqhseIdfkroTYbXQRrkVuJOplKEuOpjtpxF+IjTO+YnZoBvj4pa/msHtMnHZrgymZ6hCnSJsDl+ys7rTpGmevxMwLFS/1fcA7iNzPsDXaH1NccYH+2lJ1SnSNMlOdcbY6iYGa9g4OJzXW9zI7SBJrpjqxsA9zMkcMetf2V7NKD/McgAkxsis7EcA2fkxkqSkaYbMGRu3hr0x6q6ckufaUMpsexj0ma4Y0qDKhqlektyntXiQO4qWI0PONVZWNsNTmZwewekEwo1fpYaMZdvWf2DYrXoO/ARWLNL6VuXiYcSsuK9eXGYtHhM/nsTPVQgb7iDkydRCNBYYx1Ozj6nmSStRIgJ8UH/nMJiTZs/c7RPwExhu+vrH+p//EAB4RAAIBBAMBAAAAAAAAAAAAAAABAhAREjIhMDFC/9oACAECAQE/AOpJsxEqIj4TfNqXygIWpLc+ZEdBH//EAB4RAAICAgIDAAAAAAAAAAAAAAABAjEQETJBAxJx/9oACAEDAQE/AHWVeHQtYrDaNkno7GOzxP10xzWipDHZHidx+EuQz//Z',scansSidecar: 'choizTOCOFXo21QcOR/IlCehTFztHGnB3xo4F4d/kwmxSJJIbMmvxg==',scanLengths: [Array],midQualityFileSha256: '68OHK4IyhiKDNgNAZ3SoXsngzYENebQkV4b/RwhhYIY=',midQualityFileEncSha256: '2EYOLCXx+aqg9RyP6xJYChQNbEjXZmc0EcSwHzoyXx0='}}}})
 			}
-			
-
-			
-			
 
  		idttt = []
 	    players1 = []
@@ -859,7 +841,6 @@ lzain = ` ‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ �
 *╟ ❒ ${prefix}ping*
 *╟ ❒ ${prefix}notif*
 *╟ ❒ ${prefix}todos*
-*╟ ❒ ${prefix}tagall*
 *╟ ❒ ${prefix}kick @*
 *╟ ❒ ${prefix}chatlist*
 *╟ ❒ ${prefix}getbio @*
@@ -1601,7 +1582,6 @@ break
 
 case prefix+'thighs':
 if (isBanned) return  reply(mess.banned)
-	
 if (!isBotGroupAdmins) return reply(mess.only.Badmin)		  
 res = await fetchJson(`https://meme-api.herokuapp.com/gimme/animethighss`, {method: 'get'})
 buffer = await getBuffer(res.url)
@@ -2147,9 +2127,8 @@ break
                 addFilter(from)
           break
 
-					case prefix+'notif':
-					if (isBanned) return  reply(mess.banned)
-	
+case prefix+'notif':
+if (isBanned) return  reply(mess.banned)
 if (!isGroupAdmins) return reply(mess.only.admin)					  
 if (!isGroup) return reply(mess.only.group)
 teks = `Notificacion Dada Por: @${sender.split("@")[0]}\n*El mensaje es: ${body.slice(7)}*`
@@ -2157,83 +2136,72 @@ group = await cnf.groupMetadata(from);
 member = group['participants']
 jids = [];
 member.map(async adm => {
-  jids.push(adm.id.replace('c.us', 's.whatsapp.net'));
+jids.push(adm.id.replace('c.us', 's.whatsapp.net'));
 })
 options = {
-  text: teks,
-  contextInfo: {
+text: teks,
+contextInfo: {
 mentionedJid: jids
-  },
-  quoted: freply
+},
+quoted: freply
 }
 await cnf.sendMessage(from, options, text)
 addFilter(from)
-          break
+break
 				
 case prefix+'abrazar':
-if (isBanned) return  reply(mess.banned)          
-		
-	
+if (isBanned) return  reply(mess.banned)
 mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
-					if (mentioned.length > 1) return reply('etiqueta')  
+if (mentioned.length > 1) return reply('etiqueta')  
 const abra = ['ab1','ab2','ab3','ab4','ab5','ab6','ab7','ab8','ab9','ab10']
-	const abras = abra[Math.floor(Math.random() * abra.length)]				
-				result = fs.readFileSync(`./sticker/reac/abra/${abras}.mp4`)
+const abras = abra[Math.floor(Math.random() * abra.length)]				
+result = fs.readFileSync(`./sticker/reac/abra/${abras}.mp4`)
 cnf.sendMessage(from, result, video, { caption: `${pushname} está abrazando a @${mentioned[0].split('@')[0]}`})
-				addFilter(from)
-          break
+addFilter(from)
+break
 
 case prefix+'patear':
 if (isBanned) return  reply(mess.banned)          
-		
-	
 mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
-					if (mentioned.length > 1) return reply('etiqueta')  
+if (mentioned.length > 1) return reply('etiqueta')  
 const pat = ['pat1','pat2','pat3','pat4','pat5']
-	const pate = pat[Math.floor(Math.random() * pat.length)]				
-				result = fs.readFileSync(`./sticker/reac/patad/${pate}.mp4`)
+const pate = pat[Math.floor(Math.random() * pat.length)]				
+result = fs.readFileSync(`./sticker/reac/patad/${pate}.mp4`)
 cnf.sendMessage(from, result, video, { caption: `${pushname} a pateado a @${mentioned[0].split('@')[0]}`})
-				addFilter(from)
-          break
+addFilter(from)
+break
 
 case prefix+'palmaditas':
-if (isBanned) return  reply(mess.banned)          
-		
-	
+if (isBanned) return  reply(mess.banned)
 mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
-					if (mentioned.length > 1) return reply('etiqueta')  
+if (mentioned.length > 1) return reply('etiqueta')  
 const palm = ['pal1','pal2','pal3','pal4','pal5','pal6','pal7']
-	const palma = palm[Math.floor(Math.random() * palm.length)]				
-				result = fs.readFileSync(`./sticker/reac/palm/${palma}.mp4`)
+const palma = palm[Math.floor(Math.random() * palm.length)]				
+result = fs.readFileSync(`./sticker/reac/palm/${palma}.mp4`)
 cnf.sendMessage(from, result, video, { caption: `${pushname} le esta dando unas palmaditas a @${mentioned[0].split('@')[0]}`})
-				addFilter(from)
-          break
-
+addFilter(from)
+break
 			
 case prefix+'besar':
 if (isBanned) return  reply(mess.banned)          
-			
-
 mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
-					if (mentioned.length > 1) return reply('etiqueta')  
+if (mentioned.length > 1) return reply('etiqueta')  
 const bes = ['bes1','bes2','bes3','bes4','bes5','bes6','bes7']
-	const beso = bes[Math.floor(Math.random() * bes.length)]				
-				result = fs.readFileSync(`./sticker/reac/beso/${beso}.mp4`)
+const beso = bes[Math.floor(Math.random() * bes.length)]				
+result = fs.readFileSync(`./sticker/reac/beso/${beso}.mp4`)
 cnf.sendMessage(from, result, video, { caption: `${pushname} esta besando a @${mentioned[0].split('@')[0]}`})
-				addFilter(from)
-          break
+addFilter(from)
+break
 
-				case prefix+'play':
-				if (isBanned) return  reply(mess.banned)          
-			  
+case prefix+'play':
+if (isBanned) return  reply(mess.banned)          	  
 if (!isBotGroupAdmins) return reply(mess.only.Badmin)
-  if (args.length < 1) return reply('Coloca el enlace de la canción!')
-  
-  play = body.slice(6)
-  
-  anu = await fetchJson(`https://api.zeks.xyz/api/ytplaymp3?q=${play}&apikey=oCHDwj8ggZGBGjU5WIaK5Rctu6c`)
-  if (anu.error) return reply(anu.error)
-  infomp3 = `❒═════❬ *𝐏𝐋𝐀𝐘* ❭═════╾❒
+if (!isGroup) return reply(`[ ❗ ] Este Comando Solo Puede Ser Usado En Grupos UnU`)
+if (args.length < 1) return reply('Coloca el enlace de la canción!')
+play = body.slice(6)
+anu = await fetchJson(`https://api.zeks.xyz/api/ytplaymp3?q=${play}&apikey=oCHDwj8ggZGBGjU5WIaK5Rctu6c`)
+if (anu.error) return reply(anu.error)
+infomp3 = `❒═════❬ *𝐏𝐋𝐀𝐘* ❭═════╾❒
 ├‣ *Nombre* : 
 ┴
 ${anu.result.title}
@@ -2263,28 +2231,26 @@ mimetype: 'audio/mp4', filename: `${anu.result.title}.mp3`, quoted: mek})
 
 case prefix+'play2':  
 if (isBanned) return  reply(mess.banned) 
-	
-if (!isBotGroupAdmins) return reply(mess.only.Badmin)	
-				  if (args.length < 1) return reply('Coloca el enlace del video!')
-				play = args.join(" ")
-				anu = await fetchJson(`https://api.zeks.xyz/api/ytplaymp4?q=${play}&apikey=oCHDwj8ggZGBGjU5WIaK5Rctu6c`)
-				if (anu.error) return reply(anu.error)
-				infomp3 = `❒════❬ *𝐏𝐋𝐀𝐘𝟐* ❭═════╾❒
+if (!isBotGroupAdmins) return reply(mess.only.Badmin)
+if (!isGroup) return reply(`[ ❗ ] Este Comando Solo Puede Ser Usado En Grupos UnU`)
+if (args.length < 1) return reply('Coloca el enlace del video!')
+play = args.join(" ")
+anu = await fetchJson(`https://api.zeks.xyz/api/ytplaymp4?q=${play}&apikey=oCHDwj8ggZGBGjU5WIaK5Rctu6c`)
+if (anu.error) return reply(anu.error)
+infomp3 = `❒════❬ *𝐏𝐋𝐀𝐘𝟐* ❭═════╾❒
 ├‣ *Nombre* : ${anu.result.title}
 ├‣ *Fuente* : ${anu.result.source}
 ├‣ *Tamaño* : ${anu.result.size}
 ❒═════════════════╾❒`			
-				buffer = await getBuffer(anu.result.thumbnail)
-				buffer1 = await getBuffer(anu.result.url_video)
-				cnf.sendMessage(from, buffer, image, {quoted: freply, caption: infomp3})
-				cnf.sendMessage(from, buffer1, video, {mimetype: 'video/mp4', filename: `${anu.result.video}.mp4`, quoted:freply, caption: 'Aquí tienes 💕🦈'})
-					addFilter(from)
-          break 
+buffer = await getBuffer(anu.result.thumbnail)
+buffer1 = await getBuffer(anu.result.url_video)
+cnf.sendMessage(from, buffer, image, {quoted: freply, caption: infomp3})
+cnf.sendMessage(from, buffer1, video, {mimetype: 'video/mp4', filename: `${anu.result.video}.mp4`, quoted:freply, caption: 'Aquí tienes 💕🦈'})
+addFilter(from)
+break 
   
 case prefix+'charlie':
 if (isBanned) return  reply(mess.banned)
-	
-
 if (args.length < 1) return reply('*Has tu pregunta!*')		  
 const ch =['Si','No','No','Si','Si']
     const cha = ch[Math.floor(Math.random() * ch.length)]
@@ -2292,96 +2258,28 @@ reply(`𝐂𝐡𝐚𝐫𝐥𝐢𝐞 𝐂𝐡𝐚𝐫𝐥𝐢𝐞
 
 𝐑𝐞𝐬𝐩𝐮𝐞𝐬𝐭𝐚 : ${cha}`)
 addFilter(from)
-          break
-
-case prefix+'slot':
-if (isBanned) return  reply(mess.banned)
-
-const pb = ['100','50','50','50']
-const pv = pb[Math.floor(Math.random() * pb.length)]
-const pn = [`${pv}`]
-
-
-const prd = [
-		'🍊 : 🍒 : 🍐',
-		'🍒 : 🔔 : 🍊',
-		'🍊 : 🍋 : 🔔',
-		'🔔 : 🍒 : 🍐',
-		'🔔 : 🍒 : 🍊',
-        '🍊 : 🍋 : 🔔',		
-		'🍐 : 🍒 : 🍋',
-		'🍊 : 🍒 : 🍒',
-		'🔔 : 🔔 : 🍇',
-		'🍌 : 🍒 : 🔔',
-		'🍐 : 🔔 : 🔔',
-		'🍊 : 🍋 : 🍒',
-		'🍋 : 🍋 : 🍌',
-		'🔔 : 🔔 : 🍇',
-		'🔔 : 🍐 : 🍇'
-		] 
-const gnd = [
-        '🍇 : 🍇 : 🍇',
-	    '🍐 : 🍐 : 🍐',
-		'🔔 : 🔔 : 🔔',
-		'🍒 : 🍒 : 🍒',
-		'🍊 : 🍊 : 🍊',
-		'🍌 : 🍌 : 🍌'
-		]
-	const pbb = prd[Math.floor(Math.random() * prd.length)]
-	const pbbn = prd[Math.floor(Math.random() * prd.length)]
-	const pvv = gnd[Math.floor(Math.random() * gnd.length)]     
-
-    if (pn < 100) return reply(`╭─╼┥𝐂𝐀𝐒𝐒𝐈𝐍𝐎┝╾─╮
-╽ ┌──────────┐ ┃
-        🍋 : 🍌 : 🍍
-┃ ├──────────┤ ┃
-        ${pbb}
-┃ ├──────────┤ ┃
-        ${pbbn}
-╿ └──────────┘ ╿
-╰──┥𝐂𝐀𝐒𝐒𝐈𝐍𝐎┠──╯
-
-Lo siento, no has logrado alinear, buena suerte la próxima ✨`)
-    cnf.sendMessage(from, `╭─╼┥𝐂𝐀𝐒𝐒𝐈𝐍𝐎┝╾─╮
-╽ ┌──────────┐ ┃
-        🍋 : 🍌 : 🍍
-┃ ├──────────┤ ┃
-        ${pvv}
-┃ ├──────────┤ ┃
-        ${pbbn}
-╿ └──────────┘ ╿
-╰──┥𝐂𝐀𝐒𝐒𝐈𝐍𝐎┠──╯    
-
-Felicidades, has logrado ganar 500 coins`, text, { quoted: freply })
-    addKoinUser(sender, 500)
-                    addFilter(from)
-          break
+break
 
 case prefix+'tomp3':
-if (isBanned) return  reply(mess.banned)        
-	
-		  
-            if (!isQuotedVideo) return fakegroup('Etiqueta un video')
-            fakegroup(mess.wait)
-            encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo
-            media = await cnf.downloadAndSaveMediaMessage(encmedia)
-            ran = getRandom('.mp4')
-            exec(`ffmpeg -i ${media} ${ran}`, (err) => {
-            fs.unlinkSync(media)
-            if (err) return fakegroup(`Err: ${err}`)
-            buffer453 = fs.readFileSync(ran)
-            cnf.sendMessage(from, buffer453, audio, { mimetype: 'audio/mp4', quoted: mek })
-            fs.unlinkSync(ran)
-            })
-            addFilter(from)
-          break
+if (isBanned) return  reply(mess.banned)          
+if (!isQuotedVideo) return fakegroup('Etiqueta un video')
+fakegroup(mess.wait)
+encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo
+media = await cnf.downloadAndSaveMediaMessage(encmedia)
+ran = getRandom('.mp4')
+exec(`ffmpeg -i ${media} ${ran}`, (err) => {
+fs.unlinkSync(media)
+if (err) return fakegroup(`Err: ${err}`)
+buffer453 = fs.readFileSync(ran)
+cnf.sendMessage(from, buffer453, audio, { mimetype: 'audio/mp4', quoted: mek })
+fs.unlinkSync(ran)
+})
+addFilter(from)
+break
 
 case prefix+'juego':
 if (isBanned) return  reply(mess.banned)
-		
-	  
-	reply(`𝑷𝑰𝑬𝑫𝑹𝑨 𝑷𝑨𝑷𝑬𝑳 𝑶 ??𝑰𝑱𝑬𝑹𝑨 :
-
+reply(`𝑷𝑰𝑬𝑫𝑹𝑨 𝑷𝑨𝑷𝑬𝑳 𝑶 ??𝑰𝑱𝑬𝑹𝑨 :
 𝑷𝑨𝑹𝑨 𝑱𝑼𝑮𝑨𝑹 𝑼𝑻𝑰𝑳𝑰𝒁𝑨 𝑼𝑵𝑶 𝑫𝑬 𝑬𝑺𝑻𝑶𝑺 𝑬𝑴𝑶𝑱𝑰𝑺
 		    
 𝑷𝑰𝑬𝑫𝑹𝑨 : #✊
@@ -2390,64 +2288,43 @@ if (isBanned) return  reply(mess.banned)
 		   
 𝑻𝑰𝑱𝑬𝑹𝑨 : #✌
 
-𝗡𝗢𝗧𝗔: en este juego no se puede ganar coins️`)
+𝗡𝗢𝗧𝗔: En este juego no se puede ganar coins️`)
 addFilter(from)
-          break
-		  
-		   case prefix+'✊':		
-		   if (isBanned) return  reply(mess.banned)   
-          
-			  
+break
+
+case prefix+'✊':		
+if (isBanned) return  reply(mess.banned)   
 const piedra =[`𝒀𝒐 𝒆𝒍𝒊𝒋𝒐 : ✋\n\n :) 𝑮𝒂𝒏𝒆 𝒉𝒖𝒎𝒂𝒏𝒐 𝒆𝒔𝒕𝒖𝒑𝒊𝒅𝒐`,`𝒀𝒐 𝒆𝒍𝒊𝒋𝒐 : ✊\n\n :0 𝑬𝒎𝒑𝒂𝒕𝒆`,`𝒀𝒐 𝒆𝒍𝒊𝒋𝒐 : ✌️\n\n :( 𝑮𝒂𝒏𝒂𝒔 𝒕𝒖`]
-    const jg = piedra[Math.floor(Math.random() * piedra.length)]
-    cnf.sendMessage(from, `𝑷𝑰𝑬𝑫𝑹𝑨 𝑷𝑨𝑷𝑬𝑳 𝑶 𝑻𝑰𝑱𝑬𝑹𝑨\n\n` + jg, text)
-    addFilter(from)
-          break
-    
-    case prefix+'✋':    
-    if (isBanned) return  reply(mess.banned)
-          
-			  
-const papel =[`𝒀𝒐 𝒆𝒍𝒊𝒋𝒐 : ✋\n\n  :0 𝑬𝒎𝒑𝒂𝒕𝒆`,`𝒀𝒐 𝒆𝒍𝒊𝒋𝒐 : ✊\n\n :( 𝑮𝒂𝒏𝒂𝒔 𝒕𝒖`,`𝒀𝒐 𝒆𝒍𝒊𝒋𝒐 : ✌️\n\n :) 𝑮𝒂𝒏𝒆 𝒉𝒖𝒎𝒂𝒏𝒐 𝒆𝒔𝒕𝒖𝒑𝒊𝒅𝒐`]
-    const jggg = papel[Math.floor(Math.random() * papel.length)]
-    cnf.sendMessage(from, `𝑷𝑰𝑬𝑫𝑹𝑨 𝑷𝑨𝑷𝑬𝑳 𝑶 𝑻𝑰??𝑬𝑹𝑨\n\n` + jggg, text)
-    addFilter(from)
-          break
-    
-    case prefix+'✌️': 
-    if (isBanned) return  reply(mess.banned)
-          
-			  
-    const tijera =[`𝒀𝒐 𝒆𝒍𝒊𝒋𝒐 : ✋\n\n:( 𝑮𝒂𝒏𝒂𝒔 𝒕𝒖`,`𝒀𝒐 𝒆𝒍𝒊𝒋𝒐 : ✊\n\n :) 𝑮𝒂𝒏𝒆 𝒉𝒖𝒎𝒂𝒏𝒐 𝒆𝒔𝒕𝒖𝒑𝒊𝒅𝒐`,`𝒀𝒐 𝒆𝒍𝒊𝒋𝒐 : ✌️\n\n:0 𝑬𝒎𝒑𝒂𝒕𝒆 `]
-    const jgg = tijera[Math.floor(Math.random() * tijera.length)]
-    cnf.sendMessage(from, `𝑷𝑰𝑬𝑫𝑹𝑨 𝑷𝑨𝑷𝑬𝑳 𝑶 𝑻𝑰𝑱𝑬𝑹𝑨\n\n` + jgg, text)
-    addFilter(from)
-          break
-
-                case prefix+'frases': 
-                if (isBanned) return  reply(mess.banned)
-                
-			  
-				cnf.updatePresence(from, Presence.composing) 
-				const fra =['El amor inmaduro dice: "te amo porque te necesito". El amor maduro dice: "te necesito porque te amo" (Erich Fromm)','La vida empieza cada cinco minutos (Andreu Buenafuente)','Donde las palabras fallan la música habla (Hans Christian Andersen)','Un buen viajante no tiene planes (Confucio)','Una vez aceptamos nuestros límites, vamos más allá de ello (Albert Einstein)','Lo que no nos mata nos hace más fuertes (Friedrich Nietzsche)','Si caminas solo, irás más rápido. Si caminas acompañado, llegarás más lejos.','Una vida llena de errores no solo es más honorable, sino que es más sabia que una vida gastada sin hacer nada','Es sencillo hacer que las cosas sean complicadas, pero difícil hacer que sean sencillas. F. Nietzsche','No pierdas nunca el sentido del humor y aprende a reírte de tus propios defectos','La preocupación es como una mecedora, te mantiene ocupado pero no te lleva a ninguna parte','El hombre que más ha vivido no es aquel que más años ha cumplido, sino aquel que más ha experimentado la vida','Si lo puedes soñar, lo puedes hacer','Lo imposible es el fantasma de los tímidos y el refugio de los cobardes','El camino que nos toca recorrer está lleno de sorpresas. Nunca vas a estar preparado para las que te toquen a ti, sean dichosas o sombrías, pues eso es parte de adquirir experiencia. Y descubrir cuán gratas o desafortunadas son las que te esperan, es algo nunca podrás evadir','La felicidad no es algo que pospones para el futuro, es algo que diseñas para el presente','El amigo ha de ser como el dinero, que antes de necesitarle, se sabe el valor que tiene','Tus acciones serán el reflejo de la manera que tienes de ver la vida y las que te van definir ante los demás. No las malgastes en cosas y actitudes que no valen la pena, solo tú puedes decidir la forma en la que quieres que te recuerden, porque no estarás en este mundo para siempre','El amor es lo que mueve al mundo aunque a veces parezca lo contrario. A las personas no nos haría mal recordar esto de vez en cuando','Nunca terminas de conocer a la gente. Tus amigos, tu familia y hasta tú mismo, pueden ocultar sorpresas que en la vida te podrías haber imaginado, tanto buenas como malas','Todos tenemos el mismo destino, en esencia no hay manera de diferenciarnos si nacemos para llorar y reír. Recuérdalo, todos tenemos los días contados, vive cada uno de tus días como si fueran el regalo más grande, porque nadie puede asegurarte el mañana','Mientras vivas vas a encontrarte con todo tipo de personas, tanto buenas como malas. Es imposible adivinar las intenciones que oculta alguien detrás de su comportamiento, pero descubrirlo es la tarea más interesante y peligrosa con la que te puedes llegar a topar','Los tiempos felices en la humanidad son las páginas vacías de la historia','La decepción después de un amor fallido, puede llegar a oprimir tu corazón hasta el punto de no dejarte respirar. Pero nadie se ha muerto de amor','No llores por la gente que se ha ido, enfócate en quienes se encuentran a tu lado en el presente y quédate con los buenas recuerdos de los que se marcharon','No debes enfocarte en el dolor que puedes sentir si alguien te ha falla. Si no eres capaz de perdonar una equivocación, entiérrala y sigue adelante','Amar es la aventura más grande en la que te puedes embarcar. Porque te puede hacer volar más alto de lo que jamás imaginarte y también ponerte los pies de la tierra']
- 				const jys = fra[Math.floor(Math.random() * fra.length)]
-			    ses = fs.readFileSync(`./media/cnf.jpeg`)
-				cnf.sendMessage(from, ses, image, { caption: '*ᖴᏒᏗᏕᏋᏕ ૮ᏬᏒᎥᎧᏕᏗᏕ👌*\n\n'+ jys, quoted: mek })
-              addFilter(from)
-          break
-
-case prefix+'frases2': 
+const jg = piedra[Math.floor(Math.random() * piedra.length)]
+cnf.sendMessage(from, `𝑷𝑰𝑬𝑫𝑹𝑨 𝑷𝑨𝑷𝑬𝑳 𝑶 𝑻𝑰𝑱𝑬𝑹𝑨\n\n` + jg, text)
+addFilter(from)
+break
+					
+case prefix+'✋':
 if (isBanned) return  reply(mess.banned)
-	
-		  
-cnf.updatePresence(from, Presence.composing) 
-const frs2 = [`☁️¿Alguna vez se han puesto mirar el cielo con atención?\n\n ¿Han notado que no parece real?\nParece una pintura,\nuna pintura de acuarelas💙🎨`,`💙No le digas a nadie que lo supere; ayúdale a superarlo.\n\nMuchas veces nos quedamos en el territorio del mero aliento o en el de las simples palabras de ánimo cuando, en realidad,\nlo que la otra persona necesita de ti es que te remangues y le ayudes de verdad a salir del pozo✨`,`📸Somos una generación\nde fotos felices ,y corazones tristes🎞🥀`,`🌷𝗡𝗼 𝗱𝗲𝘀𝗲𝗼 𝗾𝘂𝗲 𝗹𝗮𝘀 𝗺𝘂𝗷𝗲𝗿𝗲𝘀 𝘁𝗲𝗻𝗴𝗮𝗻 𝗺𝗮𝘀 𝗽𝗼𝗱𝗲𝗿𝗲𝘀 𝘀𝗼𝗯𝗿𝗲 𝗹𝗼𝘀 𝗵𝗼𝗺𝗯𝗿𝗲𝘀....\n\n𝗦𝗶𝗻𝗼 𝗾𝘂𝗲 𝘁𝗲𝗻𝗴𝗮𝗻 𝗺á𝘀\n𝗣𝗢𝗗𝗘𝗥 𝘀𝗼𝗯𝗿𝗲 𝘀𝗶 𝗠𝗜𝗦𝗠𝗔𝗦🤍👑`,`SI FUERA LA PRIMERA VEZ:\n\nConoces los zapatos,que llevas puesto,no es la primera vez q te los pones.Ni la segunda.Y por eso al llegar a tu casa te las quita con ayuda del otro pie,ni siquiera te preocupas si se están ensuciando.\n\nPero si fuera la primera vez q te los pones,te los quitarías delicadamente.Solo si fuera la primera vez.Ahora no.Ahora llegas después de un día agotador y lanzas en teléfono  a la cama,pero si fuera nuevo lo dejarias en la mesa,y hasta tendrías miedo a que se raye.\n\nY lo mismo pasa con las personas ,con tu pareja,con la familia.\n\nSABEMOS QUE ESTAN ALLÍ ,\n  Y dejamos de mirarlos como si fuera\n        LA PRIMERA VEZ♥️`,`🌹Las personas sensibles tienen una característica:\n\nsufren mucho más que los demás, pero también se regocijan con intensidad similar de la felicidad ajena, disfrutándola como si fuera suya.\n\nLa sensibilidad es como la facultad de ver en un mundo de ciegos♥️`,`🍎La vida es el eco, \nlo que envías es lo que regresa, \nlo que das es lo que recibes...\n\nPor eso nunca des a los demás \nlo que no quieras para ti ♥️::✨`,`Así como en la vida existe el\n" pasado, presente y futuro" ,\n\nen los sentimientos está el \n"perdona, olvida y continua"♥️`,`•💘•\n\nMás que un lavado de manos,\nel mundo necesita un lavado de\n\n                                            CORAZÒN✨`,`🎈Aprende a soltar al amor de tu vida que según tú es el correcto pero en realidad ya se volvió costumbre,\n no te idealices con una persona si no has vivido nuevas experiencias con otras, \nno te cierres y pienses que los amores que vendrán son solo a medias. \nVive, date y quiérete♥️::✨`,`⌛️El tiempo cura lo que el corazón destroza....\n\nY aun así,siguen hablando mal del tiempo y bien del amor💚::🌿`,`♻️ Yo lo llamo “Karma”...\n\nPero la biblia dice :\n\n“Cosecharás lo que Siembras”🌱💚`,`🪀Tenía la creencia de que si no te metías con nadie, nadie se metía contigo.\n\nPero no es así, \nporque hay gente a la que le molesta tu felicidad, \ntu físico, tu esencia, tus gustos, \nqué haces y que dejas de hacer✨🎍`,`💡Todo el tiempo estamos diciendo\n "El físico no importa"...\n\npero no la pasamos leyendo o viendo (películas -series) ,donde los protagonistas son de cuerpos de infarto y belleza descomunal🌿.`,`☕️El café nunca se imaginó que podría tener un sabor tan suave,\nhasta que conoció el azúcar y la leche.\n\nTodos somos buenos individualmente,\npero nos volvemos mejores cuando nos\nmezclamos con las personas apropiadas🤎🤍`,`📕Ꮮᗩ  ᗰᗩᏀᏆᗩ  ᗞᗴ  Ꮮᗴᗴᖇ ....\n\nᗴᔑᎢÁ  ᗴᑎ  ᗴᑎᑕᝪᑎᎢᖇᗩᖇ  ᖇᗴᖴᑌᏀᏆᝪ \n\n[ᗴᑎ  Ꮮᗩᔑ  ᏞᗴᎢᖇᗩᔑ  ᗞᗴ  ᝪᎢᖇᝪᔑ✍🏻♥️]`,`♥️Las mujeres son como las canciones de Arjona....\n\nsi eres paciente y las escuchas, \nte darás cuenta \nde lo perfectas que son📀✨`,`𝗘𝗹 𝗔𝗺𝗼𝗿 𝗻𝗼 𝗱𝗲𝘀𝘁𝗿𝘂𝘆𝗲 𝗮 𝗹𝗮𝘀 𝗽𝗲𝗿𝘀𝗼𝗻𝗮𝘀...\n\n𝗟𝗮𝘀 𝗽𝗲𝗿𝘀??𝗻𝗮𝘀 𝗱𝗲𝘀𝘁𝗿𝘂𝘆𝗲𝗻 𝗮 𝗹𝗮𝘀 𝗽𝗲𝗿𝘀𝗼𝗻𝗮𝘀🤍`,`🌵✨El perdón te libera de la maldad ajena,\n aunque la otra persona no se arrepienta de lo que hizo...\n\nY tú perdonas porque sabes que es lo mejor para tu salud. \nPerdonar no es necesariamente olvidar. \nQuizás lo recuerdes por siempre, \npero sin tristeza ,\n ni amargura en el corazón💚✅`,`❌Cuidado con la gente que \nte acelere el corazón  sin tocarte.\n\n\nDuele el doble \ncuando desaparecen de golpe🥀`,`Una vez alguien me dijo:\n\nSi quieres que alguien te busque, deja de buscarle. \n\nSi quieres que alguien te quiera, deja de quererle. \n\nY si quieres que alguien regrese, \ndeja de rogarle....(ironías de la vida) \n\nY ahí entendí todo🤍✨`,`🍓La vida es como una caja de Pandora:\n\n    impredecible, \n        peligrosa, \n          y \n           llena de retos mentales y físicos♥️`,`🌹☕️Recuerda: \n\nNo importa que tan buena persona seas.\nTodos somos los malos en la historia de alguien.\nAsí que disfruta tu rol ,\ny al menos se un villano memorable.`,`“Donde hay amor, hay paz” ....\n\ndijeron alguna vez los labios de alguien\nHay personas que podrían estar de acuerdo...\n\nHay personas que lo \n     encontrarían confuso💜`,`Siempre llega quien rompe todos tus miedos, \ntus inseguridades \ny hace que olvides el daño que alguna vez te hicieron, \ncon sus mimos, sus besos y abrazos, sus pequeños detalles que te alegran la vida y todo ese amor que guarda para hacerte feliz, \ny así, claro que te quedas🎆💜`,`🌹Hazlo, comete errores, \nvuelve a intentarlo, \nfalla, manda todo a la mierda,\n y empieza otra vez si es necesario. \n\n     En serio, no pasa nada🩹☺️♥️`,`Estoy cansada de escuchar que siempre digan las mismas frases de "busca a alguien que te de paz", \n"si no te da tranquilidad no es la persona indicada". \n\nQuién quiere paz?\nA quién le gustan las relaciones lineadas y monótonas que viven en un punto exacto de equilibrio, \ndonde no existen los sube y baja? \nYo realmente no podría. \nYo necesito que mi relación sea una montaña rusa de emociones, \na veces en paz, otras guerra, hoy ganas de tú, mañana gano yo, \npasado toca empatar y empezar de cero, \npero siempre sin dejar de vivir. \nSon iguales de importantes los momentos de cariño cómo los de discusión. \nPorque sino fuera por las renconciliaciones donde el amor siempre sabe mejor, \nno tendría sentido nada, \nya la vida es demasiado monótona como para que las relaciones también lo sean\n\nMi consejo:\nSi te da paz y tranquilidad...ahí no es🤎`]
-  				const fras2 = frs2[Math.floor(Math.random() * frs2.length)]
-			    ses = fs.readFileSync(`./media/cnf.jpeg`)
-				cnf.sendMessage(from, ses, image, { caption: '*ᖴᏒᏗᏕᏋᏕ ૮ᏬᏒᎥᎧᏕᏗᏕ 2👌*\n\n'+ fras2, quoted: mek })
-              addFilter(from)
-          break
+const papel =[`𝒀𝒐 𝒆𝒍𝒊𝒋𝒐 : ✋\n\n  :0 𝑬𝒎𝒑𝒂𝒕𝒆`,`𝒀𝒐 𝒆𝒍𝒊𝒋𝒐 : ✊\n\n :( 𝑮𝒂𝒏𝒂𝒔 𝒕𝒖`,`𝒀𝒐 𝒆𝒍𝒊𝒋𝒐 : ✌️\n\n :) 𝑮𝒂𝒏𝒆 𝒉𝒖𝒎𝒂𝒏𝒐 𝒆𝒔𝒕𝒖𝒑𝒊𝒅𝒐`]
+const jggg = papel[Math.floor(Math.random() * papel.length)]
+cnf.sendMessage(from, `𝑷𝑰𝑬𝑫𝑹𝑨 𝑷𝑨𝑷𝑬𝑳 𝑶 𝑻𝑰??𝑬𝑹𝑨\n\n` + jggg, text)
+addFilter(from)
+break
+					
+case prefix+'✌️': 
+if (isBanned) return  reply(mess.banned)
+const tijera =[`𝒀𝒐 𝒆𝒍𝒊𝒋𝒐 : ✋\n\n:( 𝑮𝒂𝒏𝒂𝒔 𝒕𝒖`,`𝒀𝒐 𝒆𝒍𝒊𝒋𝒐 : ✊\n\n :) 𝑮𝒂𝒏𝒆 𝒉𝒖𝒎𝒂𝒏𝒐 𝒆𝒔𝒕𝒖𝒑𝒊𝒅𝒐`,`𝒀𝒐 𝒆𝒍𝒊𝒋𝒐 : ✌️\n\n:0 𝑬𝒎𝒑𝒂𝒕𝒆 `]
+const jgg = tijera[Math.floor(Math.random() * tijera.length)]
+cnf.sendMessage(from, `𝑷𝑰𝑬𝑫𝑹𝑨 𝑷𝑨𝑷𝑬𝑳 𝑶 𝑻𝑰𝑱𝑬𝑹𝑨\n\n` + jgg, text)
+addFilter(from)
+break
 
+case prefix+'frases':
+if (isBanned) return  reply(mess.banned)
+cnf.updatePresence(from, Presence.composing) 
+const fra =['El amor inmaduro dice: "te amo porque te necesito". El amor maduro dice: "te necesito porque te amo" (Erich Fromm)','La vida empieza cada cinco minutos (Andreu Buenafuente)','Donde las palabras fallan la música habla (Hans Christian Andersen)','Un buen viajante no tiene planes (Confucio)','Una vez aceptamos nuestros límites, vamos más allá de ello (Albert Einstein)','Lo que no nos mata nos hace más fuertes (Friedrich Nietzsche)','Si caminas solo, irás más rápido. Si caminas acompañado, llegarás más lejos.','Una vida llena de errores no solo es más honorable, sino que es más sabia que una vida gastada sin hacer nada','Es sencillo hacer que las cosas sean complicadas, pero difícil hacer que sean sencillas. F. Nietzsche','No pierdas nunca el sentido del humor y aprende a reírte de tus propios defectos','La preocupación es como una mecedora, te mantiene ocupado pero no te lleva a ninguna parte','El hombre que más ha vivido no es aquel que más años ha cumplido, sino aquel que más ha experimentado la vida','Si lo puedes soñar, lo puedes hacer','Lo imposible es el fantasma de los tímidos y el refugio de los cobardes','El camino que nos toca recorrer está lleno de sorpresas. Nunca vas a estar preparado para las que te toquen a ti, sean dichosas o sombrías, pues eso es parte de adquirir experiencia. Y descubrir cuán gratas o desafortunadas son las que te esperan, es algo nunca podrás evadir','La felicidad no es algo que pospones para el futuro, es algo que diseñas para el presente','El amigo ha de ser como el dinero, que antes de necesitarle, se sabe el valor que tiene','Tus acciones serán el reflejo de la manera que tienes de ver la vida y las que te van definir ante los demás. No las malgastes en cosas y actitudes que no valen la pena, solo tú puedes decidir la forma en la que quieres que te recuerden, porque no estarás en este mundo para siempre','El amor es lo que mueve al mundo aunque a veces parezca lo contrario. A las personas no nos haría mal recordar esto de vez en cuando','Nunca terminas de conocer a la gente. Tus amigos, tu familia y hasta tú mismo, pueden ocultar sorpresas que en la vida te podrías haber imaginado, tanto buenas como malas','Todos tenemos el mismo destino, en esencia no hay manera de diferenciarnos si nacemos para llorar y reír. Recuérdalo, todos tenemos los días contados, vive cada uno de tus días como si fueran el regalo más grande, porque nadie puede asegurarte el mañana','Mientras vivas vas a encontrarte con todo tipo de personas, tanto buenas como malas. Es imposible adivinar las intenciones que oculta alguien detrás de su comportamiento, pero descubrirlo es la tarea más interesante y peligrosa con la que te puedes llegar a topar','Los tiempos felices en la humanidad son las páginas vacías de la historia','La decepción después de un amor fallido, puede llegar a oprimir tu corazón hasta el punto de no dejarte respirar. Pero nadie se ha muerto de amor','No llores por la gente que se ha ido, enfócate en quienes se encuentran a tu lado en el presente y quédate con los buenas recuerdos de los que se marcharon','No debes enfocarte en el dolor que puedes sentir si alguien te ha falla. Si no eres capaz de perdonar una equivocación, entiérrala y sigue adelante','Amar es la aventura más grande en la que te puedes embarcar. Porque te puede hacer volar más alto de lo que jamás imaginarte y también ponerte los pies de la tierra']
+const jys = fra[Math.floor(Math.random() * fra.length)]
+ses = fs.readFileSync(`./media/cnf.jpeg`)
+cnf.sendMessage(from, ses, image, { caption: '*ᖴᏒᏗᏕᏋᏕ ૮ᏬᏒᎥᎧᏕᏗᏕ👌*\n\n'+ jys, quoted: mek })
+addFilter(from)
+break
 
 case prefix+'piropos':   
 if (isBanned) return  reply(mess.banned)
