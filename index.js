@@ -2461,139 +2461,44 @@ addFilter(from)
 break
 
 case prefix+'toimg':
-if (isBanned) return  reply(mess.banned)      
-	
-		  	
-				if (!isQuotedSticker) return reply(' etiqueta un sticker')
-				encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
-				media = await cnf.downloadAndSaveMediaMessage(encmedia)
-				ran= getRandom('.png')
-				exec(`ffmpeg -i ${media} ${ran}`, (err) => {
-				fs.unlinkSync(media)
-				if (err) return reply(' Fallo ')
-				buffer = fs.readFileSync(ran)
-				cnf.sendMessage(from, buffer, image, {quoted: mek, caption: '🌸Watame-BOT🌸'})
-				fs.unlinkSync(ran)
-			    })
-				await limitAdd(sender) 
-				addFilter(from)
-          break
+if (isBanned) return  reply(mess.banned)
+if (!isQuotedSticker) return reply(' etiqueta un sticker')
+encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
+media = await cnf.downloadAndSaveMediaMessage(encmedia)
+ran= getRandom('.png')
+exec(`ffmpeg -i ${media} ${ran}`, (err) => {
+fs.unlinkSync(media)
+if (err) return reply(' Fallo ')
+buffer = fs.readFileSync(ran)
+cnf.sendMessage(from, buffer, image, {quoted: mek, caption: '🌸Watame-BOT🌸'})
+fs.unlinkSync(ran)
+})
+await limitAdd(sender) 
+addFilter(from)
+break
 
-
-    			case prefix+'perfil':
-    			if (isBanned) return  reply(mess.banned)
-    				cnf.updatePresence(from, Presence.composing)
-				
-    				try {
-					profil = await cnf.getProfilePicture(`${sender.split('@')[0]}@s.whatsapp.net`)
-					} catch {
-					profil = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
-					}
-					   const uaangku = checkATMuser(sender)
-					profile = `╭─「 *PERFIL* 」
+case prefix+'perfil':
+if (isBanned) return  reply(mess.banned)
+cnf.updatePresence(from, Presence.composing)
+try {
+profil = await cnf.getProfilePicture(`${sender.split('@')[0]}@s.whatsapp.net`)
+} catch {
+profil = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'}
+const uaangku = checkATMuser(sender)
+profile = `╭─「 *PERFIL* 」
 │• *Nombre:* ${pushname}
-│• *Rol :${role}*
-│• *Usuario registrado:* ✅
-│• *Tu Dinero: Rp${uaangku}*
-│• *XP: ${getLevelingXp(sender)}*
-│• *Level: ${getLevelingLevel(sender)}*				
+│• *Cuenta Activa:* ✅				
 │• *Link:* wa.me/${sender.split("@")[0]}
 ╰─────────────────────`
-	 				buff = await getBuffer(profil)
-					cnf.sendMessage(from, buff, image, {quoted: mek, caption: profile})
-					addFilter(from)
-          break
-
-			                case prefix+'leveling':
-			                if (isBanned) return  reply(mess.banned)
-                if (!isGroup) return reply(mess.only.group)
-		     if (!isGroupAdmins) return reply(mess.only.admin)			
-                if (args.length < 1) return reply('activar oh desactivar')
-                if (args[0] === 'activar') {
-                if (isLevelingOn) return reply('*la función de nivel ha estado activa antes*')
-                 	   _leveling.push(from)
-                 	   fs.writeFileSync('./database/group/leveling.json', JSON.stringify(_leveling))
-                  	   reply(ind.lvlon())
-              	  } else if (args[0] === 'desactivar') {
-                  	  _leveling.splice(from, 1)
-                 	   fs.writeFileSync('./database/group/leveling.json', JSON.stringify(_leveling))
-                 	    reply(ind.lvloff())
-             	   } else {
-                 	   reply(ind.satukos())
-                	}
-				addFilter(from)
-          break 
-      
-					
-				case prefix+'yo':
-				if (isBanned) return  reply(mess.banned)
-                
-                if (!isLevelingOn) return reply(ind.lvlnoon())
-			     if (!isGroup) return reply(mess.only.group)			     
-                const userLevel = getLevelingLevel(sender)
-                const userXp = getLevelingXp(sender)
-                if (userLevel === undefined && userXp === undefined) return reply(ind.lvlnul())
-                const requiredXp = 5000 * (Math.pow(2, userLevel) - 1)
-                resul = `┏━━❉ *LEVEL* ❉━━\n┣⊱ *Nombre* : ${pushname}\n┣⊱ Numero : ${sender.split("@")[0]}\n┣⊱ Rol :  ${role}\n┣⊱ User Level : ${userLevel}\n┗━━━━━━━━━━━━`
-                costum(resul, text, tescuk, per)
-				addFilter(from)
-          break 
-            
-				case prefix+'transferir':
-				if (isBanned) return  reply(mess.banned)
-				
-				if (!q.includes('|')) return  reply(ind.wrongf())
-                const tujuan = q.substring(0, q.indexOf('|') - 1)
-                const jumblah = q.substring(q.lastIndexOf('|') + 1)
-                if(isNaN(jumblah)) return await reply('La cantidad debe ser un número!!')
-                if (jumblah < 100 ) return reply(`Transferencia mínima 100`)
-                if (jumblah > 5000 ) return reply(`Transferencia máxima 5000`)
-                if (checkATMuser(sender) < jumblah) return reply(`No tienes suficiente dinero para realizar la transferencia`)
-                const tujuantf = `${tujuan.replace("@", '')}@s.whatsapp.net`
-                fee = 0.005 *  jumblah
-                hasiltf = jumblah - fee
-                addKoinUser(tujuantf, hasiltf)
-                confirmATM(sender, jumblah)
-                addKoinUser('+51931655706@s.whatsapp.net', fee)
-                reply(`*「 ÉXITO 」*\n\nLa transferencia de dinero ha sido exitosa\n\nDe : +${sender.split("@")[0]}\nPara : +${tujuan}\n\nmonto de la transferencia : ${jumblah}\nimpuesto : ${fee}%`)
-                addFilter(from)
-          break
-			
-				case prefix+'cartera':
-				if (isBanned) return  reply(mess.banned)
-				
-				const kantong = checkATMuser(sender)
-				reply(ind.uangkau(pushname, sender, kantong))
-				addFilter(from)
-          break
-
-	case prefix+'ruleta':
-	if (isBanned) return  reply(mess.banned)
-	
-     const dinn = ['1','1','1','1000','1','1','1']    
-  const holi = dinn[Math.floor(Math.random() * dinn.length)]
- if (holi < 5) return reply(`★᭄ꦿ𝐑𝐎𝐔𝐋𝐄𝐓𝐓𝐄💸
-
--🥀Lo siento🥀
--🥀${pushname}
--🥀As perdido
--🥀No recibes ningun premio
--🥀Gracias por jugar`)
- 
-reply(`★᭄ꦿ𝐑𝐎𝐔𝐋𝐄𝐓𝐓𝐄💸
-
--🥀Felicidades 🎉 
--🥀${pushname}
--🥀As Ganado!! 🎉
--🥀Tu premio : 1000 coins`)
-addKoinUser(sender, 1000)
+buff = await getBuffer(profil)
+cnf.sendMessage(from, buff, image, {quoted: mek, caption: profile})
 addFilter(from)
-          break
+break
 					
 case prefix+'wallpaper':
 if (isBanned) return  reply(mess.banned)
-				
-if (!isBotGroupAdmins) return reply(mess.only.Badmin)				
+if (!isBotGroupAdmins) return reply(mess.only.Badmin)
+if (!isGroup) return reply(`「 ❗ 」ESTE COMANDO SOLO PUEDE SER USADO EN GRUPOS`)				
 const canogti = ['https://i.ibb.co/6JTzpJJ/68.jpg','https://i.ibb.co/S7CXQmD/15.jpg','https://i.ibb.co/yP4fMMS/18.jpg','https://i.ibb.co/zRHq0qK/47.jpg','https://i.ibb.co/vD00z3C/10.jpg','https://i.ibb.co/NjLb90d/54.jpg','https://i.ibb.co/QDRJmYb/73.jpg','https://i.ibb.co/LkDygnF/39.jpg','https://i.ibb.co/jTqjqLq/58.jpg','https://i.ibb.co/2twGcMw/86.jpg','https://i.ibb.co/vwBDKRf/71.jpg','https://i.ibb.co/JCwQfcZ/9.jpg','https://i.ibb.co/Y8sm3k8/64.jpg','https://i.ibb.co/60LsdQq/76.jpg','https://i.ibb.co/mG8xMC9/5.jpg','https://i.ibb.co/8jM2Wnq/62.jpg','https://i.ibb.co/XWd1wyB/23.jpg','https://i.ibb.co/J36Qvy0/63.jpg','https://i.ibb.co/zRFXfXB/75.jpg','https://i.ibb.co/SNkpKBM/43.jpg','https://i.ibb.co/Yc1ntvk/21.jpg','https://i.ibb.co/ZV0KBN8/44.jpg','https://i.ibb.co/ByScQYM/56.jpg','https://i.ibb.co/gvr3grn/100.jpg','https://i.ibb.co/Mp6kM0S/98.jpg','https://i.ibb.co/str6WsD/93.jpg','https://i.ibb.co/xf1tqN8/53.jpg','https://i.ibb.co/BntKBDt/3.jpg','https://i.ibb.co/cQ2QrfN/103.jpg','https://i.ibb.co/kKMYf84/7.jpg','https://i.ibb.co/C2dJXLM/33.jpg','https://i.ibb.co/ykzwZ08/67.jpg','https://i.ibb.co/qM4z8GC/25.jpg','https://i.ibb.co/w0bPg7H/38.jpg','https://i.ibb.co/QmL9QT2/72.jpg','https://i.ibb.co/Qk4qKWh/85.jpg','https://i.ibb.co/QPyjj7M/29.jpg','https://i.ibb.co/pPKRz5x/46.jpg','https://i.ibb.co/52X0QGk/27.jpg','https://i.ibb.co/tK1XmTS/13.jpg','https://i.ibb.co/b5KFHHy/55.jpg','https://i.ibb.co/ZRD9Z7M/51.jpg','https://i.ibb.co/JH8D2Js/87.jpg','https://i.ibb.co/X38B1Ns/81.jpg','https://i.ibb.co/9Ztpn3y/2.jpg','https://i.ibb.co/g7P9NT4/26.jpg','https://i.ibb.co/j5m8sgf/8.jpg','https://i.ibb.co/njnkMWC/32.jpg','https://i.ibb.co/M80BmZZ/16.jpg','https://i.ibb.co/tQqGkCf/77.jpg','https://i.ibb.co/S6Np1Vm/49.jpg','https://i.ibb.co/TbkQk71/90.jpg','https://i.ibb.co/1GVqwsn/50.jpg','https://i.ibb.co/mb0Xr9X/59.jpg','https://i.ibb.co/WnDMywW/4.jpg','https://i.ibb.co/rbBvMX4/84.jpg','https://i.ibb.co/7twNvNX/74.jpg','https://i.ibb.co/jRKDHRz/48.jpg','https://i.ibb.co/KqqYTWk/89.jpg','https://i.ibb.co/qMQNSjG/12.jpg','https://i.ibb.co/FgNw4hb/11.jpg','https://i.ibb.co/9NW9VnZ/17.jpg','https://i.ibb.co/jMc9vdx/95.jpg','https://i.ibb.co/BskF3jg/104.jpg','https://i.ibb.co/yV56m6S/99.jpg','https://i.ibb.co/5GCxFC5/19.jpg','https://i.ibb.co/8mKGXzg/31.jpg','https://i.ibb.co/4VWX6dn/34.jpg','https://i.ibb.co/fq6LjHw/82.jpg','https://i.ibb.co/CbbP0QB/80.jpg','https://i.ibb.co/vPqyBCK/36.jpg','https://i.ibb.co/k5QxxBb/57.jpg','https://i.ibb.co/WymrdBf/102.jpg','https://i.ibb.co/cth1cwb/79.jpg','https://i.ibb.co/dJRTT6f/83.jpg','https://i.ibb.co/55szk9F/91.jpg','https://i.ibb.co/sgTbTLb/65.jpg','https://i.ibb.co/8rLfBDy/24.jpg','https://i.ibb.co/W0zbd1J/66.jpg','https://i.ibb.co/g7523mx/14.jpg','https://i.ibb.co/nB8CzdY/22.jpg','https://i.ibb.co/prbLDzX/101.jpg','https://i.ibb.co/r2sZVDR/37.jpg','https://i.ibb.co/t2pn4dL/94.jpg','https://i.ibb.co/F0CkFPp/35.jpg','https://i.ibb.co/7nwhZ3w/96.jpg','https://i.ibb.co/89r7C2b/20.jpg','https://i.ibb.co/TTYYgP3/69.jpg','https://i.ibb.co/JKp6Hqr/52.jpg','https://i.ibb.co/k8FknTC/41.jpg','https://i.ibb.co/37Nk23b/6.jpg','https://i.ibb.co/zSC3dHS/88.jpg','https://i.ibb.co/dLNthzx/60.jpg','https://i.ibb.co/3RPnFTc/105.jpg','https://i.ibb.co/kHbRF4Z/28.jpg','https://i.ibb.co/XYx1rFS/1.jpg','https://i.ibb.co/pxtTK6j/40.jpg','https://i.ibb.co/tKTjL9s/30.jpg','https://i.ibb.co/FHZt6NH/45.jpg','https://i.ibb.co/3kV41Nj/42.jpg','https://i.ibb.co/WDGcQ4X/78.jpg','https://i.ibb.co/XYh4fqF/70.jpg','https://i.ibb.co/B3rHm58/61.jpg','https://i.ibb.co/Vqxn77Z/97.jpg','https://i.ibb.co/DQ5P1Xq/92.jpg']
 let canbgtip = canogti[Math.floor(Math.random() * canogti.length)]
 h = await getBuffer(canbgtip)
@@ -2604,8 +2509,8 @@ break
 
 case prefix+'yaoi':
 if (isBanned) return  reply(mess.banned)   
-	
-if (!isBotGroupAdmins) return reply(mess.only.Badmin)		  
+if (!isBotGroupAdmins) return reply(mess.only.Badmin)
+if (!isGroup) return reply(`「 ❗ 」ESTE COMANDO SOLO PUEDE SER USADO EN GRUPOS`)
 const yao = ['https://i.ibb.co/6ttzZjP/16.jpg','https://i.ibb.co/Sy2xc1P/12.jpg','https://i.ibb.co/8d2m1gF/15.jpg','https://i.ibb.co/BsYb0xN/36.jpg','https://i.ibb.co/dtgLh00/2.jpg','https://i.ibb.co/GHz2Qdx/25.jpg','https://i.ibb.co/sFVs1bt/1.jpg','https://i.ibb.co/d2J2KDj/24.jpg','https://i.ibb.co/NVHpkWp/23.jpg','https://i.ibb.co/KxVB3wY/22.jpg','https://i.ibb.co/t3ytyh6/21.jpg','https://i.ibb.co/GVrKbYD/20.jpg','https://i.ibb.co/WDttFJK/19.jpg','https://i.ibb.co/517JFnF/18.jpg','https://i.ibb.co/zGRdbtZ/4.jpg','https://i.ibb.co/WVYF9JL/3.jpg','https://i.ibb.co/ZN7zsbk/5.jpg','https://i.ibb.co/WDDgvTq/28.jpg','https://i.ibb.co/vxfVSzy/27.jpg','https://i.ibb.co/RSkfN6D/26.jpg','https://i.ibb.co/wLzRyr2/13.jpg','https://i.ibb.co/HBpxR3v/17.jpg','https://i.ibb.co/1m19qTS/35.jpg','https://i.ibb.co/6vXpDm0/11.jpg','https://i.ibb.co/myvQCmx/34.jpg','https://i.ibb.co/pRPyw6Q/33.jpg','https://i.ibb.co/gZmRKNC/10.jpg','https://i.ibb.co/pJpcWtw/32.jpg','https://i.ibb.co/vH7DBc9/9.jpg','https://i.ibb.co/fCMMBt4/31.jpg','https://i.ibb.co/p49wLDJ/8.jpg','https://i.ibb.co/3Cft0R5/30.jpg','https://i.ibb.co/qYQgGQZ/7.jpg','https://i.ibb.co/0s5x61M/6.jpg','https://i.ibb.co/C8Nngyq/29.jpg','https://i.ibb.co/Np0VTVw/14.jpg']
 let yaoii  = yao[Math.floor(Math.random() * yao.length)]   
 yaoiii = await getBuffer(yaoii)           
@@ -2617,290 +2522,148 @@ break
 					
 case prefix+'todos':
 if (isBanned) return  reply(mess.banned)
-			  
 if (!isGroupAdmins) return reply(mess.only.admin)
 if (!isBotGroupAdmins) return reply(mess.only.Badmin)
-					if (!isGroup) return reply(mess.only.group)
-					var nom = mek.participant
-					members_id = []
-					teks = '\n'
-					for (let mem of groupMembers) {
-						teks += `├╼ @${mem.jid.split('@')[0]}\n`
-						members_id.push(mem.jid)
-					}
-					mentions(`*▢ Grupo:*  ${groupName}\n*▢ Miembros:* ${groupMembers.length} \n*▢ Total De Admins:* ${groupAdmins.length}\n┌───⊷ *MENCIONES* ⊶`+teks+'└──✪ 🌸Watame-BOT🌸 ✪──⊷* ', members_id, true)
-					addFilter(from)
-          break
-
-                        
+if (!isGroup) return reply(mess.only.group)
+var nom = mek.participant
+members_id = []
+teks = '\n'
+for (let mem of groupMembers) {
+teks += `├╼ @${mem.jid.split('@')[0]}\n`
+members_id.push(mem.jid)
+}
+mentions(`*▢ Grupo:*  ${groupName}\n*▢ Miembros:* ${groupMembers.length} \n*▢ Total De Admins:* ${groupAdmins.length}\n┌───⊷ *MENCIONES* ⊶`+teks+'└──✪ 🌸Watame-BOT🌸 ✪──⊷* ', members_id, true)
+addFilter(from)
+break
+                     
 case prefix+'wame':
 if (isBanned) return  reply(mess.banned)
-	
-
-                   cnf.updatePresence(from, Presence.composing) 
-      options = {
-          text: `「 *LINK WHATSAPP* 」\n\nSolicitado por : @${sender.split("@s.whatsapp.net")[0]}\n\nSu link de Whatsapp : *https://wa.me/${sender.split("@s.whatsapp.net")[0]}*\n`,
-          contextInfo: { mentionedJid: [sender] }
-    }
-    cnf.sendMessage(from, options, text, { quoted: mek } )
-				addFilter(from)
-          break
-
-case prefix+'apostar':
-
-if (isBanned) return  reply(mess.banned)
-dineroapostado = body.slice(9)
-if (args.length < 1) return reply('¿Cuánto deseas apostar?')
-  if(isNaN(dineroapostado)) return await reply('La cantidad debe ser un número')
-  if(dineroapostado < 10) return await reply(`La apuesta debe ser mayor o igual a 10`)
-  if(dineroapostado > 2000) return await reply(`Quién apuesta más de lo que puede ganar?`)
- const apuest = checkATMuser(sender)
-if (apuest < dineroapostado) return reply(`Lo siento, coins insuficientes`)
-confirmATM(sender, dineroapostado)
-const gpp = ['10','10','10','10','5000']
-	const gppp = gpp[Math.floor(Math.random() * gpp.length)]
-piro = `*[💲] [ 𝗔𝗣𝗨𝗘𝗦𝗧𝗔𝗦 ] [💲]*
-
-᭕- Dinero apostado :
-᭕- ${dineroapostado}
-᭕- Jugador :
-᭕- ${pushname}
-
-*{💲}---𝐑𝐄𝐒𝐔𝐋𝐓𝐀𝐃𝐎--{-💲}*
-        ༊    PERDEDOR    ༊
-*{💲}---𝐑𝐄𝐒𝐔𝐋𝐓𝐀𝐃𝐎--{-💲}*
-
-× No ganas nada
-× Pierdes el dinero apostado
-
-× Gracias por jugar`
-
-
-ganadorxd = `*[💲] [ 𝗔𝗣𝗨𝗘𝗦𝗧𝗔𝗦 ] [💲]*
-
-᭕- Dinero apostado :
-᭕- ${dineroapostado}
-᭕- Jugador :
-᭕- ${pushname}
-
-*{💲}---𝐑𝐄𝐒𝐔𝐋𝐓𝐀𝐃𝐎--{-💲}*
-        ༊     GANADOR     ༊
-*{💲}---𝐑𝐄𝐒𝐔𝐋𝐓𝐀𝐃𝐎--{-💲}*
-
-× Ganaste :
-× 2000 coins
-
-× Gracias por jugar`
-if (gppp < 90) return reply(piro)
-addKoinUser(sender, 2000)
-
-reply(`${ganadorxd}`)
+cnf.updatePresence(from, Presence.composing) 
+options = {
+text: `「 *LINK WHATSAPP* 」\n\nSolicitado por : @${sender.split("@s.whatsapp.net")[0]}\n\nSu link de Whatsapp : *https://wa.me/${sender.split("@s.whatsapp.net")[0]}*\n`,
+contextInfo: { mentionedJid: [sender] }
+}
+cnf.sendMessage(from, options, text, { quoted: mek } )
 addFilter(from)
-          break
-
-
-case prefix+'coinflip':
-if (isBanned) return  reply(mess.banned)
-
-
-dineroapostadoo = args.join(" ")
-if (dineroapostadoo < 1) return reply('¿Cuánto deseas apostar?')
-if (dineroapostadoo > 501) return reply('La caja no puede pagar tanto :c')
-  if(isNaN(dineroapostadoo)) return await reply('La cantidad debe ser un número')
-const dap = checkATMuser(sender)
-if (dap < dineroapostadoo) return reply(`Lo siento, coins insuficientes`)
-confirmATM(sender, dineroapostadoo)
-const cgn = ['5','10','5','10']
-const ccgn = cgn[Math.floor(Math.random() * cgn.length)]
-
-fli = `ᐅ La moneda aterrizo en: *CARA*.
-Perdiste ${dineroapostadoo} coins`
-if (ccgn < 7) return reply(fli)
-fee = 3 * dineroapostadoo
-addKoinUser(sender, fee)
-flip = `ᐅ La moneda aterrizo en: *CRUZ*.
-Ganaste ${fee} coins`
-reply(flip)
-addFilter(from)
-          break
+break
 
 case prefix+'blood':   
-if (isBanned) return  reply(mess.banned)  
-			  
-
-        
+if (isBanned) return  reply(mess.banned)
+if (!isGroup) return reply(`「 ❗ 」ESTE COMANDO SOLO PUEDE SER USADO EN GRUPOS`)
 const apis9 =['7c6c9a9e1138b473e6c64388','ff8508e71c332b870c1e8a1b','b57c69801b7b3e63b3b3e94c','e07d2ff8ff95d995809ec7b3','99ae3d189586081a2be37357','8cd8a7918eab2510afd496c0']
  const nepe9 = apis9[Math.floor(Math.random() * apis9.length)]
-                bpp = `${body.slice(7)}`
-                     if (args.length < 1) return reply('En dónde está el texto?')
-                     if (args.length > 10) return reply('Maximo 10 letras')
-                     
-                     buff = await getBuffer(`https://api.lolhuman.xyz/api/textprome/bloodfrosted?apikey=${nepe9}&text=${bpp}`, {method: 'get'})
-                     cnf.sendMessage(from, buff, image, {quoted: mek})                  
-                  addFilter(from)
-          break  
+bpp = `${body.slice(7)}`
+if (args.length < 1) return reply('En dónde está el texto?')
+if (args.length > 10) return reply('Maximo 10 letras')
+buff = await getBuffer(`https://api.lolhuman.xyz/api/textprome/bloodfrosted?apikey=${nepe9}&text=${bpp}`, {method: 'get'})
+cnf.sendMessage(from, buff, image, {quoted: mek})                  
+addFilter(from)
+break  
                   
 case prefix+'blood2':
 if (isBanned) return  reply(mess.banned)
-		
-	  
-
-           const apis8 =['7c6c9a9e1138b473e6c64388','ff8508e71c332b870c1e8a1b','b57c69801b7b3e63b3b3e94c','e07d2ff8ff95d995809ec7b3','99ae3d189586081a2be37357','8cd8a7918eab2510afd496c0']
- const nepe8 = apis8[Math.floor(Math.random() * apis8.length)]     
-                bpp1 = `${body.slice(8)}`
-                     if (args.length < 1) return reply('En dónde está el texto?')
-                     if (args.length > 10) return reply('Maximo 10 letras')
-                     
-                     buff = await getBuffer(`https://api.lolhuman.xyz/api/textprome/horrorblood?apikey=${nepe8}&text=${bpp1}`, {method: 'get'})
-                     cnf.sendMessage(from, buff, image, {quoted: mek})
-                  
-                  addFilter(from)
-          break 
+if (!isGroup) return reply(`「 ❗ 」ESTE COMANDO SOLO PUEDE SER USADO EN GRUPOS`)
+const apis8 =['7c6c9a9e1138b473e6c64388','ff8508e71c332b870c1e8a1b','b57c69801b7b3e63b3b3e94c','e07d2ff8ff95d995809ec7b3','99ae3d189586081a2be37357','8cd8a7918eab2510afd496c0']
+const nepe8 = apis8[Math.floor(Math.random() * apis8.length)]     
+bpp1 = `${body.slice(8)}`
+if (args.length < 1) return reply('En dónde está el texto?')
+if (args.length > 10) return reply('Maximo 10 letras')
+buff = await getBuffer(`https://api.lolhuman.xyz/api/textprome/horrorblood?apikey=${nepe8}&text=${bpp1}`, {method: 'get'})
+cnf.sendMessage(from, buff, image, {quoted: mek})
+addFilter(from)
+break 
                    
 case prefix+'bokeh':
 if (isBanned) return  reply(mess.banned)
-			  
-
-
-           const apis7 =['7c6c9a9e1138b473e6c64388','ff8508e71c332b870c1e8a1b','b57c69801b7b3e63b3b3e94c','e07d2ff8ff95d995809ec7b3','99ae3d189586081a2be37357','8cd8a7918eab2510afd496c0']
- const nepe7 = apis7[Math.floor(Math.random() * apis7.length)]     
-                bpp2 = `${body.slice(7)}`
-                     if (args.length < 1) return reply('En dónde está el texto?')
-                     if (args.length > 10) return reply('Maximo 10 letras')
-                     
-                     buff = await getBuffer(`https://api.lolhuman.xyz/api/textprome/bokeh?apikey=${nepe7}&text=${bpp2}`, {method: 'get'})
-                     cnf.sendMessage(from, buff, image, {quoted: mek})
-                  
-                  addFilter(from)
-          break 
+if (!isGroup) return reply(`「 ❗ 」ESTE COMANDO SOLO PUEDE SER USADO EN GRUPOS`)
+const apis7 =['7c6c9a9e1138b473e6c64388','ff8508e71c332b870c1e8a1b','b57c69801b7b3e63b3b3e94c','e07d2ff8ff95d995809ec7b3','99ae3d189586081a2be37357','8cd8a7918eab2510afd496c0']
+const nepe7 = apis7[Math.floor(Math.random() * apis7.length)]     
+bpp2 = `${body.slice(7)}`
+if (args.length < 1) return reply('En dónde está el texto?')
+if (args.length > 10) return reply('Maximo 10 letras')         
+buff = await getBuffer(`https://api.lolhuman.xyz/api/textprome/bokeh?apikey=${nepe7}&text=${bpp2}`, {method: 'get'})
+cnf.sendMessage(from, buff, image, {quoted: mek})                
+addFilter(from)
+break 
                    
 case prefix+'toxic':
 if (isBanned) return  reply(mess.banned)      
-	
-	
-	  
-const tox = checkATMuser(sender)
-const toxx = [`${tox}`]
-if (toxx < 30) return reply(`Lo siento, coins insuficientes`)
-confirmATM(sender, 30) 	
-          const apis1 =['7c6c9a9e1138b473e6c64388','ff8508e71c332b870c1e8a1b','b57c69801b7b3e63b3b3e94c','e07d2ff8ff95d995809ec7b3','99ae3d189586081a2be37357','8cd8a7918eab2510afd496c0']
- const nepe1 = apis1[Math.floor(Math.random() * apis1.length)]    
-                bpp3 = `${body.slice(7)}`
-                     if (args.length < 1) return reply('En dónde está el texto?')
-                     if (args.length > 10) return reply('Maximo 10 letras')
-                     
-                     buff = await getBuffer(`https://api.lolhuman.xyz/api/textprome/toxic?apikey=${nepe1}&text=${bpp3}`, {method: 'get'})
-                     cnf.sendMessage(from, buff, image, {quoted: mek, caption: 'Se te cobraron 30 coins'})        
-                  addFilter(from)
-          break 
+if (!isGroup) return reply(`「 ❗ 」ESTE COMANDO SOLO PUEDE SER USADO EN GRUPOS`)
+const apis1 =['7c6c9a9e1138b473e6c64388','ff8508e71c332b870c1e8a1b','b57c69801b7b3e63b3b3e94c','e07d2ff8ff95d995809ec7b3','99ae3d189586081a2be37357','8cd8a7918eab2510afd496c0']
+const nepe1 = apis1[Math.floor(Math.random() * apis1.length)]    
+bpp3 = `${body.slice(7)}`
+if (args.length < 1) return reply('En dónde está el texto?')
+if (args.length > 10) return reply('Maximo 10 letras')
+buff = await getBuffer(`https://api.lolhuman.xyz/api/textprome/toxic?apikey=${nepe1}&text=${bpp3}`, {method: 'get'})
+cnf.sendMessage(from, buff, image, {quoted: mek})        
+addFilter(from)
+break 
                    
 case prefix+'ice':
-if (isBanned) return  reply(mess.banned)     
-		
-
-	  
- const icee = checkATMuser(sender)
-const icce = [`${icee}`]
-if (icce < 30) return reply(`Lo siento, coins insuficientes`)
-confirmATM(sender, 30) 	
+if (isBanned) return  reply(mess.banned)
+if (!isGroup) return reply(`「 ❗ 」ESTE COMANDO SOLO PUEDE SER USADO EN GRUPOS`)
 const apis =['7c6c9a9e1138b473e6c64388','ff8508e71c332b870c1e8a1b','b57c69801b7b3e63b3b3e94c','e07d2ff8ff95d995809ec7b3','99ae3d189586081a2be37357','8cd8a7918eab2510afd496c0']
- const nepe = apis[Math.floor(Math.random() * apis.length)]                
-                bpp5 = `${body.slice(5)}`
-                     if (args.length < 1) return reply('En dónde está el texto?')
-                     if (args.length > 10) return reply('Maximo 10 letras')
-                     
-                     buff = await getBuffer(`https://api.lolhuman.xyz/api/textprome/icecold?apikey=${nepe}&text=${bpp5}`, {method: 'get'})
-                     cnf.sendMessage(from, buff, image, {quoted: mek, caption: 'Se te cobraron 30 coins'})
-                  
-                  addFilter(from)
-          break  
-                  
+const nepe = apis[Math.floor(Math.random() * apis.length)]                
+bpp5 = `${body.slice(5)}`
+if (args.length < 1) return reply('En dónde está el texto?')
+if (args.length > 10) return reply('Maximo 10 letras')
+buff = await getBuffer(`https://api.lolhuman.xyz/api/textprome/icecold?apikey=${nepe}&text=${bpp5}`, {method: 'get'})
+cnf.sendMessage(from, buff, image, {quoted: mek})
+addFilter(from)
+break  
+            
 case prefix+'box':
-if (isBanned) return  reply(mess.banned)      
-		
-	  
+if (isBanned) return  reply(mess.banned)
+const apis2 =['7c6c9a9e1138b473e6c64388','ff8508e71c332b870c1e8a1b','b57c69801b7b3e63b3b3e94c','e07d2ff8ff95d995809ec7b3','99ae3d189586081a2be37357','8cd8a7918eab2510afd496c0']
+const nepe22 = apis2[Math.floor(Math.random() * apis2.length)]
+bpp4 = `${body.slice(5)}`
+if (args.length < 1) return reply('En dónde está el texto?')
+if (args.length > 10) return reply('Maximo 10 letras')
+buff = await getBuffer(`https://api.lolhuman.xyz/api/textprome/box3d?apikey=${nepe22}&text=${bpp4}`, {method: 'get'})
+cnf.sendMessage(from, buff, image, {quoted: mek})
+addFilter(from)
+break 
 
- const boxx = checkATMuser(sender)
-const boox = [`${boxx}`]
-if (boox < 30) return reply(`Lo siento, coins insuficientes`)
-confirmATM(sender, 30) 	
-       const apis2 =['7c6c9a9e1138b473e6c64388','ff8508e71c332b870c1e8a1b','b57c69801b7b3e63b3b3e94c','e07d2ff8ff95d995809ec7b3','99ae3d189586081a2be37357','8cd8a7918eab2510afd496c0']
- const nepe22 = apis2[Math.floor(Math.random() * apis2.length)]        
-                bpp4 = `${body.slice(5)}`
-                     if (args.length < 1) return reply('En dónde está el texto?')
-                     if (args.length > 10) return reply('Maximo 10 letras')
-                     
-                     buff = await getBuffer(`https://api.lolhuman.xyz/api/textprome/box3d?apikey=${nepe22}&text=${bpp4}`, {method: 'get'})
-                     cnf.sendMessage(from, buff, image, {quoted: mek, caption: 'Se te cobraron 30 coins'})
-                  
-                  addFilter(from)
-          break 
-                   
 case prefix+'love':
-if (isBanned) return  reply(mess.banned)      
-	
+if (isBanned) return  reply(mess.banned)
+const apis3 =['7c6c9a9e1138b473e6c64388','ff8508e71c332b870c1e8a1b','b57c69801b7b3e63b3b3e94c','e07d2ff8ff95d995809ec7b3','99ae3d189586081a2be37357','8cd8a7918eab2510afd496c0']
+const nepe33 = apis3[Math.floor(Math.random() * apis3.length)]           
+bpp7 = `${body.slice(6)}`
+if (args.length < 1) return reply('En dónde está el texto?')
+if (args.length > 10) return reply('Maximo 10 letras')
+buff = await getBuffer(`https://api.lolhuman.xyz/api/photooxy1/love?apikey=${nepe33}&text=${bpp7}`, {method: 'get'})
+cnf.sendMessage(from, buff, image, {quoted: mek})
+addFilter(from)
+break  
 
- const loove = checkATMuser(sender)
-const lovee = [`${loove}`]
-if (lovee < 30) return reply(`𝐋𝐨 𝐬𝐢𝐞𝐧??𝐨 𝐜𝐨𝐢𝐧𝐬 𝐢𝐧𝐬𝐮𝐟𝐢𝐜𝐢𝐞𝐧𝐭𝐞𝐬.`)
-confirmATM(sender, 30) 	
-    const apis3 =['7c6c9a9e1138b473e6c64388','ff8508e71c332b870c1e8a1b','b57c69801b7b3e63b3b3e94c','e07d2ff8ff95d995809ec7b3','99ae3d189586081a2be37357','8cd8a7918eab2510afd496c0']
- const nepe33 = apis3[Math.floor(Math.random() * apis3.length)]           
-                bpp7 = `${body.slice(6)}`
-                     if (args.length < 1) return reply('En dónde está el texto?')
-                     if (args.length > 10) return reply('Maximo 10 letras')
-                     
-                     buff = await getBuffer(`https://api.lolhuman.xyz/api/photooxy1/love?apikey=${nepe33}&text=${bpp7}`, {method: 'get'})
-                     cnf.sendMessage(from, buff, image, {quoted: mek, caption: 'Se te cobraron 30 coins'})
-                  
-                  addFilter(from)
-          break  
-                  
 case prefix+'luxury':
-if (isBanned) return  reply(mess.banned)      
-		
-	  
-
- const luux = checkATMuser(sender)
-const luxx = [`${luux}`]
-if (luxx < 30) return reply(`Lo siento, coins insuficientes`)
-confirmATM(sender, 30) 	
-   const apis4 =['7c6c9a9e1138b473e6c64388','ff8508e71c332b870c1e8a1b','b57c69801b7b3e63b3b3e94c','e07d2ff8ff95d995809ec7b3','99ae3d189586081a2be37357','8cd8a7918eab2510afd496c0']
- const nepe4 = apis4[Math.floor(Math.random() * apis4.length)]           
-                bpp6 = `${body.slice(8)}`
-                     if (args.length < 1) return reply('En dónde está el texto?')
-                     if (args.length > 10) return reply('Maximo 10 letras')
-                     
-                     buff = await getBuffer(`https://api.lolhuman.xyz/api/textprome/luxury?apikey=${nepe4}&text=${bpp6}`, {method: 'get'})
-                     cnf.sendMessage(from, buff, image, {quoted: mek, caption: 'Se te cobraron 30 coins'})
-                  
-                  addFilter(from)
-          break 
+if (isBanned) return  reply(mess.banned)
+const apis4 =['7c6c9a9e1138b473e6c64388','ff8508e71c332b870c1e8a1b','b57c69801b7b3e63b3b3e94c','e07d2ff8ff95d995809ec7b3','99ae3d189586081a2be37357','8cd8a7918eab2510afd496c0']
+const nepe4 = apis4[Math.floor(Math.random() * apis4.length)]           
+bpp6 = `${body.slice(8)}`
+if (args.length < 1) return reply('En dónde está el texto?')
+if (args.length > 10) return reply('Maximo 10 letras') 
+buff = await getBuffer(`https://api.lolhuman.xyz/api/textprome/luxury?apikey=${nepe4}&text=${bpp6}`, {method: 'get'})
+cnf.sendMessage(from, buff, image, {quoted: mek})
+addFilter(from)
+break 
                    
 case prefix+'love2':
 if (isBanned) return  reply(mess.banned)
-
-
-			  
- const loovee = checkATMuser(sender)
-const lovvve = [`${loovee}`]
-if (lovvve < 30) return reply(`Lo siento, coins insuficientes`)
-confirmATM(sender, 30) 	
-            const apis5 =['7c6c9a9e1138b473e6c64388','ff8508e71c332b870c1e8a1b','b57c69801b7b3e63b3b3e94c','e07d2ff8ff95d995809ec7b3','99ae3d189586081a2be37357','8cd8a7918eab2510afd496c0']
- const nepe5 = apis5[Math.floor(Math.random() * apis5.length)]    
-                bpp8 = `${body.slice(7)}`
-                     if (args.length < 1) return reply('En dónde está el texto?')
-                     if (args.length > 10) return reply('Maximo 10 letras')
-                     
-                     buff = await getBuffer(`https://api.lolhuman.xyz/api/photooxy1/lovemessage?apikey=${nepe5}&text=${bpp8}`, {method: 'get'})
-                     cnf.sendMessage(from, buff, image, {quoted: mek, caption: 'Se te cobraron 30 coins'})
-                  addFilter(from)
-          break  
+const apis5 =['7c6c9a9e1138b473e6c64388','ff8508e71c332b870c1e8a1b','b57c69801b7b3e63b3b3e94c','e07d2ff8ff95d995809ec7b3','99ae3d189586081a2be37357','8cd8a7918eab2510afd496c0']
+const nepe5 = apis5[Math.floor(Math.random() * apis5.length)]    
+bpp8 = `${body.slice(7)}`
+if (args.length < 1) return reply('En dónde está el texto?')
+if (args.length > 10) return reply('Maximo 10 letras')
+buff = await getBuffer(`https://api.lolhuman.xyz/api/photooxy1/lovemessage?apikey=${nepe5}&text=${bpp8}`, {method: 'get'})
+cnf.sendMessage(from, buff, image, {quoted: mek})
+addFilter(from)
+break  
 					
 case prefix+'wpanime':
 if (isBanned) return  reply(mess.banned)	      
-	
-if (!isBotGroupAdmins) return reply(mess.only.Badmin)		  				                                
+if (!isBotGroupAdmins) return reply(mess.only.Badmin)	
+if (!isGroup) return reply(`「 ❗ 」ESTE COMANDO SOLO PUEDE SER USADO EN GRUPOS`)	  				                                
 const canuugti = ['https://i.ibb.co/sF5Fdt1/1d15523b5b93da72799e1c3b92ef5fef.jpg','https://i.ibb.co/17Lbj2j/44764f88fd4c43fb6db7c2d4e226ee9a.jpg','https://i.ibb.co/qBn79dv/041cf4ee7596e251cbe9b8d95ac69ab2.jpg','https://i.ibb.co/4WbBKXY/0580e84577023fcb3d7b65490be66f69.jpg','https://i.ibb.co/Fgxd6tS/cf3ff3a484d851fc077ef5e5c81c9d65.jpg','https://i.ibb.co/ZMBynRh/e7a7ddbeafa8c14e249691a7c3c4c0b2.jpg','https://i.ibb.co/KGL9m5g/dd40d5d0fe5b1df5097ca4400ae2ad16.jpg','https://i.ibb.co/ZMZYmKz/419b0bddd10310b8611653055ec8c7b0.jpg','https://i.ibb.co/jy8sgbh/c401a02422508128821921b31539091e.jpg','https://i.ibb.co/02M4h6S/5b1871bba0fb4b4e01c4356bdd93cd86.jpg','https://i.ibb.co/997FbVT/133053afa7ee650e45f782ce8475aed8.jpg','https://i.ibb.co/xzPvvDv/18cf2c41770f9edbbf31be8bec2fb0b2.jpg','https://i.ibb.co/HYn2B4Q/702c6cf7e374a02d1da0a5f794858a38.jpg','https://i.ibb.co/7nxQBkY/f2bcf894118518cd15fd69b033da78d1.jpg','https://i.ibb.co/yd61B8v/0d12c692d699ae3ff158d54d2fe02971.jpg','https://i.ibb.co/vD8HsGD/8dcea7573f193abf7ea26aefdc8f6949.jpg','https://i.ibb.co/1Z89RJT/ec77640a70d388ab3689b922b488e000.jpg','https://i.ibb.co/98bLyLD/6c54a7a35f7c3a3a974b15b0c9c666fa.jpg','https://i.ibb.co/nsxPVMx/d51a5164ed57c571de2f337823cdfe0d.jpg','https://i.ibb.co/r4QNhf1/e62aadd019b27bcc954f9f463a8a268d.jpg','https://i.ibb.co/Qfp7vS7/4838313f143a833ec931ac026665de39.jpg','https://i.ibb.co/fYqMq9T/a7134ce6fba2dc5efd9faa6fe4213444.jpg','https://i.ibb.co/ZN397Tk/06ebb4fbc32809c99f173b3ac5596c68.jpg','https://i.ibb.co/ZdCV7G8/cca874c663aeb20eed0baa477de679cc.jpg','https://i.ibb.co/s5TJN3L/5db7c137c1f672e15dc98910aef3a77a.jpg','https://i.ibb.co/r3k8sWQ/ca50357dd6a4638dd9199d02ac810828.jpg','https://i.ibb.co/h1tMDLD/e0e5d60bdfb0c93eb723a1d0e15d6756.jpg','https://i.ibb.co/3NXvXwR/d10db58ff9114e1575de143b723ddc9b.jpg','https://i.ibb.co/fMbJ33j/83850d24bd8312104701f3e93bdaa3e0.jpg','https://i.ibb.co/mcrsqsw/d65716315dc8cf5df3e438f6adf95c9e.jpg','https://i.ibb.co/hY3N02B/6bcee3571197465654c97683d0ed0e20.jpg','https://i.ibb.co/Js1sLBh/124d64ed1227aa1487a2c42b24f8837a.jpg','https://i.ibb.co/Kjc5NkN/993ccbdf49d7e1e256274cafc2585eef.jpg','https://i.ibb.co/p0sjxGX/3a741a4634e9445c5f93bf325b75ef2a.jpg','https://i.ibb.co/BqkFmY3/064bab224123321def4b21d224fe8e82.jpg','https://i.ibb.co/rfTwhXz/logo.jpg','https://i.ibb.co/H7C2bJD/7896dbb5d93ce36a81399c9e24e0e9fa.jpg','https://i.ibb.co/rbs9ZG0/506ab25382f022726b879c2fed3179a0.jpg','https://i.ibb.co/gj2JCZm/3d71bc19b7e56e23c94de9a2da33ba3e.jpg','https://i.ibb.co/WKZV6yG/79f8e21c88ca8044a2350024675d34ef.jpg','https://i.ibb.co/427Lj3L/7f6d1e9f9a4d3316c4f6834a2fe7ec32.jpg','https://i.ibb.co/R9SXJS1/7858da10a6d8dc3a7b3d06c437dcf5c7.jpg','https://i.ibb.co/BZwM4xL/32fb465027798249e815b5473ee0d210.jpg','https://i.ibb.co/7WX24j5/b91c79ea703cd93de96656ab60cdd789.jpg','https://i.ibb.co/K5bjZY2/bb6bbe2a3295c8539970c2111f239b4b.jpg','https://i.ibb.co/SVc69Dk/54b136d4d9a52df59901fc6c675cd960.jpg','https://i.ibb.co/Wxrmn1Z/0e6c1b49b5629101da59f06db122ad19.jpg','https://i.ibb.co/zFf5KFZ/6ed2bedc080a9e8c3b267d927433e7bf.jpg','https://i.ibb.co/6Zpkx7M/075d4b0ea4e6a5bac6085bbe9157ba37.jpg','https://i.ibb.co/Tq6YJyS/c0ebcbd97922d1271629ab87469dc0c7.jpg','https://i.ibb.co/RgVcvh8/be54e24e4a7276b1d3cc830a03fd4676.jpg','https://i.ibb.co/61G5nQb/6f8c4afef5b7ddf538447dc218ca0ef8.jpg','https://i.ibb.co/QdkJ0Y8/da76b20813815efd1dbf84116501b25a.jpg','https://i.ibb.co/S3pKHft/1ec2838d5cd0cd53eaface83a1bfa921.jpg','https://i.ibb.co/9GW77Vn/5983cbabf5827793558ee7fddbaf173f.jpg','https://i.ibb.co/WpbQWqH/74ba70dce0b89460129a05ed13380aa0.jpg','https://i.ibb.co/Bwh0MS4/8ea55d8ccaa10c5b3ff540e0e08f802e.jpg','https://i.ibb.co/2c1cymy/56142f816478a819ce32453a2f917af5.jpg','https://i.ibb.co/BGfjR8M/923f89fd65d33f823028ce2944a8fb77.jpg','https://i.ibb.co/TRMb2r3/9bef9de9f522d30de4ed4c07abd2de92.jpg']
 let caanigtip = canuugti[Math.floor(Math.random() * canuugti.length)]
 il = await getBuffer(caanigtip)
@@ -2909,397 +2672,56 @@ await limitAdd(sender)
 addFilter(from)
 break
 					
-    case prefix+'lesbi':
-    if (isBanned) return  reply(mess.banned)
- if	(!isRegistered) return reply(ind.noregis())	
-			
-    const cuu =['Eres 0% Lesbi' , 'Eres 1% Lesbi' , 'Eres 2% Lesbi' , 'Eres 3% Lesbi' , 'Eres 4% Lesbi' , 'Eres 5% Lesbi' , 'Eres 6% Lesbi' , 'Eres 7% Lesbi' , 'Eres 8% Lesbi' , 'Eres 9% Lesbi' , 'Eres 10% Lesbi' , 'Eres 11% Lesbi' , 'Eres 12% Lesbi' , 'Eres 13% Lesbi' , 'Eres 14% Lesbi' , 'Eres 15% Lesbi' , 'Eres 16% Lesbi' , 'Eres 17% Lesbi' , 'Eres 18% Lesbi' , 'Eres 19% Lesbi' , 'Eres 20% Lesbi' , 'Eres 21% Lesbi' , 'Eres 22% Lesbi' , 'Eres 23% Lesbi' , 'Eres 24% Lesbi' , 'Eres 25% Lesbi' , 'Eres 26% Lesbi' , 'Eres 27% Lesbi' , 'Eres 28% Lesbi' , 'Eres 29% Lesbi' , 'Eres 30% Lesbi' , 'Eres 31% Lesbi' , 'Eres 32% Lesbi' , 'Eres 33% Lesbi' , 'Eres 34% Lesbi' , 'Eres 35% Lesbi' , 'Eres 36% Lesbi' , 'Eres 37% Lesbi' , 'Eres 38% Lesbi' , 'Eres 39% Lesbi' , 'Eres 40% Lesbi' , 'Eres 41% Lesbi' , 'Eres 42% Lesbi' , 'Eres 43% Lesbi' , 'Eres 44% Lesbi' , 'Eres 45% Lesbi' , 'Eres 46% Lesbi' , 'Eres 47% Lesbi' , 'Eres 48% Lesbi' , 'Eres 49% Lesbi' , 'Eres 50% Lesbi' , 'Eres 51% Lesbi' , 'Eres 52% Lesbi' , 'Eres 53% Lesbi' , 'Eres 54% Lesbi' , 'Eres 55% Lesbi' , 'Eres 56% Lesbi' , 'Eres 57% Lesbi' , 'Eres 58% Lesbi' , 'Eres 59% Lesbi' , 'Eres 60% Lesbi' , 'Eres 61% Lesbi' , 'Eres 62% Lesbi' , 'Eres 63% Lesbi' , 'Eres 64% Lesbi' , 'Eres 65% Lesbi' , 'Eres 66% Lesbi' , 'Eres 67% Lesbi' , 'Eres 68% Lesbi' , 'Eres 69% Lesbi' , 'Eres 70% Lesbi' , 'Eres 71% Lesbi' , 'Eres 72% Lesbi' , 'Eres 73% Lesbi' , 'Eres 74% Lesbi' , 'Eres 75% Lesbi' , 'Eres 76% Lesbi' , 'Eres 77% Lesbi' , 'Eres 78% Lesbi' , 'Eres 79% Lesbi' , 'Eres 80% Lesbi' , 'Eres 81% Lesbi' , 'Eres 82% Lesbi' , 'Eres 83% Lesbi' , 'Eres 84% Lesbi' , 'Eres 85% Lesbi' , 'Eres 86% Lesbi' , 'Eres 87% Lesbi' , 'Eres 88% Lesbi' , 'Eres 89% Lesbi' , 'Eres 90% Lesbi' , 'Eres 91% Lesbi' , 'Eres 92% Lesbi' , 'Eres 93% Lesbi' , 'Eres 94% Lesbi' , 'Eres 95% Lesbi' , 'Eres 96% Lesbi' , 'Eres 97% Lesbi' , 'Eres 98% Lesbi' , 'Eres 99% Lesbi' , 'Eres 100% Lesbi']														
-  	const rii = cuu[Math.floor(Math.random() * cuu.length)]
-					wnw = fs.readFileSync(`./src/5.jpg`)						
-						cnf.sendMessage(from, wnw, image, { caption: '*Que tan lesbi eres*\n\n'+ rii, quoted: mek })
-					addFilter(from)
-          break                                      
+case prefix+'lesbi':
+if (isBanned) return  reply(mess.banned)
+if (!isGroup) return reply(`「 ❗ 」ESTE COMANDO SOLO PUEDE SER USADO EN GRUPOS`)
+const cuu =['Eres 0% Lesbi' , 'Eres 1% Lesbi' , 'Eres 2% Lesbi' , 'Eres 3% Lesbi' , 'Eres 4% Lesbi' , 'Eres 5% Lesbi' , 'Eres 6% Lesbi' , 'Eres 7% Lesbi' , 'Eres 8% Lesbi' , 'Eres 9% Lesbi' , 'Eres 10% Lesbi' , 'Eres 11% Lesbi' , 'Eres 12% Lesbi' , 'Eres 13% Lesbi' , 'Eres 14% Lesbi' , 'Eres 15% Lesbi' , 'Eres 16% Lesbi' , 'Eres 17% Lesbi' , 'Eres 18% Lesbi' , 'Eres 19% Lesbi' , 'Eres 20% Lesbi' , 'Eres 21% Lesbi' , 'Eres 22% Lesbi' , 'Eres 23% Lesbi' , 'Eres 24% Lesbi' , 'Eres 25% Lesbi' , 'Eres 26% Lesbi' , 'Eres 27% Lesbi' , 'Eres 28% Lesbi' , 'Eres 29% Lesbi' , 'Eres 30% Lesbi' , 'Eres 31% Lesbi' , 'Eres 32% Lesbi' , 'Eres 33% Lesbi' , 'Eres 34% Lesbi' , 'Eres 35% Lesbi' , 'Eres 36% Lesbi' , 'Eres 37% Lesbi' , 'Eres 38% Lesbi' , 'Eres 39% Lesbi' , 'Eres 40% Lesbi' , 'Eres 41% Lesbi' , 'Eres 42% Lesbi' , 'Eres 43% Lesbi' , 'Eres 44% Lesbi' , 'Eres 45% Lesbi' , 'Eres 46% Lesbi' , 'Eres 47% Lesbi' , 'Eres 48% Lesbi' , 'Eres 49% Lesbi' , 'Eres 50% Lesbi' , 'Eres 51% Lesbi' , 'Eres 52% Lesbi' , 'Eres 53% Lesbi' , 'Eres 54% Lesbi' , 'Eres 55% Lesbi' , 'Eres 56% Lesbi' , 'Eres 57% Lesbi' , 'Eres 58% Lesbi' , 'Eres 59% Lesbi' , 'Eres 60% Lesbi' , 'Eres 61% Lesbi' , 'Eres 62% Lesbi' , 'Eres 63% Lesbi' , 'Eres 64% Lesbi' , 'Eres 65% Lesbi' , 'Eres 66% Lesbi' , 'Eres 67% Lesbi' , 'Eres 68% Lesbi' , 'Eres 69% Lesbi' , 'Eres 70% Lesbi' , 'Eres 71% Lesbi' , 'Eres 72% Lesbi' , 'Eres 73% Lesbi' , 'Eres 74% Lesbi' , 'Eres 75% Lesbi' , 'Eres 76% Lesbi' , 'Eres 77% Lesbi' , 'Eres 78% Lesbi' , 'Eres 79% Lesbi' , 'Eres 80% Lesbi' , 'Eres 81% Lesbi' , 'Eres 82% Lesbi' , 'Eres 83% Lesbi' , 'Eres 84% Lesbi' , 'Eres 85% Lesbi' , 'Eres 86% Lesbi' , 'Eres 87% Lesbi' , 'Eres 88% Lesbi' , 'Eres 89% Lesbi' , 'Eres 90% Lesbi' , 'Eres 91% Lesbi' , 'Eres 92% Lesbi' , 'Eres 93% Lesbi' , 'Eres 94% Lesbi' , 'Eres 95% Lesbi' , 'Eres 96% Lesbi' , 'Eres 97% Lesbi' , 'Eres 98% Lesbi' , 'Eres 99% Lesbi' , 'Eres 100% Lesbi']														
+const rii = cuu[Math.floor(Math.random() * cuu.length)]
+wnw = fs.readFileSync(`./src/5.jpg`)						
+cnf.sendMessage(from, wnw, image, { caption: '*Que tan lesbi eres*\n\n'+ rii, quoted: mek })
+addFilter(from)
+break                                      
 
-							case prefix+'reto':
-							if (isBanned) return  reply(mess.banned)
- if(!isRegistered) return reply(ind.noregis())
-				
-					const daare =['Te reto a poner en tu info de Whatsapp que te gusta Anuel por 24 horas','Te reto a decirle a tu crush que la amas y pasar cap en el grupo','Te reto a poner en tu estado que buscas pareja','Te reto a poner en tu perfil la foto de tu crush','Te reto a decirle a alguien que te gusta...','Te reto a mandar un audio cantando','Te reto mandar audio hablando con vos de niña de 5 años','Te reto a poner en tu info que te gusta tu vecin@','Te reto mandar una foto tuya sin taparte la cara','Te reto a decir que apodo tenias cuando eras un/a niñ@ aun','Te reto a enviar un vídeo bailando','Te reto a enviar el último meme que allas visto','Te reto a enviar tu canción favorita']
-					const deer = daare[Math.floor(Math.random() * daare.length)]
-				wbw = fs.readFileSync(`./src/4.jpg`)
-							
-						cnf.sendMessage(from, wbw, image, { quoted: mek, caption: '*Reto 😈*\n\n'+ deer })
-					addFilter(from)
-          break										
-									case prefix+'verdad':
-									if (isBanned) return  reply(mess.banned)
- 		
-		
-					const trrut =['Con quien de los que están aqui en el grupo te besarías? (etiqueta)','¿Alguna vez te ha gustado alguien? ¿Cuanto tiempo?','Alunga vez te llegó a gustar el/la herman@ de tu mejor amig@?','Cuantos años tienes?','Cuanto tiempo ah pasado desde que diste tu último beso?','Te gustan los chicos o las chicas o ambos?','Que opinas sobre BTS','Que opinas sobre l@s administradores','Tienes novi@?','Cuantas veces te as sentido ignorad@ por tu pareja o insuficiente para el/ella?','Que opinas de la nueva política de Whatsapp?','Que opinas sobre Telegram?','Tienes canal de Youtube?','Que opinas sobre Este bot?','Que opinas sobre el grupo?','Que tal te parece esta función de verdad o reto?']
-					const ttrrth = trrut[Math.floor(Math.random() * trrut.length)]
-					wuw = fs.readFileSync(`./src/6.jpg`)						
-						cnf.sendMessage(from, wuw, image, { caption: '*Verdad😇*\n\n'+ ttrrth, quoted: mek })
-					addFilter(from)
-          break
-      
-		    	case prefix+'antitrava':
-		    	if (isBanned) return  reply(mess.banned)  
-                			  
-                if (!isGroup) return reply(`「 ❗ 」ESTE COMANDO SOLO PUEDE SER USADO EN GRUPOS`)
-			    if (!isGroupAdmins) return reply(mess.only.admin)
-				if (args.length < 1) return reply('「 ❗ 」 1 Para Activar, 0 Para Desactivar')
-				if (Number(args[0]) === 1) {
-				if (isTrava) return reply(`「 ❗ 」La Funcion De Antitrava Ya Esta Activada En El Grupo!!`)
-				trava.push(from)
-				fs.writeFileSync('./database/trava.json', JSON.stringify(trava))
-				reply(`「 ❗ 」Activó con éxito la función Antitrava en este grupo`)
-				} else if (Number(args[0]) === 0) {
-				trava.splice(from, 1)
-				fs.writeFileSync('./database/trava.json', JSON.stringify(trava))
-				reply(`「 ❗ 」Deshabilitó Con Éxito La Función Antitrava En Este Grupo`)
-				} else {
-				reply('「 ❗ 」 1 Para Habilitar Y 0 Para Desactivar')
-				}
-				addFilter(from)
-          break
+case prefix+'reto':
+if (isBanned) return  reply(mess.banned)
+if (!isGroup) return reply(`「 ❗ 」ESTE COMANDO SOLO PUEDE SER USADO EN GRUPOS`)
+const daare =['Te reto a poner en tu info de Whatsapp que te gusta Anuel por 24 horas','Te reto a decirle a tu crush que la amas y pasar cap en el grupo','Te reto a poner en tu estado que buscas pareja','Te reto a poner en tu perfil la foto de tu crush','Te reto a decirle a alguien que te gusta...','Te reto a mandar un audio cantando','Te reto mandar audio hablando con vos de niña de 5 años','Te reto a poner en tu info que te gusta tu vecin@','Te reto mandar una foto tuya sin taparte la cara','Te reto a decir que apodo tenias cuando eras un/a niñ@ aun','Te reto a enviar un vídeo bailando','Te reto a enviar el último meme que allas visto','Te reto a enviar tu canción favorita']
+const deer = daare[Math.floor(Math.random() * daare.length)]
+wbw = fs.readFileSync(`./src/4.jpg`)
+cnf.sendMessage(from, wbw, image, { quoted: mek, caption: '*Reto 😈*\n\n'+ deer })
+addFilter(from)
+break
 
-        default:
+case prefix+'verdad':
+if (isBanned) return  reply(mess.banned)
+if (!isGroup) return reply(`「 ❗ 」ESTE COMANDO SOLO PUEDE SER USADO EN GRUPOS`)
+const trrut =['Con quien de los que están aqui en el grupo te besarías? (etiqueta)','¿Alguna vez te ha gustado alguien? ¿Cuanto tiempo?','Alunga vez te llegó a gustar el/la herman@ de tu mejor amig@?','Cuantos años tienes?','Cuanto tiempo ah pasado desde que diste tu último beso?','Te gustan los chicos o las chicas o ambos?','Que opinas sobre BTS','Que opinas sobre l@s administradores','Tienes novi@?','Cuantas veces te as sentido ignorad@ por tu pareja o insuficiente para el/ella?','Que opinas de la nueva política de Whatsapp?','Que opinas sobre Telegram?','Tienes canal de Youtube?','Que opinas sobre Este bot?','Que opinas sobre el grupo?','Que tal te parece esta función de verdad o reto?']
+const ttrrth = trrut[Math.floor(Math.random() * trrut.length)]
+wuw = fs.readFileSync(`./src/6.jpg`)						
+cnf.sendMessage(from, wuw, image, { caption: '*Verdad😇*\n\n'+ ttrrth, quoted: mek })
+addFilter(from)
+break
 
- if (budy.includes(`@18156806165`)) {
-		if (!isGroup) return
-		if (!isTrava) return
-			cnf.updatePresence(from, Presence.composing)
-		var Kick = `${sender.split("@")[0]}@s.whatsapp.net`
-		cnf.groupRemove(from, [Kick]).catch((e) => {reply(`*ERROR:* ${e}`)}) 
-					}
-	
-	 if (budy.includes(`B闦R闦I闦G闦A闦D闦`)) {
-		if (!isGroup) return
-		if (!isTrava) return
-			cnf.updatePresence(from, Presence.composing)
-		var Kick = `${sender.split("@")[0]}@s.whatsapp.net`
-		cnf.groupRemove(from, [Kick]).catch((e) => {reply(`*ERROR:* ${e}`)}) 
-					}
- if (budy.includes(`~@`)) {
-		if (!isGroup) return
-		if (!isTrava) return
-			cnf.updatePresence(from, Presence.composing)
-		var Kick = `${sender.split("@")[0]}@s.whatsapp.net`
-		cnf.groupRemove(from, [Kick]).catch((e) => {reply(`*ERROR:* ${e}`)}) 
-					}
-					 if (budy.includes(`saur.com`)) {
-		if (!isGroup) return
-		if (!isTrava) return
-			cnf.updatePresence(from, Presence.composing)
-		var Kick = `${sender.split("@")[0]}@s.whatsapp.net`
-		cnf.groupRemove(from, [Kick]).catch((e) => {reply(`*ERROR:* ${e}`)}) 
-					}
+case prefix+'antitrava':
+if (isBanned) return  reply(mess.banned)  
+if (!isGroup) return reply(`「 ❗ 」ESTE COMANDO SOLO PUEDE SER USADO EN GRUPOS`)
+if (!isGroupAdmins) return reply(mess.only.admin)
+if (args.length < 1) return reply('「 ❗ 」 1 Para Activar, 0 Para Desactivar')
+if (Number(args[0]) === 1) {
+if (isTrava) return reply(`「 ❗ 」La Funcion De Antitrava Ya Esta Activada En El Grupo!!`)
+trava.push(from)
+fs.writeFileSync('./database/trava.json', JSON.stringify(trava))
+reply(`「 ❗ 」Activó con éxito la función Antitrava en este grupo`)
+} else if (Number(args[0]) === 0) {
+trava.splice(from, 1)
+fs.writeFileSync('./database/trava.json', JSON.stringify(trava))
+reply(`「 ❗ 」Deshabilitó Con Éxito La Función Antitrava En Este Grupo`)
+} else {
+reply('「 ❗ 」 1 Para Habilitar Y 0 Para Desactivar')
+}addFilter(from)
+break
 
-					//v
-					
-	if (budy.includes(`~*@555484137179*~`)) {
-		if (!isGroup) return
-		if (!isTrava) return
-			cnf.updatePresence(from, Presence.composing)
-		var Kick = `${sender.split("@")[0]}@s.whatsapp.net`
-		cnf.groupRemove(from, [Kick]).catch((e) => {reply(`*ERROR:* ${e}`)}) 
-					}				
-					
-					
-	if (budy.includes(`19565244699`)) {
-		if (!isGroup) return
-		if (!isTrava) return
-			cnf.updatePresence(from, Presence.composing)
-		var Kick = `${sender.split("@")[0]}@s.whatsapp.net`
-		cnf.groupRemove(from, [Kick]).catch((e) => {reply(`*ERROR:* ${e}`)}) 
-					}			
-					
-		if (budy.includes(`SUSHANT.`)) {
-		if (!isGroup) return
-		if (!isTrava) return
-			cnf.updatePresence(from, Presence.composing)
-		var Kick = `${sender.split("@")[0]}@s.whatsapp.net`
-		cnf.groupRemove(from, [Kick]).catch((e) => {reply(`*ERROR:* ${e}`)}) 
-					}		
-					
-					
-	
-		
-	if (budy.includes(`Mosca_Virus`)) {
-		if (!isGroup) return
-		if (!isTrava) return
-			cnf.updatePresence(from, Presence.composing)
-		var Kick = `${sender.split("@")[0]}@s.whatsapp.net`
-		cnf.groupRemove(from, [Kick]).catch((e) => {reply(`*ERROR:* ${e}`)}) 
-					}		
-			
-	if (budy.includes(`ɩȿạɩɾ.com`)) {
-		if (!isGroup) return
-		if (!isTrava) return
-			cnf.updatePresence(from, Presence.composing)
-		var Kick = `${sender.split("@")[0]}@s.whatsapp.net`
-		cnf.groupRemove(from, [Kick]).catch((e) => {reply(`*ERROR:* ${e}`)}) 
-					}		
-	if (budy.includes(`๒`)) {
-		if (!isGroup) return
-		if (!isTrava) return
-			cnf.updatePresence(from, Presence.composing)
-		var Kick = `${sender.split("@")[0]}@s.whatsapp.net`
-		cnf.groupRemove(from, [Kick]).catch((e) => {reply(`*ERROR:* ${e}`)}) 
-					}		
-			
-			
-	if (budy.includes(`www.instagram.com/p/CE0pVKZs5Wk/?igshid=5ihhd4xdsgrh`)) {
-		if (!isGroup) return
-		if (!isTrava) return
-			cnf.updatePresence(from, Presence.composing)
-		var Kick = `${sender.split("@")[0]}@s.whatsapp.net`
-		cnf.groupRemove(from, [Kick]).catch((e) => {reply(`*ERROR:* ${e}`)}) 
-					}		
-	
-			
-	if (budy.includes(`🔴`)) {
-		if (!isGroup) return
-		if (!isTrava) return
-			cnf.updatePresence(from, Presence.composing)
-		var Kick = `${sender.split("@")[0]}@s.whatsapp.net`
-		cnf.groupRemove(from, [Kick]).catch((e) => {reply(`*ERROR:* ${e}`)}) 
-					}		
-			
-	if (budy.includes(`Mosca_Virus`)) {
-		if (!isGroup) return
-		if (!isTrava) return
-			cnf.updatePresence(from, Presence.composing)
-		var Kick = `${sender.split("@")[0]}@s.whatsapp.net`
-		cnf.groupRemove(from, [Kick]).catch((e) => {reply(`*ERROR:* ${e}`)}) 
-					}		
-			
-	if (budy.includes(`Mosca_Virus`)) {
-		if (!isGroup) return
-		if (!isTrava) return
-			cnf.updatePresence(from, Presence.composing)
-		var Kick = `${sender.split("@")[0]}@s.whatsapp.net`
-		cnf.groupRemove(from, [Kick]).catch((e) => {reply(`*ERROR:* ${e}`)}) 
-					}		
-
-			
-						
-												
-	if (budy.includes(`𝟏(𝟖𝟖𝟔)𝟗𝟗𝟗-𝟏𝟑𝟒𝟓`)) {
-		if (!isGroup) return
-		if (!isTrava) return
-			cnf.updatePresence(from, Presence.composing)
-		var Kick = `${sender.split("@")[0]}@s.whatsapp.net`
-		cnf.groupRemove(from, [Kick]).catch((e) => {reply(`*ERROR:* ${e}`)}) 
-					}		
-
-				if (budy.includes(`⏤͟͟͞͞ 😈MATAR XXX₀₀₇ꪰ😈`)) {
-		if (!isGroup) return
-		if (!isTrava) return
-			cnf.updatePresence(from, Presence.composing)
-		var Kick = `${sender.split("@")[0]}@s.whatsapp.net`
-		cnf.groupRemove(from, [Kick]).catch((e) => {reply(`*ERROR:* ${e}`)}) 
-					}		
-
-				if (budy.includes(`❄️_××××××××÷_`)) {
-		if (!isGroup) return
-		if (!isTrava) return
-			cnf.updatePresence(from, Presence.composing)
-		var Kick = `${sender.split("@")[0]}@s.whatsapp.net`
-		cnf.groupRemove(from, [Kick]).catch((e) => {reply(`*ERROR:* ${e}`)}) 
-					}		
-			
-	if (budy.includes(`Mosca_Virus`)) {
-		if (!isGroup) return
-		if (!isTrava) return
-			cnf.updatePresence(from, Presence.composing)
-		var Kick = `${sender.split("@")[0]}@s.whatsapp.net`
-		cnf.groupRemove(from, [Kick]).catch((e) => {reply(`*ERROR:* ${e}`)}) 
-					}		
-			
-						
-			if (budy.includes(`chat.whatsapp.com/K2vyQpkxfT2Eh63O55L0B8@hird_fekalinos:👿👿👿𒀱☹️𒀱𒀱𒀱⃢⃢⃢𒀱𒀱⃢⃢⃢𒀱𒀱⃢⃢⃢𒀱𒀱⃢𒀱☹️𒀱💝🤔𒀱𒀱⃢z𒀱🅱️𒀱𒀱⃢𒀱⃢🇬🇧𒀱⃢⃢⃢👾⃠⃤𒀱⃠⃤𒀱𒂭𒂭𒇫𒇫𒇫𒇫⃢⃢:👺🤡̵̛͔͍̱͙̥͔̯͖̥͙̲͆ͬ̊̑̔̂🥰:👿👿👿👿𒀱☹️𒀱𒀱𒀱⃢⃢⃢𒀱✖❌✖❌✖❌✖❌❌✖❌✖❌✖❌✖❌❌🔱❌❌❌❌✳✳❕❕❗✴✴✴✴✴✴✴✴❗〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️💔❔❔❔❔⚫▪️➿💮💮🕐🕟🕔🔕⭕💯`)) {
-		if (!isGroup) return
-		if (!isTrava) return
-			cnf.updatePresence(from, Presence.composing)
-		var Kick = `${sender.split("@")[0]}@s.whatsapp.net`
-		cnf.groupRemove(from, [Kick]).catch((e) => {reply(`*ERROR:* ${e}`)}) 
-					}		
-					if (budy.includes(`⃟ᡃ⃟ᡃ⃟ᡃ⃟`)) {
-		if (!isGroup) return
-		if (!isTrava) return
-			cnf.updatePresence(from, Presence.composing)
-		var Kick = `${sender.split("@")[0]}@s.whatsapp.net`
-		cnf.groupRemove(from, [Kick]).catch((e) => {reply(`*ERROR:* ${e}`)}) 
-					}		
-						
-										
-				if (budy.includes(`𝟏(𝟖𝟖𝟔)𝟗𝟗𝟗-𝟏𝟑𝟒𝟓ᡃ⃟ᡃ⃢ᡃ⃢ᡃ⃢⃟⃢⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃᡃ⃟`)) {
-		if (!isGroup) return
-		if (!isTrava) return
-			cnf.updatePresence(from, Presence.composing)
-		var Kick = `${sender.split("@")[0]}@s.whatsapp.net`
-		cnf.groupRemove(from, [Kick]).catch((e) => {reply(`*ERROR:* ${e}`)}) 
-					}		
-									
-							
-	if (budy.includes(`⃟⃟⃟⃟`)) {
-		if (!isGroup) return
-		if (!isTrava) return
-			cnf.updatePresence(from, Presence.composing)
-		var Kick = `${sender.split("@")[0]}@s.whatsapp.net`
-		cnf.groupRemove(from, [Kick]).catch((e) => {reply(`*ERROR:* ${e}`)}) 
-					}		
-
-												
-		if (budy.includes(`৯৯৯৯`)) {
-		if (!isGroup) return
-		if (!isTrava) return
-			cnf.updatePresence(from, Presence.composing)
-		var Kick = `${sender.split("@")[0]}@s.whatsapp.net`
-		cnf.groupRemove(from, [Kick]).catch((e) => {reply(`*ERROR:* ${e}`)}) 
-					}		
-		if (budy.includes(`100030449499276`)) {
-		if (!isGroup) return
-		if (!isTrava) return
-			cnf.updatePresence(from, Presence.composing)
-		var Kick = `${sender.split("@")[0]}@s.whatsapp.net`
-		cnf.groupRemove(from, [Kick]).catch((e) => {reply(`*ERROR:* ${e}`)}) 
-					}		
-		if (budy.includes(`xn--hatsapp-rh4c.com/free-tickets‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎`)) {
-		if (!isGroup) return
-		if (!isTrava) return
-			cnf.updatePresence(from, Presence.composing)
-		var Kick = `${sender.split("@")[0]}@s.whatsapp.net`
-		cnf.groupRemove(from, [Kick]).catch((e) => {reply(`*ERROR:* ${e}`)}) 
-					}		
-		if (budy.includes(`Wa.me/559891312574`)) {
-		if (!isGroup) return
-		if (!isTrava) return
-			cnf.updatePresence(from, Presence.composing)
-		var Kick = `${sender.split("@")[0]}@s.whatsapp.net`
-		cnf.groupRemove(from, [Kick]).catch((e) => {reply(`*ERROR:* ${e}`)}) 
-					}		
-		if (budy.includes(`www.instagram.com/p/CE6f8afF85G/?igshid=4p33q69wr89q`)) {
-		if (!isGroup) return
-		if (!isTrava) return
-			cnf.updatePresence(from, Presence.composing)
-		var Kick = `${sender.split("@")[0]}@s.whatsapp.net`
-		cnf.groupRemove(from, [Kick]).catch((e) => {reply(`*ERROR:* ${e}`)}) 
-					}		
-		if (budy.includes(`JXgH0fuabFR5VijfrdwyxY`)) {
-		if (!isGroup) return
-		if (!isTrava) return
-			cnf.updatePresence(from, Presence.composing)
-		var Kick = `${sender.split("@")[0]}@s.whatsapp.net`
-		cnf.groupRemove(from, [Kick]).catch((e) => {reply(`*ERROR:* ${e}`)}) 
-					}		
-	
-			if (budy.includes(`images.app.goo.gl/d3sU6Z6hgbVmPwx79`)) {
-		if (!isGroup) return
-		if (!isTrava) return
-			cnf.updatePresence(from, Presence.composing)
-		var Kick = `${sender.split("@")[0]}@s.whatsapp.net`
-		cnf.groupRemove(from, [Kick]).catch((e) => {reply(`*ERROR:* ${e}`)}) 
-					}		
-	
-			if (budy.includes(`www.instagram.com/p/CE0pVKZs5Wk/?igshid=5ihhd4xdsgrh`)) {
-		if (!isGroup) return
-		if (!isTrava) return
-			cnf.updatePresence(from, Presence.composing)
-		var Kick = `${sender.split("@")[0]}@s.whatsapp.net`
-		cnf.groupRemove(from, [Kick]).catch((e) => {reply(`*ERROR:* ${e}`)}) 
-					}		
-		
-		if (budy.includes(`www.instagram.com/p/CE9OsNblDcq`)) {
-		if (!isGroup) return
-		if (!isTrava) return
-			cnf.updatePresence(from, Presence.composing)
-		var Kick = `${sender.split("@")[0]}@s.whatsapp.net`
-		cnf.groupRemove(from, [Kick]).catch((e) => {reply(`*ERROR:* ${e}`)}) 
-					}		
-		
-				if (budy.includes(`www.facebook.com/mohamed.faslan.121772`)) {
-		if (!isGroup) return
-		if (!isTrava) return
-			cnf.updatePresence(from, Presence.composing)
-		var Kick = `${sender.split("@")[0]}@s.whatsapp.net`
-		cnf.groupRemove(from, [Kick]).catch((e) => {reply(`*ERROR:* ${e}`)}) 
-					}		
-		
-			
-					if (budy.includes(`ᡃ⃟‎ᡃ⃝‎ᡃ⃟‎ᡃ⃝‎ᡃ⃟‎ᡃ⃝‎ᡃ⃟‎ᡃ⃝‎ᡃ⃟‎ᡃ⃝‎ᡃ⃟‎ᡃ⃝‎ᡃ⃟‎ᡃ⃝‎ᡃ⃟‎ᡃ⃝‎ᡃ⃟‎ᡃ⃝‎ᡃ⃟‎ᡃ⃝‎ᡃ⃟‎ᡃ⃟‎ᡃ⃝‎ᡃ⃟‎ᡃ⃝‎ᡃ⃟‎ᡃ⃝‎ᡃ⃟‎ᡃ⃝‎ᡃ⃟‎ᡃ⃝‎ᡃ⃟‎ᡃ⃝`)) {
-		if (!isGroup) return
-		if (!isTrava) return
-			cnf.updatePresence(from, Presence.composing)
-		var Kick = `${sender.split("@")[0]}@s.whatsapp.net`
-		cnf.groupRemove(from, [Kick]).catch((e) => {reply(`*ERROR:* ${e}`)}) 
-					}		
-					
-	//vvv
-		if (budy.includes(`pinterest.com/detetive`)) {
-		if (!isGroup) return
-		if (!isTrava) return
-			cnf.updatePresence(from, Presence.composing)
-		var Kick = `${sender.split("@")[0]}@s.whatsapp.net`
-		cnf.groupRemove(from, [Kick]).catch((e) => {reply(`*ERROR:* ${e}`)}) 
-					}		
-
-		if (budy.includes(`lol.davizinmaker.ml/nagazap`)) {
-		if (!isGroup) return
-		if (!isTrava) return
-			cnf.updatePresence(from, Presence.composing)
-		var Kick = `${sender.split("@")[0]}@s.whatsapp.net`
-		cnf.groupRemove(from, [Kick]).catch((e) => {reply(`*ERROR:* ${e}`)}) 
-					}		
-
-		if (budy.includes(`www.instagram.com/p/CMx2kO9pnW-/?utm_source=ig_web_copy_link`)) {
-		if (!isGroup) return
-		if (!isTrava) return
-			cnf.updatePresence(from, Presence.composing)
-		var Kick = `${sender.split("@")[0]}@s.whatsapp.net`
-		cnf.groupRemove(from, [Kick]).catch((e) => {reply(`*ERROR:* ${e}`)}) 
-					}		
-			
-					
-					
-		  
-	if (budy.includes(`ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ`)) {
-		if (!isGroup) return
-		if (!isTrava) return
-		cnf.updatePresence(from, Presence.composing)
-		var Kick = `${sender.split("@")[0]}@s.whatsapp.net`
-		cnf.groupRemove(from, [Kick]).catch((e) => {reply(`*ERROR:* ${e}`)}) 
-					}	     
-		        
-		              
-		         if (budy.includes(`🆇҉⃟⃢🅲҉⃟⃢🅻҉⃟⃢`)) {
-		if (!isGroup) return
-		if (!isTrava) return
-		cnf.updatePresence(from, Presence.composing)
-		var Kick = `${sender.split("@")[0]}@s.whatsapp.net`
-		cnf.groupRemove(from, [Kick]).catch((e) => {reply(`*ERROR:* ${e}`)}) 
-					}
-
-		       	
-if	 (budy.includes(`www.instagram.com/p/CE0pVKZs5Wk/?igshid=5ihhd4xdsgrh🅻҉⃟⃢🅸҉⃟⃢🅽҉⃟⃢🆄҉⃟⃢🆇҉⃟⃢🅲҉⃟⃢🅻҉⃟⃢🅰҉⃟⃢🅽҉⃟⃢tratrav🔯🔯🔯🔯🔯🔯🔯🔯🔯🔯🔯🔯🔯🔯🔯🔯??🔯🔯🔯🔯`)) {
-		if (!isGroup) return
-		if (!isTrava) return
-		cnf.updatePresence(from, Presence.composing)
-		var Kick = `${sender.split("@")[0]}@s.whatsapp.net`
-		cnf.groupRemove(from, [Kick]).catch((e) => {reply(`*ERROR:* ${e}`)}) 
-					}       	          			   			
-		      		       	          														   											   
-
-
-
-
-
-
-}
-
-
-	
+default:
 		if (isTTT && isPlayer2){
 if (budy.startsWith('Y')){
   tto = ky_ttt.filter(ghg => ghg.id.includes(from))
