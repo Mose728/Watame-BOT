@@ -1462,9 +1462,7 @@ exec(`wget ${anu.data.url} -O ${ranp} && ffmpeg -i ${ranp} -vcodec libwebp -filt
 fs.unlinkSync(ranp)
 if (err) return reply('E-error ⊙﹏⊙')
 buffer = fs.readFileSync(rano)
-const fdecir =['Aquí tienes 💕🦈','¿Linda foto no?','Pedido entregado 🕊']
-const fpoke = fdecir[Math.floor(Math.random() * fdecir.length)]
-cnf.sendMessage(from, buffer, MessageType.sticker, { caption: fpoke, quoted: mek })
+cnf.sendMessage(from, buffer, MessageType.sticker, { quoted: mek })
 fs.unlinkSync(rano)
 })
 addFilter(from)
