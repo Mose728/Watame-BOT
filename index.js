@@ -1838,7 +1838,7 @@ const kime =['https://thumbs2.imgbox.com/90/ec/Zy8EgWzQ_t.jpg','https://thumbs2.
 let kime2 = kime[Math.floor(Math.random() * kime.length)]
 kimetsu = await getBuffer(kime2)
 const kidecir =['Aquí tienes 💕🦈','¿Linda foto no?','Pedido entregado 🕊']
-const kifrase = decir[Math.floor(Math.random() * kidecir.length)]
+const kifrase = kidecir[Math.floor(Math.random() * kidecir.length)]
 cnf.sendMessage(from, kimetsu, image, { caption: kifrase, quoted: mek })
 addFilter(from)
 break
