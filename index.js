@@ -1037,10 +1037,12 @@ fetch('https://raw.githubusercontent.com/pajaar/grabbed-results/master/pajaar-20
 .then(body => {
 let tod = body.split("\n");
 let pjr = tod[Math.floor(Math.random() * tod.length)];
+const nime =['Aquí tienes 💕🦈','¿Linda foto no?','Pedido entregado 🕊']
+const anim = nime[Math.floor(Math.random() * nime.length)]
 imageToBase64(pjr)
 .then((response) => {
 media =  Buffer.from(response, 'base64');
-cnf.sendMessage(from,media,image,{quoted:mek,caption:'Aquí tienes 💕🦈'})
+cnf.sendMessage(from,media,image,{ caption: anim, quoted: mek }))
 }
 )
 .catch((error) => {
