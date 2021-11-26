@@ -1042,7 +1042,7 @@ const anim = nime[Math.floor(Math.random() * nime.length)]
 imageToBase64(pjr)
 .then((response) => {
 media =  Buffer.from(response, 'base64');
-cnf.sendMessage(from,media,image,{ caption: anim, quoted: mek }))
+cnf.sendMessage(from,media,image, { caption: anim, quoted: mek }))
 }
 )
 .catch((error) => {
