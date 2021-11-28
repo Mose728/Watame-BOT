@@ -76,33 +76,6 @@ const sleep = async (ms) => {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-module.exports = msgHandler = async (bocchi = new Client(), message) => {
-    try {
-        const { type, id, from, t, sender, isGroupMsg, chat, caption, isMedia, mimetype, quotedMsg, quotedMsgObj, mentionedJidList } = message
-        let { body } = message
-        const { name, formattedTitle } = chat
-        let { pushname, verifiedName, formattedName } = sender
-        pushname = pushname || verifiedName || formattedName
-        const botNumber = await bocchi.getHostNumber() + '@c.us'
-        const blockNumber = await bocchi.getBlockedIds()
-        const ownerNumber = config.ownerBot
-        const authorWm = config.authorStick
-        const packWm = config.packStick
-        const groupId = isGroupMsg ? chat.groupMetadata.id : ''
-        const groupAdmins = isGroupMsg ? await bocchi.getGroupAdmins(groupId) : ''
-        const time = moment(t * 1000).format('DD/MM/YY HH:mm:ss')
-
-        const cmd = caption || body || ''
-        const command = cmd.toLowerCase().split(' ')[0] || ''
-        const prefix = /^[°•π÷×¶∆£¢€¥®™✓=|~!#$%^&./\\©^]/.test(command) ? command.match(/^[°•π÷×¶∆£¢€¥®™✓=|~!#$%^&./\\©^]/gi) : '-' // Multi-Prefix by: VideFrelan
-        const chats = (type === 'chat') ? body : ((type === 'image' || type === 'video')) ? caption : ''
-        body = (type === 'chat' && body.startsWith(prefix)) ? body : (((type === 'image' || type === 'video') && caption) && caption.startsWith(prefix)) ? caption : ''
-        const args = body.trim().split(/ +/).slice(1)
-        const uaOverride = config.uaOverride
-        const q = args.join(' ')
-        const ar = args.map((v) => v.toLowerCase())
-        const url = args.length !== 0 ? args[0] : ''
-
 ConfuMods = [`51931655706@s.whatsapp.net`] 
 prefix = '#'
 hardi = 'hardianto'
