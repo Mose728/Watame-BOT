@@ -897,6 +897,42 @@ reply(`*╭═┅╡🌸WATAME🌸╞┅═╮*\n*╟ ╳*\n*╟ ❒ Iniciando..
 addFilter(from)
 break
 
+case prefix+'twitter':
+            case prefix+'twt':
+                if (!isRegistered) return await bocchi.reply(from, ind.notRegistered(), id)
+                if (!isUrl(url) && !url.includes('twitter.com')) return await bocchi.reply(from, ind.wrongFormat(), id)
+                if (limit.isLimit(sender.id, _limit, limitCount, isPremium, isOwner)) return await bocchi.reply(from, ind.limit(), id)
+                limit.addLimit(sender.id, _limit, isPremium, isOwner)
+                await bocchi.reply(from, ind.wait(), id)
+                downloader.tweet(url)
+                    .then(async (data) => {
+                        if (data.type === 'video') {
+                            const content = data.variants.filter((x) => x.content_type !== 'application/x-mpegURL').sort((a, b) => b.bitrate - a.bitrate)
+                            const result = await misc.shortener(content[0].url)
+                            console.log('Shortlink:', result)
+                            await bocchi.sendFileFromUrl(from, content[0].url, 'video.mp4', `Link HD: ${result}`, id)
+                                .then(() => console.log('Success sending Twitter media!'))
+                                .catch(async (err) => {
+                                    console.error(err)
+                                    await bocchi.reply(from, 'Error!', id)
+                                })
+                        } else if (data.type === 'photo') {
+                            for (let i = 0; i < data.variants.length; i++) {
+                                await bocchi.sendFileFromUrl(from, data.variants[i], data.variants[i].split('/media/')[1], '', id)
+                                .then(() => console.log('Success sending Twitter media!'))
+                                .catch(async (err) => {
+                                    console.error(err)
+                                    await bocchi.reply(from, 'Error!', id)
+                                })
+                            }
+                        }
+                    })
+                    .catch(async (err) => {
+                        console.error(err)
+                        await bocchi.reply(from, 'Error!', id)
+                    })
+            break					
+
 case prefix+'ban':
 if (!isOwner) return reply(mess.only.ownerB)
 if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('Por favor etiqueta!')
