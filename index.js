@@ -1055,24 +1055,23 @@ reply('Escribe 1 para activar o 0 para desactivar')
 }
 addFilter(from)
 break
-
-case prefix+'takestick':
+			
+case prefix+'fb':
 if (isBanned) return  reply(mess.banned)
-if (!isQuotedSticker) return reply(`Responder a un sticker con *${prefix}takestick nama|author*`)
-var pembawm = body.slice(6)
-var encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
-var media = await cnf.downloadAndSaveMediaMessage(encmedia, `./sticker/${sender}`)
-var packname = pembawm.split('|')[0]
-var author = pembawm.split('|')[1]
-exif.create(packname, author, `takestick_${sender}`)
-exec(`webpmux -set exif ./sticker/takestick_${sender}.exif ./sticker/${sender}.webp -o ./sticker/${sender}.webp`, async (error) => {
-if (error) return reply('Error')
-cnf.sendMessage(from, fs.readFileSync(`./sticker/${sender}.webp`), MessageType.sticker, {quoted: freply})
-fs.unlinkSync(media)
-fs.unlinkSync(`./sticker/takestick_${sender}.exif`)
-})
-addFilter(from)
-break
+          
+if (!isRegistered) return reply(ind.noregis())			  
+  if (args.length < 1) return reply('*Url?*')
+  query = args.join(" ")
+					anu = await fetchJson(`https://videfikri.com/api/fbdl/?urlfb=${query}`, {method: 'get'})
+					wing = ` *F A C E B O O K DOWNLOADER*
+					
+*Título :* ${anu.result.judul}`
+					
+					cnf.sendMessage(from, mess.wait, text,{quoted : freply})
+					buffer = await getBuffer(anu.result.url)
+					cnf.sendMessage(from, buffer, video, {mimetype: 'video/mp4', filename: `${anu.result.url}.mp4`, quoted: freply, caption: wing})
+					addFilter(from)
+          break 
 
 case prefix+'anime':
 if (isBanned) return  reply(mess.banned)
