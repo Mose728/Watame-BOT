@@ -2214,8 +2214,8 @@ const apis32 =['7c6c9a9e1138b473e6c64388','ff8508e71c332b870c1e8a1b','b57c69801b
 const lolkeyt = apis32[Math.floor(Math.random() * apis32.length)]
 anu = await fetchJson(`https://api.lolhuman.xyz/api/twitter?apikey=${lolkeyt}&url=${terr}`, {method: 'get'})
 wing = ` Pedido entregado 🕊 `
-buffer = await getBuffer(anu.link)
-cnf.sendMessage(from, buffer, video, {mimetype: 'video/mp4', filename: `${anu.link}.mp4`, quoted: mek ,caption: wing})
+buffer = await getBuffer(anu.result.link)
+cnf.sendMessage(from, buffer, video, {mimetype: 'video/mp4', filename: `${anu.result.link}.mp4`, quoted: mek ,caption: wing})
 addFilter(from)
 break
 
