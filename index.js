@@ -1061,9 +1061,7 @@ if (isBanned) return  reply(mess.banned)
 if (args.length < 1) return reply('*Url?*')
 query = args.join(" ")
 anu = await fetchJson(`https://api.lolhuman.xyz/api/facebook?apikey=c9b3628121d4a8adfbff2e11&url=${query}`, {method: 'get'})
-wing = ` *F A C E B O O K DOWNLOADER*
-*Título :* ${anu.result}`
-cnf.sendMessage(from, mess.wait, text,{quoted : freply})
+wing = ` *F A C E B O O K DOWNLOADER* `
 buffer = await getBuffer(anu.result)
 cnf.sendMessage(from, buffer, video, {mimetype: 'video/mp4', filename: `${anu.result}.mp4`, quoted: freply, caption: wing})
 addFilter(from)
