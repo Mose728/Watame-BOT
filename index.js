@@ -1059,17 +1059,15 @@ break
 case prefix+'fb':
 if (isBanned) return  reply(mess.banned)
 if (args.length < 1) return reply('*Url?*')
-  query = args.join(" ")
-					anu = await fetchJson(`https://videfikri.com/api/fbdl/?urlfb=${query}`, {method: 'get'})
-					wing = ` *F A C E B O O K DOWNLOADER*
-					
-*Título :* ${anu.result.judul}`
-					
-					cnf.sendMessage(from, mess.wait, text,{quoted : freply})
-					buffer = await getBuffer(anu.result.url)
-					cnf.sendMessage(from, buffer, video, {mimetype: 'video/mp4', filename: `${anu.result.url}.mp4`, quoted: freply, caption: wing})
-					addFilter(from)
-          break 
+query = args.join(" ")
+anu = await fetchJson(`https://api.lolhuman.xyz/api/facebook?apikey=c9b3628121d4a8adfbff2e11&url=${query}`, {method: 'get'})
+wing = ` *F A C E B O O K DOWNLOADER*
+*Título :* ${anu.result}`
+cnf.sendMessage(from, mess.wait, text,{quoted : freply})
+buffer = await getBuffer(anu.result)
+cnf.sendMessage(from, buffer, video, {mimetype: 'video/mp4', filename: `${anu.result}.mp4`, quoted: freply, caption: wing})
+addFilter(from)
+break
 
 case prefix+'anime':
 if (isBanned) return  reply(mess.banned)
