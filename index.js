@@ -1058,9 +1058,7 @@ break
 			
 case prefix+'fb':
 if (isBanned) return  reply(mess.banned)
-          
-if (!isRegistered) return reply(ind.noregis())			  
-  if (args.length < 1) return reply('*Url?*')
+if (args.length < 1) return reply('*Url?*')
   query = args.join(" ")
 					anu = await fetchJson(`https://videfikri.com/api/fbdl/?urlfb=${query}`, {method: 'get'})
 					wing = ` *F A C E B O O K DOWNLOADER*
