@@ -1056,7 +1056,7 @@ reply('Escribe 1 para activar o 0 para desactivar')
 addFilter(from)
 break
 
-case prefix+'take':
+case prefix+'takestick':
 if (isBanned) return  reply(mess.banned)
 if (!isQuotedSticker) return reply(`Responder a un sticker con *${prefix}takestick nama|author*`)
 var pembawm = body.slice(6)
