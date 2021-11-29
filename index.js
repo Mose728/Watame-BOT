@@ -1066,7 +1066,7 @@ reply ('Espera por favor, esto podría tomar un tiempo.')
 anu = await fetchJson(`https://api.lolhuman.xyz/api/facebook?apikey=${lolkeyapi}&url=${query}`, {method: 'get'})
 wing = ` Pedido entregado 🕊 `
 buffer = await getBuffer(anu.result)
-cnf.sendMessage(from, buffer, video, {mimetype: 'video/mp4', filename: `${anu.result}.mp4`, quoted: mek, caption: wing})
+cnf.sendMessage(from, buffer, video, {mimetype: 'video/mp4', filename: `${anu.result}.mp4`, caption: wing})
 addFilter(from)
 break
 
