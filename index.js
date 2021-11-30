@@ -286,7 +286,7 @@ Es grato para nosotros darte la bienvenida y agradecerte por preferir ser parte 
 					ownerG: 'Este Comando Solo Puede Ser Usado Por El Dueño Del Grupo',
 					ownerB: 'Este comando solo lo puede utilizar mi creador, tu no (・–・;)ゞ',
 					admin: 'No eres admin 😸',
-					Badmin: 'Debo ser administrador para usar estos comandos 😕'
+					Badmin: 'No disponible en este momento 😕'
 				}
 			}
 			const botNumber = cnf.user.jid			
