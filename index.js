@@ -1,6 +1,5 @@
 //WATAME-BOT
 
-
 const {
 WAConnection,
 MessageType,
