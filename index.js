@@ -1074,7 +1074,6 @@ break
 case prefix+'shitpost':
 if (!isOwner) return reply(mess.only.ownerB)
 if (isBanned) return  reply(mess.banned)
-msgFilter.isFiltered(from)
 cnf.updatePresence(from, Presence.composing)
 uk = ["shitpost br"]
 nk = uk[Math.floor(Math.random() * uk.length)]
