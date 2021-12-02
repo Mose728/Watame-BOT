@@ -1081,15 +1081,12 @@ try {
 data = await fetchJson(`https://api.fdci.se/sosmed/rep.php?gambar=${nk}`, {
 method: 'get'
 })
-reply(ptbr.wait())
 n = JSON.parse(JSON.stringify(data));
 nimek = n[Math.floor(Math.random() * n.length)];
 pok = await getBuffer(nimek)
 cnf.sendMessage(from, pok, image, {
 quoted: mek, caption: `𝐂𝐨𝐧𝐟𝐮𝐌𝐨𝐝𝐬`
 })
-} catch {
-reply(ptbr.erro())
 }
 addFilter(from)
 break
