@@ -1071,6 +1071,30 @@ cnf.sendMessage(from, buffer, video, {mimetype: 'video/mp4', filename: `${anu.re
 addFilter(from)
 break
 
+case prefix+'shitpost':
+if (!isOwner) return reply(mess.only.ownerB)
+if (isBanned) return  reply(mess.banned)
+msgFilter.isFiltered(from)
+cnf.updatePresence(from, Presence.composing)
+uk = ["shitpost br"]
+nk = uk[Math.floor(Math.random() * uk.length)]
+try {
+data = await fetchJson(`https://api.fdci.se/sosmed/rep.php?gambar=${nk}`, {
+method: 'get'
+})
+reply(ptbr.wait())
+n = JSON.parse(JSON.stringify(data));
+nimek = n[Math.floor(Math.random() * n.length)];
+pok = await getBuffer(nimek)
+cnf.sendMessage(from, pok, image, {
+quoted: mek, caption: `𝐂𝐨𝐧𝐟𝐮𝐌𝐨𝐝𝐬`
+})
+} catch {
+reply(ptbr.erro())
+}
+addFilter(from)
+break
+
 case prefix+'anime':
 if (isBanned) return  reply(mess.banned)
 if (!isGroup) return reply(`「 ❗ 」ESTE COMANDO SOLO PUEDE SER USADO EN GRUPOS`)
