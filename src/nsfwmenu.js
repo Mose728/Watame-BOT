@@ -12,6 +12,7 @@ const nsfwmenu = (prefix, pushname) => {
 │๛ ${prefix}anal
 │๛ ${prefix}yaoi
 │๛ ${prefix}hero
+│๛ ${prefix}bjgif
 │๛ ${prefix}pussy
 │๛ ${prefix}nekoh
 │๛ ${prefix}ninte
