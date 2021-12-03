@@ -821,6 +821,7 @@ lzain = ` ‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ �
 *╟ ❒ ${prefix}yaoi*
 *╟ ❒ ${prefix}feed*
 *╟ ❒ ${prefix}poke*
+*╟ ❒ ${prefix}neko*
 *╟ ❒ ${prefix}waifu*
 *╟ ❒ ${prefix}invitar*
 *╟ ❒ ${prefix}hinata*
@@ -1318,6 +1319,21 @@ botits = await getBuffer(tits.data.url)
 const yurit =['Aquí tienes 💕🦈','¿Linda foto no?','Pedido entregado 🕊']
 const bptits = yurit[Math.floor(Math.random() * yurit.length)]
 cnf.sendMessage(from, botits, image, { caption: bptits, quoted: mek })
+.catch(err => {
+return('E-error ⊙﹏⊙')
+})
+addFilter(from)
+break
+
+case prefix+'neko':
+if (isBanned) return  reply(mess.banned)
+if (!isGroup) return reply(`「 ❗ 」ESTE COMANDO SOLO PUEDE SER USADO EN GRUPOS`)
+if (!isBotGroupAdmins) return reply(mess.only.Badmin)
+nekoo = await axios.get('https://nekos.life/api/v2/img/neko')
+nekko = await getBuffer(nekoo.data.url)
+const nneko =['Aquí tienes 💕🦈','¿Linda foto no?','Pedido entregado 🕊']
+const nnko = nneko[Math.floor(Math.random() * nneko.length)]
+cnf.sendMessage(from, nekko, image, { caption: nnko, quoted: mek })
 .catch(err => {
 return('E-error ⊙﹏⊙')
 })
