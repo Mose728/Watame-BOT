@@ -1185,7 +1185,7 @@ if (!isGroup) return reply(`「 ❗ 」ESTE COMANDO SOLO PUEDE SER USADO EN GRUP
 if (!isBotGroupAdmins) return reply(mess.only.Badmin)
 ranp = getRandom('.gif')
 rano = getRandom('.webp')
-anu = await axios.get('https://nekos.life/api/v2/img/bjgif')
+anu = await axios.get('https://nekos.life/api/v2/img/bj')
 exec(`wget ${anu.data.url} -O ${ranp} && ffmpeg -i ${ranp} -vcodec libwebp -filter:v fps=fps=15 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512:512 ${rano}`, (err) => {
 fs.unlinkSync(ranp)
 if (err) return reply('error')
