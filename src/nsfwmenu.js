@@ -7,11 +7,13 @@ const nsfwmenu = (prefix, pushname) => {
 │๛ ${prefix}dbz
 │๛ ${prefix}cum
 │๛ ${prefix}solo
+│๛ ${prefix}ngif
 │๛ ${prefix}yuri
 │๛ ${prefix}anal
 │๛ ${prefix}yaoi
 │๛ ${prefix}hero
 │๛ ${prefix}pussy
+│๛ ${prefix}nekoh
 │๛ ${prefix}ninte
 │๛ ${prefix}uzaki
 │๛ ${prefix}oppai
@@ -30,6 +32,7 @@ const nsfwmenu = (prefix, pushname) => {
 │๛ ${prefix}cosplay 
 │๛ ${prefix}konosuba
 │๛ ${prefix}lolihentai
+│๛ ${prefix}lesbhentai
 │๛ ${prefix}pussyimage
 │๛ ${prefix}dragonmaid
 │
