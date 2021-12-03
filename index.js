@@ -1495,6 +1495,7 @@ break
 
 case  prefix+'nekopoi':          
 if (isBanned) return  reply(mess.banned)
+if (!isGroup) return reply(`[ ❗ ] Este Comando Solo Puede Ser Usado En Grupos UnU`)
 if (!isBotGroupAdmins) return reply(mess.only.Badmin)
 ranp = getRandom('.gif')
 rano = getRandom('.webp')
@@ -1527,6 +1528,7 @@ break
 
 case prefix+'trap':
 if (isBanned) return  reply(mess.banned)
+if (!isGroup) return reply(`[ ❗ ] Este Comando Solo Puede Ser Usado En Grupos UnU`)
 if (!isBotGroupAdmins) return reply(mess.only.Badmin)
 trapss = await axios.get('https://nekos.life/api/v2/img/trap')
 traps2 = await getBuffer(trapss.data.url)
@@ -1548,6 +1550,7 @@ break
 					
 case prefix+'foxgirl':
 if (isBanned) return  reply(mess.banned)
+if (!isGroup) return reply(`[ ❗ ] Este Comando Solo Puede Ser Usado En Grupos UnU`)
 if (!isBotGroupAdmins) return reply(mess.only.Badmin)
 breast2 = await axios.get('https://nekos.life/api/v2/img/fox_girl')
 bupboobs = await getBuffer(breast2.data.url)
@@ -1562,6 +1565,7 @@ break
 					
 case prefix+'blowjob':
 if (isBanned) return  reply(mess.banned)
+if (!isGroup) return reply(`[ ❗ ] Este Comando Solo Puede Ser Usado En Grupos UnU`)
 if (!isBotGroupAdmins) return reply(mess.only.Badmin)
 breast20 = await axios.get('https://nekos.life/api/v2/img/blowjob')
 bupboobs1 = await getBuffer(breast20.data.url)
@@ -1573,9 +1577,25 @@ return('E-error ⊙﹏⊙')
 })
 addFilter(from)
 break
-					
+
+case prefix+'nekoh':
+if (isBanned) return  reply(mess.banned)
+if (!isGroup) return reply(`[ ❗ ] Este Comando Solo Puede Ser Usado En Grupos UnU`)
+if (!isBotGroupAdmins) return reply(mess.only.Badmin)
+neko20 = await axios.get('https://nekos.life/api/v2/img/lewdkemo')
+neko1 = await getBuffer(neko20.data.url)
+const kodecir =['Aquí tienes 💕🦈','¿Linda foto no?','Pedido entregado 🕊']
+const kbfrase = kodecir[Math.floor(Math.random() * kodecir.length)]
+cnf.sendMessage(from, neko1, image, { caption: kbfrase, quoted: mek })
+.catch(err => {
+return('E-error ⊙﹏⊙')
+})
+addFilter(from)
+break
+
 case prefix+'patas':
 if (isBanned) return  reply(mess.banned)
+if (!isGroup) return reply(`[ ❗ ] Este Comando Solo Puede Ser Usado En Grupos UnU`)
 if (!isBotGroupAdmins) return reply(mess.only.Badmin)		  
 res = await fetchJson(`https://meme-api.herokuapp.com/gimme/animefeets`, {method: 'get'})
 buffer = await getBuffer(res.url)
@@ -1587,6 +1607,7 @@ break
 
 case prefix+'thighs':
 if (isBanned) return  reply(mess.banned)
+if (!isGroup) return reply(`[ ❗ ] Este Comando Solo Puede Ser Usado En Grupos UnU`)
 if (!isBotGroupAdmins) return reply(mess.only.Badmin)		  
 res = await fetchJson(`https://meme-api.herokuapp.com/gimme/animethighss`, {method: 'get'})
 buffer = await getBuffer(res.url)
