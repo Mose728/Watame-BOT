@@ -825,9 +825,12 @@ lzain = ` ‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ �
 *╟ ❒ ${prefix}avatar*
 *╟ ❒ ${prefix}kanna*
 *╟ ❒ ${prefix}anime*
+*╟ ❒ ${prefix}patpat*
+*╟ ❒ ${prefix}abrazo*
 *╟ ❒ ${prefix}sakura*
 *╟ ❒ ${prefix}naruto*
 *╟ ❒ ${prefix}wpanime*
+*╟ ❒ ${prefix}abofetear*
 *╟ ❒ ${prefix}wallpaper*
 *╟X* ‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎
 *┠━➣REACCIONES*
@@ -1160,9 +1163,43 @@ fs.unlinkSync(rano)
 addFilter(from)
 break
 
+case prefix+'patpat':
+if (isBanned) return  reply(mess.banned)
+if (!isGroup) return reply(`「 ❗ 」ESTE COMANDO SOLO PUEDE SER USADO EN GRUPOS`)
+ranp = getRandom('.gif')
+rano = getRandom('.webp')
+anu = await axios.get('https://nekos.life/api/v2/img/pat')
+exec(`wget ${anu.data.url} -O ${ranp} && ffmpeg -i ${ranp} -vcodec libwebp -filter:v fps=fps=15 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512:512 ${rano}`, (err) => {
+fs.unlinkSync(ranp)
+if (err) return reply('error')
+buffer = fs.readFileSync(rano)
+cnf.sendMessage(from, buffer, MessageType.sticker, {quoted: mek})
+fs.unlinkSync(rano)
+})
+addFilter(from)
+break
+
+case prefix+'bjgif':
+if (isBanned) return  reply(mess.banned)
+if (!isGroup) return reply(`「 ❗ 」ESTE COMANDO SOLO PUEDE SER USADO EN GRUPOS`)
+if (!isBotGroupAdmins) return reply(mess.only.Badmin)
+ranp = getRandom('.gif')
+rano = getRandom('.webp')
+anu = await axios.get('https://nekos.life/api/v2/img/bjgif')
+exec(`wget ${anu.data.url} -O ${ranp} && ffmpeg -i ${ranp} -vcodec libwebp -filter:v fps=fps=15 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512:512 ${rano}`, (err) => {
+fs.unlinkSync(ranp)
+if (err) return reply('error')
+buffer = fs.readFileSync(rano)
+cnf.sendMessage(from, buffer, MessageType.sticker, {quoted: mek})
+fs.unlinkSync(rano)
+})
+addFilter(from)
+break
+
 case prefix+'lesbhentai':
 if (isBanned) return  reply(mess.banned)
 if (!isGroup) return reply(`「 ❗ 」ESTE COMANDO SOLO PUEDE SER USADO EN GRUPOS`)
+if (!isBotGroupAdmins) return reply(mess.only.Badmin)
 ranp = getRandom('.gif')
 rano = getRandom('.webp')
 anu = await axios.get('https://nekos.life/api/v2/img/les')
