@@ -1584,9 +1584,9 @@ if (!isGroup) return reply(`[ ❗ ] Este Comando Solo Puede Ser Usado En Grupos 
 if (!isBotGroupAdmins) return reply(mess.only.Badmin)
 neko20 = await axios.get('https://nekos.life/api/v2/img/lewdkemo')
 neko1 = await getBuffer(neko20.data.url)
-const kodecir =['Aquí tienes 💕🦈','¿Linda foto no?','Pedido entregado 🕊']
-const kbfrase = kodecir[Math.floor(Math.random() * kodecir.length)]
-cnf.sendMessage(from, neko1, image, { caption: kbfrase, quoted: mek })
+const nedecir =['Aquí tienes 💕🦈','¿Linda foto no?','Pedido entregado 🕊']
+const knbfrase = nedecir[Math.floor(Math.random() * nedecir.length)]
+cnf.sendMessage(from, neko1, image, { caption: knfrase, quoted: mek })
 .catch(err => {
 return('E-error ⊙﹏⊙')
 })
