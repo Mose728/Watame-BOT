@@ -22,7 +22,9 @@ const nsfwmenu = (prefix, pushname) => {
 │๛ ${prefix}pwankg
 │๛ ${prefix}rezero
 │๛ ${prefix}hentai
-│๛ ${prefix}thighs 
+│๛ ${prefix}thighs
+│๛ ${prefix}cosplay
+│๛ ${prefix}erokemo
 │๛ ${prefix}blowjob
 │๛ ${prefix}foxgirl
 │๛ ${prefix}pokemon
@@ -30,7 +32,6 @@ const nsfwmenu = (prefix, pushname) => {
 │๛ ${prefix}genshin
 │๛ ${prefix}kimetsu
 │๛ ${prefix}futanari
-│๛ ${prefix}cosplay 
 │๛ ${prefix}konosuba
 │๛ ${prefix}lolihentai
 │๛ ${prefix}lesbhentai
