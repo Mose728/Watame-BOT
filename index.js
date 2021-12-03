@@ -1550,7 +1550,7 @@ if (!isBotGroupAdmins) return reply(mess.only.Badmin)
 breast20 = await axios.get('https://nekos.life/api/v2/img/blowjob')
 bupboobs1 = await getBuffer(breast20.data.url)
 const bdecir =['Aquí tienes 💕🦈','¿Linda foto no?','Pedido entregado 🕊']
-const bfrase = bdecir[Math.floor(Math.random() * decir.length)]
+const bfrase = bdecir[Math.floor(Math.random() * bdecir.length)]
 cnf.sendMessage(from, bupboobs1, image, { caption: bfrase, quoted: mek })
 .catch(err => {
 return('E-error ⊙﹏⊙')
