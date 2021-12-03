@@ -1245,19 +1245,6 @@ return('E-error ⊙﹏⊙')
 addFilter(from)
 break
 
-case prefix+'eroyuri':
-if (isBanned) return  reply(mess.banned)
-if (!isGroup) return reply(`「 ❗ 」ESTE COMANDO SOLO PUEDE SER USADO EN GRUPOS`)
-if (!isBotGroupAdmins) return reply(mess.only.Badmin)
-yurizz = await axios.get('https://nekos.life/api/v2/img/eroyuri')
-eroyur = await getBuffer(yurizz.data.url)
-cnf.sendMessage(from, eroyur, MessageType.image, {quoted: mek})
-.catch(err => {
-return('E-error ⊙﹏⊙')
-})
-addFilter(from)
-break
-
 case prefix+'solo':
 if (isBanned) return  reply(mess.banned)
 if (!isGroup) return reply(`「 ❗ 」ESTE COMANDO SOLO PUEDE SER USADO EN GRUPOS`)
@@ -1284,6 +1271,21 @@ bupyuri = await getBuffer(yuriz.data.url)
 const yurix =['Aquí tienes 💕🦈','¿Linda foto no?','Pedido entregado 🕊']
 const bpyuri = yurix[Math.floor(Math.random() * yurix.length)]
 cnf.sendMessage(from, bupyuri, image, { caption: bpyuri, quoted: mek })
+.catch(err => {
+return('E-error ⊙﹏⊙')
+})
+addFilter(from)
+break
+
+case prefix+'eroyuri':
+if (isBanned) return  reply(mess.banned)
+if (!isGroup) return reply(`「 ❗ 」ESTE COMANDO SOLO PUEDE SER USADO EN GRUPOS`)
+if (!isBotGroupAdmins) return reply(mess.only.Badmin)
+yurixz = await axios.get('https://nekos.life/api/v2/img/eroyuri')
+yurixzx = await getBuffer(yurixz.data.url)
+const eroyurx =['Aquí tienes 💕🦈','¿Linda foto no?','Pedido entregado 🕊']
+const eroyur = eroyurx[Math.floor(Math.random() * eroyurx.length)]
+cnf.sendMessage(from, yurixzx, image, { caption: eroyur, quoted: mek })
 .catch(err => {
 return('E-error ⊙﹏⊙')
 })
@@ -1469,7 +1471,7 @@ break
 case prefix+'shutdown':
 if (isBanned) return  reply(mess.banned)
 if (!isGroupAdmins) return reply(mess.only.admin)
-await cnf.sendMessage(from, `Bye...\n_🌸Watame-BOT?? apagandose..._`, text,{quoted : freply})
+await cnf.sendMessage(from, `Bye...\n_🌸Watame-BOT🌸 apagandose..._`, text,{quoted : freply})
 await sleep(3000)
 cnf.close()
 addFilter(from)
