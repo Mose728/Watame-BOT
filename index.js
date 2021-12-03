@@ -819,8 +819,10 @@ lzain = ` ‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ �
 *╟*๛ _Solicita imágenes_
 *╟ ❒ ${prefix}loli*
 *╟ ❒ ${prefix}yaoi*
+*╟ ❒ ${prefix}feed*
 *╟ ❒ ${prefix}poke*
 *╟ ❒ ${prefix}waifu*
+*╟ ❒ ${prefix}invitar*
 *╟ ❒ ${prefix}hinata*
 *╟ ❒ ${prefix}avatar*
 *╟ ❒ ${prefix}kanna*
@@ -1196,6 +1198,23 @@ fs.unlinkSync(rano)
 addFilter(from)
 break
 
+case prefix+'invitar':
+if (isBanned) return  reply(mess.banned)
+if (!isGroup) return reply(`「 ❗ 」ESTE COMANDO SOLO PUEDE SER USADO EN GRUPOS`)
+if (!isBotGroupAdmins) return reply(mess.only.Badmin)
+ranp = getRandom('.gif')
+rano = getRandom('.webp')
+anu = await axios.get('https://nekos.life/api/v2/img/feed')
+exec(`wget ${anu.data.url} -O ${ranp} && ffmpeg -i ${ranp} -vcodec libwebp -filter:v fps=fps=15 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512:512 ${rano}`, (err) => {
+fs.unlinkSync(ranp)
+if (err) return reply('error')
+buffer = fs.readFileSync(rano)
+cnf.sendMessage(from, buffer, MessageType.sticker, {quoted: mek})
+fs.unlinkSync(rano)
+})
+addFilter(from)
+break
+
 case prefix+'lesbhentai':
 if (isBanned) return  reply(mess.banned)
 if (!isGroup) return reply(`「 ❗ 」ESTE COMANDO SOLO PUEDE SER USADO EN GRUPOS`)
@@ -1252,6 +1271,21 @@ bupyuri = await getBuffer(yuriz.data.url)
 const yurix =['Aquí tienes 💕🦈','¿Linda foto no?','Pedido entregado 🕊']
 const bpyuri = yurix[Math.floor(Math.random() * yurix.length)]
 cnf.sendMessage(from, bupyuri, image, { caption: bpyuri, quoted: mek })
+.catch(err => {
+return('E-error ⊙﹏⊙')
+})
+addFilter(from)
+break
+
+case prefix+'tits':
+if (isBanned) return  reply(mess.banned)
+if (!isGroup) return reply(`「 ❗ 」ESTE COMANDO SOLO PUEDE SER USADO EN GRUPOS`)
+if (!isBotGroupAdmins) return reply(mess.only.Badmin)
+tits = await axios.get('https://nekos.life/api/v2/img/tits')
+botits = await getBuffer(tits.data.url)
+const yurit =['Aquí tienes 💕🦈','¿Linda foto no?','Pedido entregado 🕊']
+const bptits = yurit[Math.floor(Math.random() * yurit.length)]
+cnf.sendMessage(from, botits, image, { caption: bptits, quoted: mek })
 .catch(err => {
 return('E-error ⊙﹏⊙')
 })
@@ -1331,6 +1365,21 @@ buferon = await getBuffer(eronz.data.url)
 const deci =['Aquí tienes 💕🦈','¿Linda foto no?','Pedido entregado 🕊']
 const fr = deci[Math.floor(Math.random() * deci.length)]
 cnf.sendMessage(from, buferon, image, { caption: fr, quoted: mek })
+.catch(err => {
+return('E-error ⊙﹏⊙')
+})
+addFilter(from)
+break
+
+case prefix+'erokemo':
+if (isBanned) return  reply(mess.banned)
+if (!isGroup) return reply(`「 ❗ 」ESTE COMANDO SOLO PUEDE SER USADO EN GRUPOS`)
+if (!isBotGroupAdmins) return reply(mess.only.Badmin)
+eronk = await axios.get('https://nekos.life/api/v2/img/erokemo')
+buferok = await getBuffer(eronk.data.url)
+const decix =['Aquí tienes 💕🦈','¿Linda foto no?','Pedido entregado 🕊']
+const frx = decix[Math.floor(Math.random() * decix.length)]
+cnf.sendMessage(from, buferok, image, { caption: frx, quoted: mek })
 .catch(err => {
 return('E-error ⊙﹏⊙')
 })
