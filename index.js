@@ -1299,6 +1299,40 @@ fs.unlinkSync(rano)
 addFilter(from)
 break
 
+case prefix+'kuni':
+if (isBanned) return  reply(mess.banned)
+if (!isGroup) return reply(`「 ❗ 」ESTE COMANDO SOLO PUEDE SER USADO EN GRUPOS`)
+if (!isBotGroupAdmins) return reply(mess.only.Badmin)
+ranp = getRandom('.gif')
+rano = getRandom('.webp')
+anu = await axios.get('https://nekos.life/api/v2/img/kuni')
+exec(`wget ${anu.data.url} -O ${ranp} && ffmpeg -i ${ranp} -vcodec libwebp -filter:v fps=fps=15 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512:512 ${rano}`, (err) => {
+fs.unlinkSync(ranp)
+if (err) return reply('Perdón, tuvimos un error 🙁')
+buffer = fs.readFileSync(rano)
+cnf.sendMessage(from, buffer, MessageType.sticker, {quoted: mek})
+fs.unlinkSync(rano)
+})
+addFilter(from)
+break
+
+case prefix+'classic':
+if (isBanned) return  reply(mess.banned)
+if (!isGroup) return reply(`「 ❗ 」ESTE COMANDO SOLO PUEDE SER USADO EN GRUPOS`)
+if (!isBotGroupAdmins) return reply(mess.only.Badmin)
+ranp = getRandom('.gif')
+rano = getRandom('.webp')
+anu = await axios.get('https://nekos.life/api/v2/img/classic')
+exec(`wget ${anu.data.url} -O ${ranp} && ffmpeg -i ${ranp} -vcodec libwebp -filter:v fps=fps=15 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512:512 ${rano}`, (err) => {
+fs.unlinkSync(ranp)
+if (err) return reply('Perdón, tuvimos un error 🙁')
+buffer = fs.readFileSync(rano)
+cnf.sendMessage(from, buffer, MessageType.sticker, {quoted: mek})
+fs.unlinkSync(rano)
+})
+addFilter(from)
+break
+
 case prefix+'hentaigif':
 if (isBanned) return  reply(mess.banned)
 if (!isGroup) return reply(`「 ❗ 」ESTE COMANDO SOLO PUEDE SER USADO EN GRUPOS`)
@@ -1325,6 +1359,21 @@ bupyuri = await getBuffer(yuriz.data.url)
 const yurix =['Aquí tienes 💕🦈','¿Linda foto no?','Pedido entregado 🕊']
 const bpyuri = yurix[Math.floor(Math.random() * yurix.length)]
 cnf.sendMessage(from, bupyuri, image, { caption: bpyuri, quoted: mek })
+.catch(err => {
+return('E-error ⊙﹏⊙')
+})
+addFilter(from)
+break
+
+case prefix+'femdom':
+if (isBanned) return  reply(mess.banned)
+if (!isGroup) return reply(`「 ❗ 」ESTE COMANDO SOLO PUEDE SER USADO EN GRUPOS`)
+if (!isBotGroupAdmins) return reply(mess.only.Badmin)
+fem = await axios.get('https://nekos.life/api/v2/img/femdom')
+bpfem = await getBuffer(fem.data.url)
+const femx =['Aquí tienes 💕🦈','¿Linda foto no?','Pedido entregado 🕊']
+const femdom = femx[Math.floor(Math.random() * femx.length)]
+cnf.sendMessage(from, bpfem, image, { caption: femdom, quoted: mek })
 .catch(err => {
 return('E-error ⊙﹏⊙')
 })
