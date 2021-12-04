@@ -2787,7 +2787,7 @@ break
 case prefix+'wpanime':
 if (isBanned) return  reply(mess.banned)
 if (!isGroup) return reply(`「 ❗ 」ESTE COMANDO SOLO PUEDE SER USADO EN GRUPOS`)
-wpani = await axios.get('https://nekos.life/api/v2/img/wpanime')
+wpani = await axios.get('https://nekos.life/api/v2/img/wallpaper')
 bpani = await getBuffer(wpani.data.url)
 const anim =['Aquí tienes 💕🦈','¿Linda foto no?','Pedido entregado 🕊']
 const animx = anim[Math.floor(Math.random() * anim.length)]
