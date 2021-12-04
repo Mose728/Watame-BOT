@@ -22,6 +22,7 @@ const nsfwmenu = (prefix, pushname) => {
 │๛ ${prefix}uzaki
 │๛ ${prefix}oppai
 │๛ ${prefix}patas
+│๛ ${prefix}femdom
 │๛ ${prefix}pwankg
 │๛ ${prefix}rezero
 │๛ ${prefix}hentai
