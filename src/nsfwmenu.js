@@ -7,6 +7,7 @@ const nsfwmenu = (prefix, pushname) => {
 │๛ ${prefix}dbz
 │๛ ${prefix}cum
 │๛ ${prefix}solo
+│๛ ${prefix}kuni
 │๛ ${prefix}ngif
 │๛ ${prefix}tits
 │๛ ${prefix}yuri
@@ -27,6 +28,7 @@ const nsfwmenu = (prefix, pushname) => {
 │๛ ${prefix}thighs
 │๛ ${prefix}eroyuri
 │๛ ${prefix}cosplay
+│๛ ${prefix}classic
 │๛ ${prefix}erokemo
 │๛ ${prefix}blowjob
 │๛ ${prefix}foxgirl
