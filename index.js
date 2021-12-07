@@ -286,7 +286,7 @@ Es grato para nosotros darte la bienvenida y agradecerte por preferir ser parte 
 					ownerG: 'Este Comando Solo Puede Ser Usado Por El Dueño Del Grupo',
 					ownerB: 'Este comando solo lo puede utilizar mi creador, tu no (・–・;)ゞ',
 					admin: 'No eres admin 😸',
-					Badmin: 'No disponible en este momento 😕'
+					Badmin: 'Necesito ser admin para poder usar estos comandos 😕'
 				}
 			}
 			const botNumber = cnf.user.jid			
@@ -2485,8 +2485,6 @@ break
 
 case prefix+'play':
 if (isBanned) return  reply(mess.banned)          	  
-if (!isBotGroupAdmins) return reply(mess.only.Badmin)
-if (!isGroup) return reply(`[ ❗ ] Este Comando Solo Puede Ser Usado En Grupos UnU`)
 if (args.length < 1) return reply('Coloca el enlace de la canción!')
 play = body.slice(6)
 anu = await fetchJson(`https://api.zeks.xyz/api/ytplaymp3?q=${play}&apikey=oCHDwj8ggZGBGjU5WIaK5Rctu6c`)
@@ -2513,9 +2511,6 @@ addFilter(from)
 break
 
 case prefix+'play2':  
-if (isBanned) return  reply(mess.banned) 
-if (!isBotGroupAdmins) return reply(mess.only.Badmin)
-if (!isGroup) return reply(`[ ❗ ] Este Comando Solo Puede Ser Usado En Grupos UnU`)
 if (args.length < 1) return reply('Coloca el enlace del video!')
 play = args.join(" ")
 anu = await fetchJson(`https://api.zeks.xyz/api/ytplaymp4?q=${play}&apikey=oCHDwj8ggZGBGjU5WIaK5Rctu6c`)
