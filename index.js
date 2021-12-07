@@ -1765,8 +1765,6 @@ break
 
 case prefix+'info':
 if (isBanned) return  reply(mess.banned)
-if (!isGroupAdmins) return reply(mess.only.admin)
-if (!isBotGroupAdmins) return reply(mess.only.Badmin)		  
 me = cnf.user
 uptime = process.uptime()
 teks = `┌─────┤𝐈𝐍𝐅𝐎├─────
@@ -1777,7 +1775,7 @@ teks = `┌─────┤𝐈𝐍𝐅𝐎├─────
 ├‣@${me.jid.split('@')[0]}
 │
 ├‣ *Dueño* : 🔰Manuel🔰 
-├‣ *Prefijo* : ${prefix}
+├‣ *Número* : +51931655706
 │
 ├‣ *Tiempo activo* : 
 ├‣${kyun(uptime)}
