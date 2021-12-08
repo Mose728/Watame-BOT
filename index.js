@@ -1740,7 +1740,7 @@ fs.unlinkSync(ran)
 .toFormat('webp')
 .save(ran)*/
 } else {
-reply(`Etiqueta una imagen oh video`)
+reply(`Etiqueta una imagen o video (máximo: 6 segundos)👈`)
 }
 addFilter(from)
 addFilter(from)
