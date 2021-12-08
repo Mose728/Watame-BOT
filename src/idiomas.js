@@ -2,6 +2,7 @@ const idiomas = (prefix, pushname) => {
     return `╭❍ *🌸Watame🌸*
 │
 *│✎Menu de idiomas TTS*
+│
 ├‣ Ejemplo: #tts en Hola
 │
 │๛ af: Afrikaans
