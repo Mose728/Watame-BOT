@@ -3,7 +3,7 @@ const idiomas = (prefix, pushname) => {
 │
 *│✎Menu de idiomas TTS*
 │
-├‣ Ejemplo: #tts en Hola
+├‣ Ejemplo: #tts af Hola
 │
 │๛ af: Afrikaans
 │๛ sq: Albanian
