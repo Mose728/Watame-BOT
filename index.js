@@ -1776,7 +1776,7 @@ ayudda =`┌─────┤AYUDA├─────
 │
 ├ *Grupo Oficial :*
 ├‣ https://chat.whatsapp.com/FP2KKGk4cim8UZ1r7SNbDQ
-└─────────────`
+└────────────────`
 cnf.sendMessage(from, ayudda, text,{quoted : freply})
 addFilter(from)
 break
