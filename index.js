@@ -1792,7 +1792,6 @@ break
 
 case prefix+'ayuda':
 if (isBanned) return  reply(mess.banned)
-me = cnf.user
 teks = `┌─────┤*AYUDA*├─────
 ├‣ *#menu* : 
 ├‣ Visualiza el menú completo de comandos 
@@ -1804,7 +1803,7 @@ teks = `┌─────┤*AYUDA*├─────
 ├‣ *Grupo Oficial*:
 ├‣ https://chat.whatsapp.com/FP2KKGk4cim8UZ1r7SNbDQ
 └─────────────`
-cnf.sendMessage(from, {
+cnf.sendMessage(from, text,{
 caption: teks, contextInfo: {
 mentionedJid: [me.jid]}})
 addFilter(from)
