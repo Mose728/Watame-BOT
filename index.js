@@ -1763,6 +1763,22 @@ cnf.sendMessage(from, anjink, text,{quoted : freply})
 addFilter(from)
 break
 
+case prefix+'ayuda':
+if (isBanned) return  reply(mess.banned)
+ayudda =`┌─────┤AYUDA├─────
+├ *Nombre : 🌸Watame-BOT🌸*
+│
+├ *Creador : 🔰Manuel🔰*
+│
+├ *Número: +51931655706*
+│
+├ *Grupo Oficial :*
+├‣ https://chat.whatsapp.com/FP2KKGk4cim8UZ1r7SNbDQ
+└─────────────`
+cnf.sendMessage(from, ayudda, text,{quoted : freply})
+addFilter(from)
+break
+
 case prefix+'info':
 if (isBanned) return  reply(mess.banned)
 me = cnf.user
@@ -1785,25 +1801,6 @@ teks = `┌─────┤𝐈𝐍𝐅𝐎├─────
 └─────────────`
 weww = fs.readFileSync(`./media/cnf.jpeg`)
 cnf.sendMessage(from, weww, image, {
-caption: teks, contextInfo: {
-mentionedJid: [me.jid]}})
-addFilter(from)
-break
-
-case prefix+'ayuda':
-if (isBanned) return  reply(mess.banned)
-teks = `┌─────┤*AYUDA*├─────
-├‣ *#menu* : 
-├‣ Visualiza el menú completo de comandos 
-│
-├‣ *Dueño* : 🔰Manuel🔰 
-│
-├‣ *Número* : +51931655706
-│
-├‣ *Grupo Oficial*:
-├‣ https://chat.whatsapp.com/FP2KKGk4cim8UZ1r7SNbDQ
-└─────────────`
-cnf.sendMessage(from, text,{
 caption: teks, contextInfo: {
 mentionedJid: [me.jid]}})
 addFilter(from)
