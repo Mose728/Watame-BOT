@@ -1790,6 +1790,26 @@ mentionedJid: [me.jid]}})
 addFilter(from)
 break
 
+case prefix+'ayuda':
+if (isBanned) return  reply(mess.banned)
+me = cnf.user
+teks = `┌─────┤*AYUDA*├─────
+├‣ *#menu* : 
+├‣ Visualiza el menú completo de comandos 
+│
+├‣ *Dueño* : 🔰Manuel🔰 
+│
+├‣ *Número* : +51931655706
+│
+├‣ *Grupo Oficial*:
+├‣ https://chat.whatsapp.com/FP2KKGk4cim8UZ1r7SNbDQ
+└─────────────`
+cnf.sendMessage(from, {
+caption: teks, contextInfo: {
+mentionedJid: [me.jid]}})
+addFilter(from)
+break
+
 case  prefix+'nekopoi':          
 if (isBanned) return  reply(mess.banned)
 if (!isGroup) return reply(`[ ❗ ] Este Comando Solo Puede Ser Usado En Grupos UnU`)
