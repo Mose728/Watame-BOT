@@ -445,7 +445,7 @@ isPlayer11 = isGroup ? players11.includes(sender) : false
 				try {
 					const getmemex = groupMembers.length	
 				    if (getmemex <= memberlimit) {
-					reply(`lo siento, los miembros del grupo no han cumplido con los requisitos. miembros mínimos deben ser ${memberlimit}`)					
+					reply(`Lo siento, los miembros del grupo no han cumplido con los requisitos. Miembros mínimos: ${memberlimit}`)					
  	                           cnf.groupLeave(from) 			  
 							cnf.updatePresence(from, Presence.composing)						
 				    }
