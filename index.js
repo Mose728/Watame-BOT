@@ -786,8 +786,10 @@ addFilter(from)
 break			
 
 case prefix+'menu':
-if (isBanned) return  reply(mess.banned)	       
-wew = fs.readFileSync(`./media/cnf.jpeg`)
+if (isBanned) return  reply(mess.banned)
+const watigm =['confu.jpeg','cnf.jpeg']
+const igmm = watigm[Math.floor(Math.random() * watigm.length)]
+wew = fs.readFileSync(`./media/${igmm}`)
 const sosGay = checkATMuser(sender)   
 lzain = ` ‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎
 *╭✦┅╡ MENU PRINCIPAL ╞┅✦╮*
@@ -2556,7 +2558,7 @@ break
 
 case prefix+'charlie':
 if (isBanned) return  reply(mess.banned)
-if (args.length < 1) return reply('*Has tu pregunta!*')		  
+if (args.length < 1) return reply('Coloca tu pregunta junto al comando!')		  
 const ch =['Si','No','No','Si','Si']
     const cha = ch[Math.floor(Math.random() * ch.length)]
 reply(`𝐂𝐡𝐚𝐫𝐥𝐢𝐞 𝐂𝐡𝐚𝐫𝐥𝐢𝐞
