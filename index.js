@@ -925,7 +925,7 @@ lzain = ` ‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ �
 *┠ೋ━ೋ✧ೋ━ೋ┓*
 *║        🌸Watame🌸*
 *┗ೋ━ೋ✧ೋ━ೋ┛*`      
-cnf.sendMessage(from, wew, image,{contextInfo: sendEphemeral: true, caption:lzain})
+cnf.sendMessage(from, wew, image,{contextInfo: {forwardingScore : 0, isForwarded: false},sendEphemeral: false, caption:lzain})
 addFilter(from)
 break
 
