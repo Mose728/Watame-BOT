@@ -757,7 +757,7 @@ const uploadImages = (buffData, type) => {
 			
 case prefix+'tictactoe':
 if (isBanned) return  reply(mess.banned)
-if (!isGroup) return reply(mess.only.group)
+if (!isGroup) return reply(`[ ❗ ] Este Comando Solo Puede Ser Usado En Grupos UnU`)
 if (args.length < 1) return reply('Etiqueta a tu oponente ⚔️')
 if (isTTT) return reply('Hay un juego en este grupo, espere')
 if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('Etiqueta al objetivo del oponente')
@@ -777,7 +777,7 @@ break
 
 case prefix+'delltictactoe':
 if (isBanned) return  reply(mess.banned)
-if (!isGroup) return reply(mess.only.group)
+if (!isGroup) return reply(`[ ❗ ] Este Comando Solo Puede Ser Usado En Grupos UnU`)
 if (!isTTT) return reply('No hay juegos en este grupo')
 naa = ky_ttt.filter(toek => !toek.id.includes(from)) 
 ky_ttt = naa 
@@ -950,7 +950,8 @@ addFilter(from)
 break
 
 case prefix+ 'ranklindo':
-if (!isGroup) return reply(mess.only.group)
+if (isBanned) return  reply(mess.banned)
+if (!isGroup) return reply(`[ ❗ ] Este Comando Solo Puede Ser Usado En Grupos UnU`)
 tuh = fs.readFileSync(`./stik/lindo.jpg`)
 jds = []
 const YDDY = groupMembers
@@ -968,7 +969,8 @@ addFilter(from)
 break
 
 case prefix+ 'rankgay':
-if (!isGroup) return reply(mess.only.group)
+if (isBanned) return  reply(mess.banned)
+if (!isGroup) return reply(`[ ❗ ] Este Comando Solo Puede Ser Usado En Grupos UnU`)
 tuh = fs.readFileSync(`./stik/gay.jpg`)
 jds = []
 const Z11 = groupMembers
@@ -986,7 +988,8 @@ addFilter(from)
 break
 
 case prefix+ 'rankfeo':
-if (!isGroup) return reply(mess.only.group)
+if (isBanned) return  reply(mess.banned)
+if (!isGroup) return reply(`[ ❗ ] Este Comando Solo Puede Ser Usado En Grupos UnU`)
 tuh = fs.readFileSync(`./stik/lindo.jpg`)
 const YDDDY = groupMembers
 const JJSJ = groupMembers
@@ -1004,8 +1007,8 @@ addFilter(from)
 break
 
 case prefix+ 'ranksexy':
-if (!isGroup) return reply(mess.only.group)
 if (isBanned) return  reply(mess.banned)
+if (!isGroup) return reply(`[ ❗ ] Este Comando Solo Puede Ser Usado En Grupos UnU`)
 tuh = fs.readFileSync(`./stik/lindo.jpg`)
 const Z111 = groupMembers
 const U111 = groupMembers
@@ -1572,7 +1575,7 @@ break
 					
 case prefix+'antilink':
 if (isBanned) return  reply(mess.banned)
-if (!isGroup) return reply(mess.only.group)
+if (!isGroup) return reply(`[ ❗ ] Este Comando Solo Puede Ser Usado En Grupos UnU`)
 if (!isGroupAdmins) return reply(mess.only.admin)
 if (args.length < 1) return reply('Hmmmm')
 if (Number(args[0]) === 1) {
@@ -1934,7 +1937,7 @@ break
 
 case prefix+'linkgroup':
 if (isBanned) return  reply(mess.banned)
-if (!isGroup) return reply(mess.only.group)
+if (!isGroup) return reply(`[ ❗ ] Este Comando Solo Puede Ser Usado En Grupos UnU`)
 if (!isGroupAdmins) return reply(mess.only.admin)
 if (!isBotGroupAdmins) return reply(mess.only.Badmin)
 linkgc = await cnf.groupInviteCode (from)
@@ -1945,7 +1948,7 @@ break
 			       
 case prefix+'grupo':
 if (isBanned) return  reply(mess.banned)		  
-if (!isGroup) return reply(mess.only.group)
+if (!isGroup) return reply(`[ ❗ ] Este Comando Solo Puede Ser Usado En Grupos UnU`)
 if (!isBotGroupAdmins) return reply(mess.only.Badmin)
 if (!isGroupAdmins) return reply(mess.only.admin)		
 if (args[0] === 'abrir') {
@@ -1968,7 +1971,7 @@ break
 				
 case prefix+'listadmin':
 if (isBanned) return  reply(mess.banned)
-if (!isGroup) return reply(mess.only.group)
+if (!isGroup) return reply(`[ ❗ ] Este Comando Solo Puede Ser Usado En Grupos UnU`)
 teks = `Lista de facheritos *${groupMetadata.subject}*\nTotal : ${groupAdmins.length}\n\n`
 no = 0
 for (let admon of groupAdmins) {
@@ -1982,7 +1985,7 @@ break
 case prefix+'promote':
 if (isBanned) return  reply(mess.banned)  
 if (!isGroupAdmins) return reply(mess.only.admin)
-if (!isGroup) return reply(mess.only.group)
+if (!isGroup) return reply(`[ ❗ ] Este Comando Solo Puede Ser Usado En Grupos UnU`)
 if (!isBotGroupAdmins) return reply(mess.only.Badmin)
 if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('Tag target yang ingin di jadi admin!')
 mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
@@ -2003,7 +2006,7 @@ break
 case prefix+'demote':
 if (isBanned) return  reply(mess.banned)                 			  
 if (!isGroupAdmins) return reply(mess.only.admin)
-if (!isGroup) return reply(mess.only.group)
+if (!isGroup) return reply(`[ ❗ ] Este Comando Solo Puede Ser Usado En Grupos UnU`)
  if (!isBotGroupAdmins) return reply(mess.only.Badmin)
 if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('Tag target yang ingin di tidak jadi admin!')
 mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
@@ -2367,7 +2370,7 @@ break
 case prefix+'welcome':
 if (isBanned) return  reply(mess.banned)
 if (!isGroupAdmins) return reply(mess.only.admin)		  
-if (!isGroup) return reply(mess.only.group)
+if (!isGroup) return reply(`[ ❗ ] Este Comando Solo Puede Ser Usado En Grupos UnU`)
 if (args.length < 1) return reply('Quien eres? 7-7')
 if (Number(args[0]) === 1) {
 if (isWelkom) return reply('Ya activo ')
@@ -2386,7 +2389,7 @@ break
 
 case prefix+'kick':
 if (isBanned) return  reply(mess.banned)	  
-if (!isGroup) return reply(mess.only.group)
+if (!isGroup) return reply(`[ ❗ ] Este Comando Solo Puede Ser Usado En Grupos UnU`)
 if (!isBotGroupAdmins) return reply(mess.only.Badmin)
 if (!isGroupAdmins) return reply(mess.only.admin)		
 if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('Tag target yang ingin di tendang!')
@@ -2436,7 +2439,7 @@ break
 case prefix+'notif':
 if (isBanned) return  reply(mess.banned)
 if (!isGroupAdmins) return reply(mess.only.admin)					  
-if (!isGroup) return reply(mess.only.group)
+if (!isGroup) return reply(`[ ❗ ] Este Comando Solo Puede Ser Usado En Grupos UnU`)
 teks = `Notificacion Dada Por: @${sender.split("@")[0]}\n*El mensaje es: ${body.slice(7)}*`
 group = await cnf.groupMetadata(from);
 member = group['participants']
@@ -2704,7 +2707,7 @@ case prefix+'todos':
 if (isBanned) return  reply(mess.banned)
 if (!isGroupAdmins) return reply(mess.only.admin)
 if (!isBotGroupAdmins) return reply(mess.only.Badmin)
-if (!isGroup) return reply(mess.only.group)
+if (!isGroup) return reply(`[ ❗ ] Este Comando Solo Puede Ser Usado En Grupos UnU`)
 var nom = mek.participant
 members_id = []
 teks = '\n'
