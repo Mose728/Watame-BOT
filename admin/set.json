@@ -1,6 +1,6 @@
 {
 	"limitawal" : 0,
-	"memberlimit" : 2,
+	"memberlimit" : 10,
 	"cr" : "ConfuBot*",
 	"BotPrefix" : "/",
 	"author" : "confu",
