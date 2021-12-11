@@ -1067,7 +1067,7 @@ if (!isAntiLink) return reply('*Desactivado*')
 var ini = antilink.indexOf(from)
 antilink.splice(ini, 1)
 fs.writeFileSync('./database/group/antilink.json', JSON.stringify(antilink))
-reply('Desactivar correctamente ✔️')
+reply('Desactivado correctamente ✔️')
 } else {
 reply('Escribe 1 para activar o 0 para desactivar')
 }
