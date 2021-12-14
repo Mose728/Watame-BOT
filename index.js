@@ -787,7 +787,7 @@ break
 
 case prefix+'menu':
 if (isBanned) return  reply(mess.banned)
-const watigm =['confu.jpeg','cnf.jpeg']
+const watigm =['confu.jpeg','cnf.jpeg','Watame01.jpg','Watame02.jpg','Watame03.jpg','Watame04.jpg','Watame06.jpg','Watame07.jpg','Watame08.jpg','Watame09.jpg','Watame10.jpg']
 const igmm = watigm[Math.floor(Math.random() * watigm.length)]
 wew = fs.readFileSync(`./media/${igmm}`)
 const sosGay = checkATMuser(sender)   
