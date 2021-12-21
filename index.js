@@ -2483,34 +2483,40 @@ break
 
 case prefix+'patear':
 if (isBanned) return  reply(mess.banned)          
-mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
-if (mentioned.length > 1) return reply('etiqueta')  
+ment = mek.message.extendedTextMessage.contextInfo.mentionedJid
+pateado = ment[0]
+if (ment.length > 1) return reply('etiqueta')  
 const pat = ['pat1','pat2','pat3','pat4','pat5']
 const pate = pat[Math.floor(Math.random() * pat.length)]				
 result = fs.readFileSync(`./sticker/reac/patad/${pate}.mp4`)
-cnf.sendMessage(from, result, video, { caption: `${pushname} a pateado a @${mentioned[0].split('@')[0]}`})
+cnf.sendMessage(from, result, video)
+cnf.sendMessage(from, `${pushname} está pateando a @${pateado.split('@')[0]}`, text, {contextInfo: {mentionedJid: [pateado]}})
 addFilter(from)
 break
 
 case prefix+'palmaditas':
 if (isBanned) return  reply(mess.banned)          
-mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
-if (mentioned.length > 1) return reply('etiqueta')  
+ment = mek.message.extendedTextMessage.contextInfo.mentionedJid
+palm = ment[0]
+if (ment.length > 1) return reply('etiqueta')  
 const palm = ['pal1','pal2','pal3','pal4','pal5','pal6','pal7']
 const palma = palm[Math.floor(Math.random() * palm.length)]				
 result = fs.readFileSync(`./sticker/reac/palm/${palma}.mp4`)
-cnf.sendMessage(from, result, video, { caption: `${pushname} le esta dando unas palmaditas a @${mentioned[0].split('@')[0]}`})
+cnf.sendMessage(from, result, video)
+cnf.sendMessage(from, `${pushname} le ha dado unas palmaditas a @${palm.split('@')[0]}`, text, {contextInfo: {mentionedJid: [palm]}})
 addFilter(from)
 break
 			
 case prefix+'besar':
 if (isBanned) return  reply(mess.banned)          
-mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
-if (mentioned.length > 1) return reply('etiqueta')  
+ment = mek.message.extendedTextMessage.contextInfo.mentionedJid
+besado = ment[0]
+if (ment.length > 1) return reply('etiqueta')  
 const bes = ['bes1','bes2','bes3','bes4','bes5','bes6','bes7']
 const beso = bes[Math.floor(Math.random() * bes.length)]				
 result = fs.readFileSync(`./sticker/reac/beso/${beso}.mp4`)
-cnf.sendMessage(from, result, video, { caption: `${pushname} esta besando a @${mentioned[0].split('@')[0]}`})
+cnf.sendMessage(from, result, video)
+cnf.sendMessage(from, `${pushname} está besando a @${besado.split('@')[0]}`, text, {contextInfo: {mentionedJid: [besado]}})
 addFilter(from)
 break
 
