@@ -2477,7 +2477,7 @@ const abra = ['ab1','ab2','ab3','ab4','ab5','ab6','ab7','ab8','ab9','ab10']
 const abras = abra[Math.floor(Math.random() * abra.length)]				
 result = fs.readFileSync(`./sticker/reac/abra/${abras}.mp4`)
 cnf.sendMessage(from, result, video)
-cnf.sendMessage(from, `[@${abrazado.split('@')[0]}] te están abrazando.`, text, {contextInfo: {mentionedJid: [abrazado]}})
+cnf.sendMessage(from, `@${abrazado.split('@')[0]} te están abrazando.`, text, {contextInfo: {mentionedJid: [abrazado]}})
 addFilter(from)
 break
 
