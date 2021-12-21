@@ -670,12 +670,12 @@ const uploadImages = (buffData, type) => {
 	
 		if (isCmd && isFiltered(from) && !isGroup) {
         	console.log(chalk.greenBright("├"), chalk.keyword("red")("[ SPAM ]"), chalk.whiteBright(`${command}`), chalk.greenBright("de"), chalk.keyword("yellow")(senderNumber))
-        	return cnf.sendMessage(from, `🙂 Porfavor ${pushname}...\n\nMas lento, espera 3 segundos para poder usar otros comandos.`, MessageType.text, {quoted: fspam})
+        	return cnf.sendMessage(from, `🙂 Porfavor ${pushname}...\n\nMás lento, espera 5 segundos para poder usar otros comandos.`, MessageType.text, {quoted: fspam})
 		}
         
         	if (isCmd && isFiltered(from) && isGroup) {
         	console.log(chalk.greenBright("├"), chalk.keyword("red")("[ SPAM ]"), chalk.whiteBright(`${command}`), chalk.greenBright("de"), chalk.keyword("yellow")(senderNumber))
-        	return cnf.sendMessage(from, `Por favor ${pushname}, espera 10 segundos para poder usar otros comandos, gracias.`, MessageType.text, {quoted: fspam})
+        	return cnf.sendMessage(from, `Por favor ${pushname}, espera 5 segundos para poder usar otros comandos, gracias.`, MessageType.text, {quoted: fspam})
 		}
 	   
 	   
@@ -1740,6 +1740,7 @@ break
 
 case prefix+'ping':
 if (isBanned) return  reply(mess.banned)
+if (!isGroup) return reply(`[ ❗ ] Este Comando Solo Puede Ser Usado En Grupos UnU`)
 if (!isGroupAdmins) return reply(mess.only.admin)
 uptime = process.uptime()
 const timestampi = speed();
