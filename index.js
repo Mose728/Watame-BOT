@@ -2497,13 +2497,13 @@ break
 case prefix+'palmaditas':
 if (isBanned) return  reply(mess.banned)          
 ment = mek.message.extendedTextMessage.contextInfo.mentionedJid
-palm = ment[0]
+palmadas = ment[0]
 if (ment.length > 1) return reply('etiqueta')  
 const palm = ['pal1','pal2','pal3','pal4','pal5','pal6','pal7']
 const palma = palm[Math.floor(Math.random() * palm.length)]				
 result = fs.readFileSync(`./sticker/reac/palm/${palma}.mp4`)
 cnf.sendMessage(from, result, video)
-cnf.sendMessage(from, `${pushname} le ha dado unas palmaditas a @${palm.split('@')[0]}`, text, {contextInfo: {mentionedJid: [palm]}})
+cnf.sendMessage(from, `${pushname} le ha dado unas palmaditas a @${palmadas.split('@')[0]}`, text, {contextInfo: {mentionedJid: [palmadas]}})
 addFilter(from)
 break
 			
