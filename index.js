@@ -2470,18 +2470,19 @@ break
 				
 case prefix+'abrazar':
 if (isBanned) return  reply(mess.banned)
-mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
+ment = mek.message.extendedTextMessage.contextInfo.mentionedJid
+abrazado = ment[0]
 if (mentioned.length > 1) return reply('etiqueta')  
 const abra = ['ab1','ab2','ab3','ab4','ab5','ab6','ab7','ab8','ab9','ab10']
 const abras = abra[Math.floor(Math.random() * abra.length)]				
 result = fs.readFileSync(`./sticker/reac/abra/${abras}.mp4`)
-cnf.sendMessage(from, result, video, { caption: `${pushname} está abrazando a [@${mentioned[0].split('@')[0]}]`})
+cnf.sendMessage(from, result, video)
+cnf.sendMessage(from, `[@${abrazado.split('@')[0]}] te están abrazando.`, text, {contextInfo: {mentionedJid: [abrazado]}})
 addFilter(from)
 break
 
 case prefix+'patear':
 if (isBanned) return  reply(mess.banned)          
-if (!isRegistered) return reply(ind.noregis())		
 mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
 if (mentioned.length > 1) return reply('etiqueta')  
 const pat = ['pat1','pat2','pat3','pat4','pat5']
@@ -2493,7 +2494,6 @@ break
 
 case prefix+'palmaditas':
 if (isBanned) return  reply(mess.banned)          
-if (!isRegistered) return reply(ind.noregis())		
 mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
 if (mentioned.length > 1) return reply('etiqueta')  
 const palm = ['pal1','pal2','pal3','pal4','pal5','pal6','pal7']
