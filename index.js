@@ -2483,7 +2483,7 @@ case prefix+'patear':
 if (isBanned) return  reply(mess.banned)          
 ment = mek.message.extendedTextMessage.contextInfo.mentionedJid
 pateado = ment[0]
-if (mentioned.length > 1) return reply('etiqueta')  
+if (ment.length > 1) return reply('etiqueta')  
 const pat = ['pat1','pat2','pat3','pat4','pat5']
 const pate = pat[Math.floor(Math.random() * pat.length)]				
 result = fs.readFileSync(`./sticker/reac/patad/${pate}.mp4`)
