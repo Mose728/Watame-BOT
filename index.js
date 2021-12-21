@@ -2499,7 +2499,7 @@ const palm = ['pal1','pal2','pal3','pal4','pal5','pal6','pal7']
 const palma = palm[Math.floor(Math.random() * palm.length)]				
 result = fs.readFileSync(`./sticker/reac/palm/${palma}.mp4`)
 cnf.sendMessage(from, result, video) 
-cnf.sendMessage(from, `${pushname} le esta dando unas palmaditas a @${mentioned[0].split('@')[0]}`)
+cnf.sendMessage(from, { caption: `${pushname} le esta dando unas palmaditas a @${mentioned[0].split('@')[0]}`})
 addFilter(from)
 break
 			
