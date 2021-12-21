@@ -2472,7 +2472,7 @@ case prefix+'abrazar':
 if (isBanned) return  reply(mess.banned)
 ment = mek.message.extendedTextMessage.contextInfo.mentionedJid
 abrazado = ment[0]
-if (mentioned.length > 1) return reply('etiqueta')  
+if (ment.length > 1) return reply('etiqueta')  
 const abra = ['ab1','ab2','ab3','ab4','ab5','ab6','ab7','ab8','ab9','ab10']
 const abras = abra[Math.floor(Math.random() * abra.length)]				
 result = fs.readFileSync(`./sticker/reac/abra/${abras}.mp4`)
