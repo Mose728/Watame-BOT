@@ -2487,7 +2487,7 @@ if (ment.length > 1) return reply('etiqueta')
 const pat = ['pat1','pat2','pat3','pat4','pat5']
 const pate = pat[Math.floor(Math.random() * pat.length)]				
 result = fs.readFileSync(`./sticker/reac/patad/${pate}.mp4`)
-cnf.sendMessage(from, result, video, { caption: `${pushname} a pateado a @${pateado.split('@')[0]}`})
+cnf.sendMessage(from, result, video, { caption: `${pushname} a pateado a @${pateado.split('@')[0]}`}, {contextInfo: {mentionedJid: [pateado]}})
 addFilter(from)
 break
 
