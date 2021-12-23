@@ -2715,7 +2715,7 @@ profilp = await cnf.getProfilePicture(`${sender.split('@')[0]}@s.whatsapp.net`)
 } catch {
 profilp = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'}
 buffph = await getBuffer(profilp)
-buff = await getBuffer(`https://api.zeks.me/api/phub?apikey=kka0xgL5FZOo9eOOJgZO1t31z1M&img=${buffph}&username=${pushname}&msg=${bpp}`, {method: 'get'})
+buff = await getBuffer(`https://api.zeks.me/api/phub?apikey=kka0xgL5FZOo9eOOJgZO1t31z1M&img=${buffph}&username=Anonimo&msg=${bpp}`, {method: 'get'})
 cnf.sendMessage(from, buff, image, {quoted: mek})                  
 addFilter(from)
 break  
