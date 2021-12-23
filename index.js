@@ -2710,7 +2710,7 @@ if (isBanned) return  reply(mess.banned)
 if (!isGroup) return reply(`「 ❗ 」ESTE COMANDO SOLO PUEDE SER USADO EN GRUPOS`)
 bpp = `${body.slice(7)}`
 if (args.length < 1) return reply('En dónde está el texto?')
-buff = await getBuffer(`https://api.zeks.me/api/phub?apikey=kka0xgL5FZOo9eOOJgZO1t31z1M&img=https://thumbs2.imgbox.com/8d/7c/0n7hB4zl_t.png&username=${pushname}&msg=${bpp}`, {method: 'get'})
+buff = await getBuffer(`https://api.zeks.me/api/phub?apikey=kka0xgL5FZOo9eOOJgZO1t31z1M&img=https://thumbs2.imgbox.com/8d/7c/0n7hB4zl_t.png&username=Anonimo&msg=${bpp}`, {method: 'get'})
 cnf.sendMessage(from, buff, image, {quoted: mek})                  
 addFilter(from)
 break  
