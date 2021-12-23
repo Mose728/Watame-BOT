@@ -2573,9 +2573,18 @@ cnf.sendMessage(from, buffer1, video, {mimetype: 'video/mp4', filename: `${anu.r
 addFilter(from)
 break
 
+case prefix+'tiktok':
+if (isBanned) return  reply(mess.banned)
+if (args.length < 1) return reply('Adjunta el enlace 😾')
+tik = args.join(" ")
+tok = await fetchJson(`https://api.xteam.xyz/dl/tiktok?url=${tik}&APIKEY=5f83df033d01e54c`)
+buffer = await getBuffer(anu.result.link_dl1)
+cnf.sendMessage(from, buffer, video)
+break
+
 case prefix+'charlie':
 if (isBanned) return  reply(mess.banned)
-if (args.length < 1) return reply('Coloca tu pregunta junto al comando!')		  
+if (args.length < 1) return reply('Coloca tu pregunta junto al comando!')
 const ch =['Si','No','No','Si','Si']
     const cha = ch[Math.floor(Math.random() * ch.length)]
 reply(`𝐂𝐡𝐚𝐫𝐥𝐢𝐞 𝐂𝐡𝐚𝐫𝐥𝐢𝐞
