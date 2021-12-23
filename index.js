@@ -2590,7 +2590,7 @@ if (args.length < 1) return reply('Adjunta el enlace 😾')
 tik = args.join(" ")
 tok = await fetchJson(`https://api.xteam.xyz/dl/tiktok?url=${tik}&APIKEY=5f83df033d01e54c`)
 buffer = await getBuffer(tok.result.link_dl1)
-cnf.sendMessage(from, buffer, video)
+cnf.sendMessage(from, buffer, video, {quoted: mek})
 break
 
 case prefix+'charlie':
