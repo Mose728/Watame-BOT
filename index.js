@@ -2590,7 +2590,7 @@ if (args.length < 1) return reply('Adjunta el enlace 😾')
 facek = args.join(" ")
 book = await fetchJson(`https://api.xteam.xyz/dl/fbv2?url=${facek}&APIKEY=5f83df033d01e54c`)
 wing = ` Pedido entregado 🕊 `
-buffer = await getBuffer(bok.result.sd.url)
+buffer = await getBuffer(book.result.sd.url)
 cnf.sendMessage(from, buffer, video, {quoted: mek ,caption: wing})
 addFilter(from)
 break
