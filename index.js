@@ -2592,9 +2592,9 @@ case prefix+'twitter':
 if (isBanned) return  reply(mess.banned)
 if (args.length < 1) return reply('Adjunta el enlace 😾')
 twiit = args.join(" ")
-twiter = await fetchJson(`https://hardianto.xyz/api/download/twitter?url=${twiit}&apikey=hardianto`)
+twiter = await fetchJson(`https://kocakz.herokuapp.com/api/media/twvid?url=${twiit}`)
 nwtwk = ` Pedido entregado 🕊 `
-buffer = await getBuffer(twiter.HD)
+buffer = await getBuffer(twiter.getVideo)
 cnf.sendMessage(from, buffer, video, {quoted: mek ,caption: nwtwk})
 break
 
