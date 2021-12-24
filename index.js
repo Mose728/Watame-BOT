@@ -2602,9 +2602,9 @@ case prefix+'fb':
 if (isBanned) return  reply(mess.banned)
 if (args.length < 1) return reply('Adjunta el enlace 😾')
 facek = args.join(" ")
-book = await fetchJson(`https://api.xteam.xyz/dl/fbv2?url=${facek}&APIKEY=5f83df033d01e54c`)
+book = await fetchJson(`https://api.neoxr.eu.org/api/fb?url=${facek}&apikey=2echZwzF0d`)
 wing = ` Pedido entregado 🕊 `
-buffer = await getBuffer(book.result.sd.url)
+buffer = await getBuffer(book.data.url)
 cnf.sendMessage(from, buffer, video, {quoted : freply,caption: wing})
 addFilter(from)
 break
