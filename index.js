@@ -2588,9 +2588,9 @@ case prefix+'twitter':
 if (isBanned) return  reply(mess.banned)
 if (args.length < 1) return reply('Adjunta el enlace 😾')
 twiit = args.join(" ")
-twiter = await fetchJson(`https://api.lolhuman.xyz/api/twitter?apikey=2a95668d6170392ab6dd5ce1&url=${twiit}`)
+twiter = await fetchJson(`https://hardianto.xyz/api/download/twitter?url=${twiit}&apikey=hardianto`)
 nwtwk = ` Pedido entregado 🕊 `
-buffer = await getBuffer(twiter.result.link.url)
+buffer = await getBuffer(twiter.HD)
 cnf.sendMessage(from, buffer, video, {quoted: mek ,caption: nwtwk})
 break
 
