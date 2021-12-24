@@ -2613,9 +2613,9 @@ case prefix+'tiktok':
 if (isBanned) return  reply(mess.banned)
 if (args.length < 1) return reply('Adjunta el enlace 😾')
 tik = args.join(" ")
-tok = await fetchJson(`https://api.xteam.xyz/dl/tiktok?url=${tik}&APIKEY=5f83df033d01e54c`)
+tok = await fetchJson(`https://hadi-api.herokuapp.com/api/tiktok?url=${tik}&apikey=b1eb05ffbf`)
 nwtok = ` Pedido entregado 🕊 `
-buffer = await getBuffer(tok.result.link_dl1)
+buffer = await getBuffer(tok.result.video.nowm)
 cnf.sendMessage(from, buffer, video, {quoted : freply,caption: nwtok})
 break
 
