@@ -2591,7 +2591,7 @@ facek = args.join(" ")
 book = await fetchJson(`https://api.xteam.xyz/dl/fbv2?url=${facek}&APIKEY=5f83df033d01e54c`)
 wing = ` Pedido entregado 🕊 `
 buffer = await getBuffer(book.result.sd.url)
-cnf.sendMessage(from, buffer, video, {quoted: mek ,caption: wing})
+cnf.sendMessage(from, buffer, video, {quoted : freply,caption: wing})
 addFilter(from)
 break
 
@@ -2600,8 +2600,9 @@ if (isBanned) return  reply(mess.banned)
 if (args.length < 1) return reply('Adjunta el enlace 😾')
 tik = args.join(" ")
 tok = await fetchJson(`https://api.xteam.xyz/dl/tiktok?url=${tik}&APIKEY=5f83df033d01e54c`)
+nwtok = ` Pedido entregado 🕊 `
 buffer = await getBuffer(tok.result.link_dl1)
-cnf.sendMessage(from, buffer, video, {quoted: mek})
+cnf.sendMessage(from, buffer, video, {quoted : freply,caption: nwtok})
 break
 
 case prefix+'charlie':
