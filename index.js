@@ -2584,6 +2584,18 @@ cnf.sendMessage(from, buffer1, video, {mimetype: 'video/mp4', filename: `${anu.r
 addFilter(from)
 break
 
+case prefix+'twitter':
+if (isBanned) return  reply(mess.banned)
+if (args.length < 1) return reply('Adjunta el enlace 😾')
+twiit = args.join(" ")
+const apistw =['7c6c9a9e1138b473e6c64388','ff8508e71c332b870c1e8a1b','b57c69801b7b3e63b3b3e94c','e07d2ff8ff95d995809ec7b3','99ae3d189586081a2be37357','8cd8a7918eab2510afd496c0','69ca7c7a6206090978680cbe','9e91ba5f31f1eb7c772f3100','715bbe735bd7e25872ef40d6','5453dae015e205a91b6994ff']
+const terr = apistw[Math.floor(Math.random() * apistw.length)]
+twiter = await fetchJson(`https://api.lolhuman.xyz/api/twitter?apikey=${terr}&url=${twiit}`)
+nwtwk = ` Pedido entregado 🕊 `
+buffer = await getBuffer(twiter.result.link.url)
+cnf.sendMessage(from, buffer, video, {quoted: mek ,caption: nwtwk})
+break
+
 case prefix+'fb':
 if (isBanned) return  reply(mess.banned)
 if (args.length < 1) return reply('Adjunta el enlace 😾')
