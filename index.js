@@ -2595,7 +2595,7 @@ twiit = args.join(" ")
 twiter = await fetchJson(`https://kocakz.herokuapp.com/api/media/twvid?url=${twiit}`)
 nwtwk = ` Pedido entregado 🕊 `
 buffer = await getBuffer(twiter.getVideo)
-cnf.sendMessage(from, buffer, video, {quoted: mek ,caption: nwtwk})
+cnf.sendMessage(from, buffer, video, {quoted: freply ,caption: nwtwk})
 break
 
 case prefix+'fb':
