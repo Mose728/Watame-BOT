@@ -2584,6 +2584,17 @@ cnf.sendMessage(from, buffer1, video, {mimetype: 'video/mp4', filename: `${anu.r
 addFilter(from)
 break
 
+case prefix+'fb':
+if (isBanned) return  reply(mess.banned)
+if (args.length < 1) return reply('Adjunta el enlace 😾')
+facek = args.join(" ")
+book = await fetchJson(`https://api.xteam.xyz/dl/fbv2?url=${facek}&APIKEY=5f83df033d01e54c`)
+wing = ` Pedido entregado 🕊 `
+buffer = await getBuffer(bok.result.sd.url)
+cnf.sendMessage(from, buffer, video, {quoted: mek ,caption: wing})
+addFilter(from)
+break
+
 case prefix+'tiktok':
 if (isBanned) return  reply(mess.banned)
 if (args.length < 1) return reply('Adjunta el enlace 😾')
