@@ -2972,7 +2972,7 @@ nuber = parseInt(budy)
 if (isNaN(nuber)) return
 if (nuber < 1 || nuber > 9) return reply('Ingrese los números correctamente')
 main = ky_ttt.filter(hjh => hjh.id.includes(from)) 
-if (!tttawal.includes(main[0].angka[nuber])) return reply('Ya lleno, los otros contenidos')
+if (!tttawal.includes(main[0].angka[nuber])) return reply('Un momento por favor')
 if (main[0].gilir.includes(sender)) return reply('Espera tu turno')
 s = '❌'
 main[0].angka[nuber] = s
@@ -3046,7 +3046,7 @@ nuber = parseInt(budy)
 if (isNaN(nuber)) return
 if (nuber < 1 || nuber > 9) return reply('Ingrese los números correctamente')
 main = ky_ttt.filter(hjh => hjh.id.includes(from)) 
-if (!tttawal.includes(main[0].angka[nuber])) return reply('Ya lleno, los otros contenidos 🥺')
+if (!tttawal.includes(main[0].angka[nuber])) return reply('Un momento por favor')
 if (main[0].gilir.includes(sender)) return reply('Espera tu turno 🥀')
 s = '⭕'
 main[0].angka[nuber] = s
