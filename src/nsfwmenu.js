@@ -38,6 +38,7 @@ const nsfwmenu = (prefix, pushname) => {
 │๛ ${prefix}nekopoi
 │๛ ${prefix}genshin
 │๛ ${prefix}kimetsu
+│๛ ${prefix}darling
 │๛ ${prefix}futanari
 │๛ ${prefix}konosuba
 │๛ ${prefix}cumimage
