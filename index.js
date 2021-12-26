@@ -2579,10 +2579,10 @@ case prefix+'status':
 if (isBanned) return  reply(mess.banned)
 anuapi = await fetchJson(`https://api.lolhuman.xyz/api/checkapikey?apikey=c9b3628121d4a8adfbff2e11`)
 infoapi = `◪ API-KEY
-├ *Nombre : 🔰Manuel🔰*
-├ *Máximo de solicitudes :*
+├ *NOMBRE : 🔰Manuel🔰*
+├ *LÍMITE:*
 ├  1000
-├ *Solicitudes hoy*
+├ *HOY*
 ├  ${anuapi.result.today}
 └─────────────`
 cnf.sendMessage(from, infoapi, text,{quoted : freply})
