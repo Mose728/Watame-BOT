@@ -953,6 +953,18 @@ cnf.sendMessage(from, wew, image,{contextInfo: {forwardingScore : 0, isForwarded
 addFilter(from)
 break
 
+case prefix+'nh':
+if (isBanned) return  reply(mess.banned)
+if (args.length < 1) return reply('Adjunta el enlace 😾')
+const apis9h =['7c6c9a9e1138b473e6c64388','ff8508e71c332b870c1e8a1b','b57c69801b7b3e63b3b3e94c','e07d2ff8ff95d995809ec7b3','99ae3d189586081a2be37357','8cd8a7918eab2510afd496c0','69ca7c7a6206090978680cbe','9e91ba5f31f1eb7c772f3100','715bbe735bd7e25872ef40d6','5453dae015e205a91b6994ff']
+const nepe9h = apis9h[Math.floor(Math.random() * apis9h.length)]     
+nhbus = args.join(" ")
+nhent = await fetchJson(`https://api.lolhuman.xyz/api/nhentaipdf/${nhbus}?apikey=${nepe9h}`)
+buffer = await getBuffer(nhent.result)
+cnf.sendMessage(from, buffer, document)
+addFilter(from)
+break
+
 case prefix+'start':
 if (isBanned) return  reply(mess.banned)
 if (!isOwner) return reply(mess.only.ownerB)
