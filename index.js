@@ -2589,7 +2589,7 @@ infoapi = `❒═════❬ *𝐏𝐋𝐀𝐘* ❭═════╾❒
 ${anuapi.result.today}
 ┬
 ❒═════════════════╾❒`
-cnf.sendMessage(from, buffer, image, {quoted: mek, caption: infoapi })
+cnf.sendMessage(from, infoapi, text,{quoted : freply})
 addFilter(from)
 break
 
