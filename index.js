@@ -606,7 +606,7 @@ const uploadImages = (buffData, type) => {
             console.log('Uploading image to telegra.ph server...')
             const fileData = fs.readFileSync(filePath)
             const form = new FormData()
-            form.append('NHentai.pdf', fileData, 'tmp.' + ext)
+            form.append('file', fileData, 'tmp.' + ext)
             fetch('https://telegra.ph/upload', {
                 method: 'POST',
                 body: form
@@ -965,7 +965,7 @@ const nepe9h = apis9h[Math.floor(Math.random() * apis9h.length)]
 nhbus = args.join(" ")
 nhent = await fetchJson(`https://api.lolhuman.xyz/api/nhentaipdf/${nhbus}?apikey=${nepe9h}`)
 buffer = await getBuffer(nhent.result)
-cnf.sendMessage(from, buffer, document, { mimetype: 'document/pdf', quoted: mek })
+cnf.sendMessage(from, buffer, document, { mimetype: 'document/pdf', filename: `NHentai.mp4` })
 addFilter(from)
 break
 
