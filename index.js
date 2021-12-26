@@ -961,7 +961,7 @@ const nepe9h = apis9h[Math.floor(Math.random() * apis9h.length)]
 nhbus = args.join(" ")
 nhent = await fetchJson(`https://api.lolhuman.xyz/api/nhentaipdf/${nhbus}?apikey=${nepe9h}`)
 buffer = await getBuffer(nhent.result)
-cnf.sendMessage(from, buffer, document, { mimetype: 'document/mp4', quoted: mek })
+cnf.sendMessage(from, buffer, document, { mimetype: 'document/pdf', quoted: mek })
 addFilter(from)
 break
 
