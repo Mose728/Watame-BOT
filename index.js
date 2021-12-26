@@ -2974,21 +2974,7 @@ if (args.length > 10) return reply('Maximo 10 letras')
 buff = await getBuffer(`https://api.lolhuman.xyz/api/photooxy1/lovemessage?apikey=${nepe5}&text=${bpp8}`, {method: 'get'})
 cnf.sendMessage(from, buff, image, {quoted: mek})
 addFilter(from)
-break  
-					
-case prefix+'wpanime':
-if (isBanned) return  reply(mess.banned)
-if (!isGroup) return reply(`「 ❗ 」ESTE COMANDO SOLO PUEDE SER USADO EN GRUPOS`)
-wpani = await axios.get('https://nekos.life/api/v2/img/wallpaper')
-bpani = await getBuffer(wpani.data.url)
-const anim =['Aquí tienes 💕🦈','¿Linda foto no?','Pedido entregado 🕊']
-const animx = anim[Math.floor(Math.random() * anim.length)]
-cnf.sendMessage(from, bpani, image, { caption: animx, quoted: mek })
-.catch(err => {
-return('E-error ⊙﹏⊙')
-})
-addFilter(from)
-break
+break 
 					
 case prefix+'lesbi':
 if (isBanned) return  reply(mess.banned)
