@@ -963,6 +963,7 @@ break
 
 case prefix+'nh':
 if (isBanned) return  reply(mess.banned)
+if (!isGroup) return reply(`[ ❗ ] Este Comando Solo Puede Ser Usado En Grupos UnU`)
 if (args.length < 1) return reply('Adjunta el enlace 😾')   
 nhbus = args.join(" ")
 nhent = await fetchJson(`https://api.lolhuman.xyz/api/nhentaipdf/${nhbus}?apikey=c9b3628121d4a8adfbff2e11`)
@@ -2577,20 +2578,13 @@ break
 case prefix+'status':
 if (isBanned) return  reply(mess.banned)
 anuapi = await fetchJson(`https://api.lolhuman.xyz/api/checkapikey?apikey=c9b3628121d4a8adfbff2e11`)
-infoapi = `❒═════❬ *𝐏𝐋𝐀𝐘* ❭═════╾❒
-├‣ *USUARIO* : 
-┴
-┠━➣ 🔰Manuel🔰
-┬
-├‣ *SOLICITUDES POR DIA* : 
-┴
-┠━➣ 1000
-┬
-├‣ *SOLICITUDES HOY* : 
-┴
-┠━➣ ${anuapi.result.today}
-┬
-❒═════════════════╾❒`
+infoapi = `◪ API-KEY
+├ *Nombre : 🔰Manuel🔰*
+├ *Máximo de solicitudes :*
+├  1000
+├ *Solicitudes hoy*
+├  ${anuapi.result.today}
+└─────────────`
 cnf.sendMessage(from, infoapi, text,{quoted : freply})
 addFilter(from)
 break
