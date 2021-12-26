@@ -2572,6 +2572,27 @@ cnf.sendMessage(from, `${pushname} está besando a @${besado.split('@')[0]}`, te
 addFilter(from)
 break
 
+case prefix+'status':
+if (isBanned) return  reply(mess.banned)
+anuapi = await fetchJson(`https://api.lolhuman.xyz/api/checkapikey?apikey=c9b3628121d4a8adfbff2e11`)
+infoapi = `❒═════❬ *𝐏𝐋𝐀𝐘* ❭═════╾❒
+├‣ *USUARIO* : 
+┴
+🔰Manuel🔰
+┬
+├‣ *SOLICITUDES POR DIA* : 
+┴
+1000
+┬
+├‣ *SOLICITUDES HOY* : 
+┴
+${anuapi.result.today}
+┬
+❒═════════════════╾❒`
+cnf.sendMessage(from, buffer, image, {quoted: mek, caption: infoapi })
+addFilter(from)
+break
+
 case prefix+'play':
 if (isBanned) return  reply(mess.banned)          	  
 if (args.length < 1) return reply('Coloca el enlace de la canción!')
