@@ -389,7 +389,7 @@ isPlayer11 = isGroup ? players11.includes(sender) : false
                     if(mime.split("/")[0] === "audio"){
                         mime = Mimetype.mp4Audio
                     }
-                    if(mime === "application/pdf"){
+                    if(mime === "document/pdf"){
                         type = MessageType.document
                         mime = Mimetype.pdf
                     }
