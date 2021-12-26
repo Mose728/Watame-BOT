@@ -389,7 +389,8 @@ isPlayer11 = isGroup ? players11.includes(sender) : false
                     if(mime.split("/")[0] === "audio"){
                         mime = Mimetype.mp4Audio
                     }
-                    if(mime.split("/")[0] === "document"){
+                    if(mime === "application/pdf"){
+                        type = MessageType.document
                         mime = Mimetype.pdf
                     }
                     cnf.sendMessage(to, media, type, { quoted: mek, mimetype: mime, caption: text,contextInfo: {"mentionedJid": mids}})
