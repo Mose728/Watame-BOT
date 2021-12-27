@@ -2648,7 +2648,18 @@ facek = args.join(" ")
 book = await fetchJson(`https://api.lolhuman.xyz/api/facebook2?apikey=c9b3628121d4a8adfbff2e11&url=${facek}`)
 wing = ` Pedido entregado 🕊 `
 buffer = await getBuffer(book.result)
-cnf.sendMessage(from, buffer, video, {quoted : freply,caption: wing})
+cnf.sendMessage(from, buffer, video, {quoted : freply, caption: wing})
+addFilter(from)
+break
+
+case prefix+'inst':
+if (isBanned) return  reply(mess.banned)
+if (args.length < 1) return reply('Adjunta el enlace 😾')    
+tagr = args.join(" ")
+insm = await fetchJson(`https://api.lolhuman.xyz/api/instagram?apikey=c9b3628121d4a8adfbff2e11&url=${tagr}`)
+wing = ` Pedido entregado 🕊 `
+buffer = await getBuffer(insm.result)
+cnf.sendMessage(from, buffer, video, {quoted : freply, caption: wing})
 addFilter(from)
 break
 
