@@ -1072,7 +1072,7 @@ break
 
 case prefix+'nsfwmenu':
 if (isBanned) return  reply(mess.banned)
-cnf.sendMessage(from, nsfwmenu(prefix, sender), text, {quoted: mek})
+cnf.sendMessage(from, nsfwmenu(prefix, sender), text, {quoted: freply})
 addFilter(from)
 break
 
