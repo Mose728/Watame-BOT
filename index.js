@@ -832,7 +832,7 @@ lzain = ` ‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ �
 *╟ ❒ ${prefix}nh*
 *╟*๛ _Adjunta el código de manga_
 *╟ ❒ ${prefix}gimage*
-*╟*๛ _Busca cualquier cosa en google_
+*╟*๛ _Busca en imágenes de google_
 *╟ ❒ ${prefix}tiktok*
 *╟*๛ _Descarga videos sin marca de agua_
 *╟ ❒ ${prefix}telesticker*
@@ -979,6 +979,18 @@ cnf.sendMessage(from, buffer, document, { mimetype: 'document/pdf', filename: `N
 addFilter(from)
 break
 
+case prefix+'gimage':
+if (isBanned) return  reply(mess.banned)
+if (!isGroup) return reply(`[ ❗ ] Este Comando Solo Puede Ser Usado En Grupos UnU`)
+if (args.length < 1) return reply('Coloca una palabra para la búsqueda 🤦‍♂️')
+gima = args.join(" ")
+mage = await getBuffer(`https://api.lolhuman.xyz/api/gimage?apikey=c9b3628121d4a8adfbff2e11&query=${gima}, {method: 'get'}`)
+const googlei =['Aquí tienes 💕🦈','Pedido entregado 🕊']
+const gimag = googlei[Math.floor(Math.random() * googlei.length)]
+cnf.sendMessage(from, mage, image, { caption: gimag, quoted: mek })
+addFilter(from)
+break
+
 case prefix+'telesticker':
 if (isBanned) return  reply(mess.banned)
 if (!isGroup) return reply(`[ ❗ ] Este Comando Solo Puede Ser Usado En Grupos UnU`)
@@ -986,7 +998,6 @@ if (args.length < 1) return reply('Adjunta el enlace 😾')
 teles = args.join(" ")
 teleg = await fetchJson(`https://api.lolhuman.xyz/api/telestick?apikey=c9b3628121d4a8adfbff2e11&url=${teles}`)
 dteles = teleg.result.sticker
-if (teleg.error) return reply('El enlace no es válido 😿')
 for (sticker_ in dteles) {buffer = await getBuffer(dteles[sticker_])
 await cnf.sendMessage(from, buffer, sticker)}
 addFilter(from)
@@ -2884,7 +2895,7 @@ case prefix+'waifu':
 if (isBanned) return  reply(mess.banned) 
 if (!isGroup) return reply(`[ ❗ ] Este Comando Solo Puede Ser Usado En Grupos UnU`)
 if (!isBotGroupAdmins) return reply(mess.only.Badmin)
-waifu = await getBuffer(`https://api.lolhuman.xyz/api/random/waifu?apikey=c9b3628121d4a8adfbff2e11`,{method: 'get'})
+waifu = await getBuffer(`https://api.lolhuman.xyz/api/random/waifu?apikey=c9b3628121d4a8adfbff2e11`, {method: 'get'})
 const waiff =['Aquí tienes 💕🦈','¿Linda foto no?','Pedido entregado 🕊']
 const wife = waiff[Math.floor(Math.random() * waiff.length)]
 cnf.sendMessage(from, waifu, image, { caption: wife, quoted: mek })
