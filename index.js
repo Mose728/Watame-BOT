@@ -2721,7 +2721,7 @@ insm = await fetchJson(`https://api.lolhuman.xyz/api/instagram?apikey=c9b3628121
 winsg = ` Pedido entregado 🕊 `
 dinst = insm.result
 for (result_ in dinst) {buffer = await getBuffer(dinst[result_])
-await cnf.sendMessage(from, buffer, video, {quoted : freply, caption: winsg})
+await cnf.sendMessage(from, buffer, video, {quoted : freply, caption: winsg})}
 addFilter(from)
 break
 
