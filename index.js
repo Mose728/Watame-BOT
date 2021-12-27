@@ -990,7 +990,7 @@ ${spot.result.duration} Segundos
 ❒═════════════════╾❒`
 buffer = await getBuffer(spot.result.thumbnail)
 dspoti = await getBuffer(spot.result.link)
-cnf.sendMessage(from, buffer, image, {quoted: mek, caption: infospoti })
+cnf.sendMessage(from, buffer, image, {quoted: freply, caption: infospoti })
 cnf.sendMessage(from, dspoti, audio, {mimetype: 'audio/mp4', filename: `${spot.result.title}.mp3`})
 addFilter(from)
 break
