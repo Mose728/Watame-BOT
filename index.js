@@ -968,10 +968,37 @@ cnf.sendMessage(from, wew, image,{contextInfo: {forwardingScore : 0, isForwarded
 addFilter(from)
 break
 
+case prefix+'spoti':
+if (isBanned) return  reply(mess.banned)
+if (!isGroup) return reply(`[ ❗ ] Este Comando Solo Puede Ser Usado En Grupos UnU`)
+if (args.length < 1) return reply('Adjunta el enlace de la canción😾')
+stify = args.join(" ")
+spot = await fetchJson(`https://api.lolhuman.xyz/api/spotify?apikey=c9b3628121d4a8adfbff2e11&url=${stify}`)
+infospoti = `❒═════❬ *SPOTIFY* ❭═════╾❒
+├‣ *Título* : 
+┴
+${spot.result.title}
+┬
+├‣ *Artista* : 
+┴
+${spot.result.artists}
+┬
+├‣ *Duración* : 
+┴
+${spot.result.duration} Segundos
+┬
+❒═════════════════╾❒`
+buffer = await getBuffer(spot.result.thumbnail)
+dspoti = await getBuffer(spot.result.link)
+cnf.sendMessage(from, buffer, image, {quoted: mek, caption: infospoti })
+cnf.sendMessage(from, dspoti, audio, {mimetype: 'audio/mp4', filename: `${spot.result.title}.mp3`})
+addFilter(from)
+break
+
 case prefix+'nh':
 if (isBanned) return  reply(mess.banned)
 if (!isGroup) return reply(`[ ❗ ] Este Comando Solo Puede Ser Usado En Grupos UnU`)
-if (args.length < 1) return reply('Adjunta el enlace 😾')   
+if (args.length < 1) return reply('Adjunta el código 😾')   
 nhbus = args.join(" ")
 nhent = await fetchJson(`https://api.lolhuman.xyz/api/nhentaipdf/${nhbus}?apikey=c9b3628121d4a8adfbff2e11`)
 buffer = await getBuffer(nhent.result)
