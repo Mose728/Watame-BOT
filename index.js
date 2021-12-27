@@ -973,6 +973,18 @@ cnf.sendMessage(from, buffer, document, { mimetype: 'document/pdf', filename: `N
 addFilter(from)
 break
 
+case prefix+'telesticker':
+if (isBanned) return  reply(mess.banned)
+if (!isGroup) return reply(`[ ❗ ] Este Comando Solo Puede Ser Usado En Grupos UnU`)
+if (args.length < 1) return reply('Adjunta el enlace 😾')   
+teles = args.join(" ")
+teleg = await fetchJson(`https://api.lolhuman.xyz/api/telestick?apikey=c9b3628121d4a8adfbff2e11&url=${teles}`)
+dteles = teleg.result.sticker
+for (sticker_ in dteles) {buffer = await getBuffer(dteles[sticker_])}
+cnf.sendMessage(from, buffer, sticker)
+addFilter(from)
+break
+
 case prefix+'start':
 if (isBanned) return  reply(mess.banned)
 if (!isOwner) return reply(mess.only.ownerB)
