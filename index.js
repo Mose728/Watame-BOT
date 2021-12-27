@@ -2718,9 +2718,10 @@ if (isBanned) return  reply(mess.banned)
 if (args.length < 1) return reply('Adjunta el enlace 😾')    
 tagr = args.join(" ")
 insm = await fetchJson(`https://api.lolhuman.xyz/api/instagram?apikey=c9b3628121d4a8adfbff2e11&url=${tagr}`)
-wing = ` Pedido entregado 🕊 `
-buffer = await getBuffer(insm.message)
-cnf.sendMessage(from, buffer, text, {quoted : freply, caption: wing})
+winsg = ` Pedido entregado 🕊 `
+dinst = insm.result
+for (result_ in dinst) {buffer = await getBuffer(dinst[result_])
+await cnf.sendMessage(from, buffer, video, {quoted : freply, caption: winsg})
 addFilter(from)
 break
 
