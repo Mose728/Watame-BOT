@@ -806,6 +806,8 @@ lzain = ` ‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ �
 *╟*๛ _Simula un comentario en PH_
 *╟ ❒ ${prefix}darling*
 *╟*๛ _NSFW +18_
+*╟ ❒ ${prefix}inst*
+*╟*๛ _Videos y reels de Instagram_
 *╟ ❒ ${prefix}tiktok*
 *╟*๛ _Descarga videos sin marca de agua_
 *╟ ❒ ${prefix}twitter (video)*
@@ -837,6 +839,8 @@ lzain = ` ‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ �
 *╟*๛ _Descarga música de spotify_
 *╟ ❒ ${prefix}gimage*
 *╟*๛ _Busca en imágenes de google_
+*╟ ❒ ${prefix}inst*
+*╟*๛ _Videos y reels de Instagram_
 *╟ ❒ ${prefix}tiktok*
 *╟*๛ _Descarga videos sin marca de agua_
 *╟ ❒ ${prefix}telesticker*
