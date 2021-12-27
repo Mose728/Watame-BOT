@@ -1,6 +1,5 @@
 const nsfwmenu = (prefix, pushname) => {
-    return `
-*╭✦┅╡ MENU PRINCIPAL ╞┅✦╮*
+    return `*╭✦┅╡ MENU PRINCIPAL ╞┅✦╮*
 *╟*
 *╟ ✎_𝑴𝒆𝒏𝒖 +18_*
 *╟*
