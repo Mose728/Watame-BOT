@@ -806,6 +806,8 @@ lzain = ` ‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ �
 *╟*๛ _Simula un comentario en PH_
 *╟ ❒ ${prefix}darling*
 *╟*๛ _NSFW +18_
+*╟ ❒ ${prefix}toloveru*
+*╟*๛ _NSFW +18_
 *╟ ❒ ${prefix}inst*
 *╟*๛ _Videos y reels de Instagram_
 *╟ ❒ ${prefix}tiktok*
