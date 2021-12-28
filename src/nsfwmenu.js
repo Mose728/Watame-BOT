@@ -27,18 +27,18 @@ const nsfwmenu = (prefix, pushname) => {
 *╟ ❒ ${prefix}yaoi*
 *╟ ❒ ${prefix}patas*
 *╟ ❒ ${prefix}nekoh*
-*╟ ❒ ${prefix}hentai*
-*╟ ❒ ${prefix}foxgirl*
 *╟ ❒ ${prefix}thighs*
+*╟ ❒ ${prefix}hentai*
+*╟ ❒ ${prefix}femdom*
+*╟ ❒ ${prefix}foxgirl*
 *╟ ❒ ${prefix}eroyuri*
 *╟ ❒ ${prefix}futanari*
 *╟ ❒ ${prefix}cosplay*
 *╟ ❒ ${prefix}blowjob*
-*╟ ❒ ${prefix}femdom*
 *╟ ❒ ${prefix}erokemo*
+*╟ ❒ ${prefix}cumimage*
 *╟ ❒ ${prefix}hardcore*
 *╟ ❒ ${prefix}lolihentai*
-*╟ ❒ ${prefix}cumimage*
 *╟ ❒ ${prefix}pussyimage*
 *╟X* ‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ 
 *┠━➣STICKER-GIF*
