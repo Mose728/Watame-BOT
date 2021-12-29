@@ -1744,7 +1744,8 @@ break
 case prefix+'attp':
 if (isBanned) return  reply(mess.banned)
 if (args.length < 1) return reply(`¿Y el texto? Ù.Ú\n*Ejemplo ${prefix}attp Monogatari*`)
-attp2 = await getBuffer(`https://api.xteam.xyz/attp?file&text=${body.slice(6)}`)
+attp = args.join(" ")
+attp2 = await getBuffer(`https://api.lolhuman.xyz/api/attp2?apikey=c9b3628121d4a8adfbff2e11&text=${attp}`, {method: 'get'}))
 cnf.sendMessage(from, attp2, sticker, {quoted: freply})
 addFilter(from)
 break 
@@ -2197,7 +2198,7 @@ case prefix+'lolihentai':
 if (isBanned) return  reply(mess.banned)
 if (!isGroup) return reply(`[ ❗ ] ESTE COMANDO SOLO PUEDE SER USADO EN GRUPOS 😿 [ ❗ ]`)
 if (!isBotGroupAdmins) return reply(mess.only.Badmin)
-petan = await fetchJson(`https://api.lolhuman.xyz/api/random/nsfw/chiisaihentai?apikey=c9b3628121d4a8adfbff2e11`)
+petan = await fetchJson(`https://api.lolhuman.xyz/api/random/nsfw/chiisaihentai?apikey=c9b3628121d4a8adfbff2e11`, {method: 'get'}))
 lolihentai = await getBuffer(petan)
 cnf.sendMessage(from, lolihentai, image, {quoted: mek, caption: 'Aquí tienes 💕🦈'})
 addFilter(from)
