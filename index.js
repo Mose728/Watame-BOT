@@ -2198,7 +2198,7 @@ case prefix+'lolihentai':
 if (isBanned) return  reply(mess.banned)
 if (!isGroup) return reply(`[ ❗ ] ESTE COMANDO SOLO PUEDE SER USADO EN GRUPOS 😿 [ ❗ ]`)
 if (!isBotGroupAdmins) return reply(mess.only.Badmin)
-petan = await fetchJson(`https://api.lolhuman.xyz/api/random/nsfw/chiisaihentai?apikey=c9b3628121d4a8adfbff2e11`, {method: 'get'})
+petan = await fetchJson(`https://api.lolhuman.xyz/api/random/nsfw/chiisaihentai?apikey=c9b3628121d4a8adfbff2e11`)
 lolihentai = await getBuffer(petan)
 cnf.sendMessage(from, lolihentai, image, {quoted: mek, caption: 'Aquí tienes 💕🦈'})
 addFilter(from)
