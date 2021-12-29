@@ -1745,7 +1745,7 @@ case prefix+'attp':
 if (isBanned) return  reply(mess.banned)
 if (args.length < 1) return reply(`¿Y el texto? Ù.Ú\n*Ejemplo ${prefix}attp Monogatari*`)
 attp = args.join(" ")
-attp2 = await getBuffer(`https://api.lolhuman.xyz/api/attp2?apikey=c9b3628121d4a8adfbff2e11&text=${attp}`, {method: 'get'}))
+attp2 = await getBuffer(`https://api.lolhuman.xyz/api/attp2?apikey=c9b3628121d4a8adfbff2e11&text=${attp}`, {method: 'get'})
 cnf.sendMessage(from, attp2, sticker, {quoted: freply})
 addFilter(from)
 break 
