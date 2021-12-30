@@ -12981,7 +12981,7 @@ if (ment.length > 1) return reply('etiqueta')
 const viola = ['V1','V2','V3','V4','V5']
 const viiol = viola[Math.floor(Math.random() * viola.length)]				
 result = fs.readFileSync(`./sticker/reac/viol/${viiol}.mp4`)
-voiolar = `${pushname} está violando a @${abrazado.split('@')[0]}`, text, {contextInfo: {mentionedJid: [abrazado]}}`
+voiolar = `${pushname} está violando a @${abrazado.split('@')[0]}`
 cnf.sendMessage(from, result, video, {caption: voiolar)
 addFilter(from)
 break
