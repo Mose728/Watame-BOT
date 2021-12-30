@@ -2086,7 +2086,7 @@ if (isBanned) return  reply(mess.banned)
 if (!isGroupAdmins) return reply(mess.only.admin)
 if (!isGroup) return reply(`[ ❗ ] ESTE COMANDO SOLO PUEDE SER USADO EN GRUPOS 😿 [ ❗ ]`)
 if (!isBotGroupAdmins) return reply(mess.only.Badmin)
-if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('Tag target yang ingin di jadi admin!')
+if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('Etiqueta a alguien para que sea administrador!')
 mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
 if (mentioned.length > 1) {
 teks = 'Pedido recibido, te conviertes en administrador! :\n'
@@ -2107,7 +2107,7 @@ if (isBanned) return  reply(mess.banned)
 if (!isGroupAdmins) return reply(mess.only.admin)
 if (!isGroup) return reply(`[ ❗ ] ESTE COMANDO SOLO PUEDE SER USADO EN GRUPOS 😿 [ ❗ ]`)
  if (!isBotGroupAdmins) return reply(mess.only.Badmin)
-if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('Tag target yang ingin di tidak jadi admin!')
+if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('Etiqueta a alguien para quitarle la función de administrador!')
 mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
 if (mentioned.length > 1) {
 teks = 'Pedido recibido, ya no eres administrador :\n'
@@ -2117,7 +2117,7 @@ teks += `@${_.split('@')[0]}\n`
 mentions(teks, mentioned, true)
 cnf.groupDemoteAdmin(from, mentioned)
 } else {
-mentions(`Okey ya no eres admin ~ UnU @${mentioned[0].split('@')[0]}`, mentioned, true)
+mentions(`Pedido recibido, ya no eres admin ~ UnU @${mentioned[0].split('@')[0]}`, mentioned, true)
 cnf.groupDemoteAdmin(from, mentioned)
 }
 addFilter(from)
@@ -12904,7 +12904,7 @@ if (isBanned) return  reply(mess.banned)
 if (!isGroup) return reply(`[ ❗ ] ESTE COMANDO SOLO PUEDE SER USADO EN GRUPOS 😿 [ ❗ ]`)
 if (!isBotGroupAdmins) return reply(mess.only.Badmin)
 if (!isGroupAdmins) return reply(mess.only.admin)		
-if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('Tag target yang ingin di tendang!')
+if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('Etiqueta a alguien para ser expulsado del grupo!')
 mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
 if (mentioned.length > 1) {
 teks = 'Orden recibida, emitida :\n'
