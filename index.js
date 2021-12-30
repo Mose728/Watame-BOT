@@ -804,6 +804,8 @@ lzain = ` ‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ �
 *╟*๛ _Adjunta el código de manga_
 *╟ ❒ ${prefix}phub*
 *╟*๛ _Simula un comentario en PH_
+*╟ ❒ ${prefix}violar @*
+*╟*๛ _Nueva función de reacción_
 *╟ ❒ ${prefix}darling*
 *╟*๛ _NSFW +18_
 *╟ ❒ ${prefix}inst*
@@ -880,6 +882,7 @@ lzain = ` ‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ �
 *╟ ❒ ${prefix}patear @*
 *╟ ❒ ${prefix}abrazar @*
 *╟ ❒ ${prefix}palmaditas @*
+*╟ ❒ ${prefix}violar @*
 *╟X* ‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎
 *┠━➣ADMINS*
 *╟X* ‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎
@@ -12978,8 +12981,8 @@ if (ment.length > 1) return reply('etiqueta')
 const viola = ['V1','V2','V3','V4','V5']
 const viiol = viola[Math.floor(Math.random() * viola.length)]				
 result = fs.readFileSync(`./sticker/reac/viol/${viiol}.mp4`)
-cnf.sendMessage(from, result, video)
-cnf.sendMessage(from, `${pushname} está violando a @${abrazado.split('@')[0]}`, text, {contextInfo: {mentionedJid: [abrazado]}})
+voiolar = `${pushname} está violando a @${abrazado.split('@')[0]}`, text, {contextInfo: {mentionedJid: [abrazado]}}`
+cnf.sendMessage(from, result, video, {caption: voiolar)
 addFilter(from)
 break
 
@@ -13110,7 +13113,7 @@ twiit = args.join(" ")
 twiter = await fetchJson(`https://kocakz.herokuapp.com/api/media/twvid?url=${twiit}`)
 nwtwk = ` Pedido entregado 🕊 `
 buffer = await getBuffer(twiter.getVideo)
-cnf.sendMessage(from, buffer, video, {quoted: freply ,caption: nwtwk})
+cnf.sendMessage(from, buffer, video, {quoted: freply , caption: nwtwk})
 break
 
 case prefix+'fbook':
