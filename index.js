@@ -1043,16 +1043,6 @@ await cnf.sendMessage(from, buffer, sticker)}
 addFilter(from)
 break
 
-case prefix+'fbook':
-if (isBanned) return  reply(mess.banned)
-if (args.length < 1) return reply('Adjunta el enlace 😾')    
-facek = args.join(" ")
-book = await fetchJson(`https://api.lolhuman.xyz/api/facebook?apikey=c9b3628121d4a8adfbff2e11&url=${facek}`, {method: 'get'})
-fbook = await getBuffer(book.result)
-cnf.sendMessage(from, fbook, video)
-addFilter(from)
-break
-
 case prefix+'start':
 if (isBanned) return  reply(mess.banned)
 if (!isOwner) return reply(mess.only.ownerB)
