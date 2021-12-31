@@ -1047,10 +1047,9 @@ case prefix+'fbook':
 if (isBanned) return  reply(mess.banned)
 if (args.length < 1) return reply('Adjunta el enlace 😾')    
 facek = args.join(" ")
-book = await fetchJson(`https://api-alphabot.herokuapp.com/api/downloader/facebook?url=${facek}&apikey=Alphabot`)
-dfack = book.results.medias
-for (medias_ in dfack) {buffer = await getBuffer(dfack[medias_])
-await cnf.sendMessage(from, buffer, video)}
+book = await fetchJson(`https://api.lolhuman.xyz/api/facebook?apikey=c9b3628121d4a8adfbff2e11&url=${facek}`, {method: 'get'})
+fbook = await getBuffer(book.result)
+cnf.sendMessage(from, fbook, video)
 addFilter(from)
 break
 
