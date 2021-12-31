@@ -1043,6 +1043,17 @@ await cnf.sendMessage(from, buffer, sticker)}
 addFilter(from)
 break
 
+case prefix+'fbook':
+if (isBanned) return  reply(mess.banned)
+if (args.length < 1) return reply('Adjunta el enlace 😾')    
+facek = args.join(" ")
+book = await fetchJson(`https://api-alphabot.herokuapp.com/api/downloader/facebook?url=${facek}&apikey=Alphabot`)
+dfack = book.results.medias
+for (medias_ in dfack) {buffer = await getBuffer(dfack[medias_])
+await cnf.sendMessage(from, buffer, video)}
+addFilter(from)
+break
+
 case prefix+'start':
 if (isBanned) return  reply(mess.banned)
 if (!isOwner) return reply(mess.only.ownerB)
@@ -13114,17 +13125,6 @@ twiter = await fetchJson(`https://kocakz.herokuapp.com/api/media/twvid?url=${twi
 nwtwk = ` Pedido entregado 🕊 `
 buffer = await getBuffer(twiter.getVideo)
 cnf.sendMessage(from, buffer, video, {quoted: freply , caption: nwtwk})
-break
-
-case prefix+'fbook':
-if (isBanned) return  reply(mess.banned)
-if (args.length < 1) return reply('Adjunta el enlace 😾')    
-facek = args.join(" ")
-book = await fetchJson(`https://api.lolhuman.xyz/api/facebook2?apikey=c9b3628121d4a8adfbff2e11&url=${facek}`)
-wing = ` Pedido entregado 🕊 `
-buffer = await getBuffer(book.result)
-cnf.sendMessage(from, buffer, video, {quoted : freply, caption: wing})
-addFilter(from)
 break
 
 case prefix+'inst':
