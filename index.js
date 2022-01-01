@@ -937,6 +937,8 @@ lzain = ` ‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ �
 *╟ ❒ ${prefix}verdad*
 *╟ ❒ ${prefix}rankfeo*
 *╟ ❒ ${prefix}tictactoe*
+*╟*๛ _Puede tener errores si hay_
+*╟*๛ _muchos miembros en el chat
 *╟ ❒ ${prefix}rankgay*
 *╟ ❒ ${prefix}ranklindo*
 *╟ ❒ ${prefix}ranksexy*
