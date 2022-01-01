@@ -1898,7 +1898,7 @@ ayudda =`┌─────┤AYUDA├─────
 ├ *Grupo Oficial :*
 ├‣ https://bit.ly/3Jyb1nf
 └────────────────`
-cnf.sendMessage(from, ayudda, text,{quoted : freply})
+cnf.sendMessage(from, ayudda, text)
 addFilter(from)
 break
 
