@@ -825,6 +825,7 @@ lzain = ` ‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ �
 *╟X* ‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎
 *╟ ❒ ${prefix}ayuda*
 *╟* _Comenta tus dudas al creador_
+*╟* _Contáctame para usar al bot_
 *╟ ❒ ${prefix}tts*
 *╟* _Envía un mensaje de voz_
 *╟ ❒ ${prefix}attp*
@@ -980,8 +981,7 @@ lzain = ` ‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ �
 *┗ೋ━ೋ✧ೋ━ೋ┛*
 *║*
 *┠━➣NOTA:*
-• No uses tildes o símbolos al realizar peticiones.
-• Si alguna función no responde espera algunas horas hasta que se reestablezca o ponte en contacto con el creador.`
+No uses tildes o símbolos al realizar peticiones, si alguna función no responde espera algunas horas hasta que se reestablezca o ponte en contacto con el creador.`
 
 cnf.sendMessage(from, wew, image,{contextInfo: {forwardingScore : 0, isForwarded: false},sendEphemeral: false, caption:lzain})
 addFilter(from)
