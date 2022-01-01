@@ -1887,13 +1887,15 @@ addFilter(from)
 break
 
 case prefix+'ayuda':
+case prefix+'help':
 if (isBanned) return  reply(mess.banned)
 ayudda =`┌─────┤AYUDA├─────
 ├ *Nombre : 🌸Watame-BOT🌸*
 │
 ├ *Creador : 🔰Manuel🔰*
 │
-├ *Número: +51931655706*
+├ *Número:*
+├‣ https://bit.ly/3sPnGfB
 │
 ├ *Grupo Oficial :*
 ├‣ https://bit.ly/3Jyb1nf
