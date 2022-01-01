@@ -1895,7 +1895,7 @@ ayudda =`┌─────┤AYUDA├─────
 ├ *Creador : 🔰Manuel🔰*
 │
 ├ *Número:*
-├‣ https://bit.ly/3sPnGfB
+├‣ +51931655706
 │
 ├ *Grupo Oficial :*
 ├‣ https://bit.ly/3Jyb1nf
