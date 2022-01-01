@@ -773,10 +773,9 @@ gilir = player2
 id = from
 ky_ttt.push({player1,player2,id,angka,gilir})
 cnf.sendMessage(from, `*🎳 Iniciar un juego de Tictactoe 🎲*
-[@${player2.split('@')[0]}] Te desafían a convertirte en un oponente del juego🔥
-Escribe Y para aceptar o N para rechazar el juego.
-Como recomendación usa los emojis de números para jugar.
-Escriba ${prefix}dellt, para reiniciar los juegos grupales.`, text, {contextInfo: {mentionedJid: [player2]}})
+[@${player2.split('@')[0]}] Te desafían a convertirte en un oponente 🔥
+Escribe Y para aceptar o N para rechazar el juego, recuerda usa los emojis de números para jugar.
+Escribe ${prefix}dellt, para reiniciar los juegos grupales.`, text, {contextInfo: {mentionedJid: [player2]}})
 addFilter(from)
 break
 
