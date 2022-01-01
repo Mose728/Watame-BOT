@@ -1896,7 +1896,7 @@ ayudda =`┌─────┤AYUDA├─────
 ├ *Número: +51931655706*
 │
 ├ *Grupo Oficial :*
-├‣ https://chat.whatsapp.com/FP2KKGk4cim8UZ1r7SNbDQ
+├‣ https://bit.ly/3Jyb1nf
 └────────────────`
 cnf.sendMessage(from, ayudda, text,{quoted : freply})
 addFilter(from)
