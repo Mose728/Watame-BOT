@@ -1069,10 +1069,9 @@ break
 
 case prefix+'join':
 if (isBanned) return  reply(mess.banned)
-if (!isRegistered) return reply(ind.noregis())			  
 if (!q) return reply('Ingrese el enlace del grupo')
 var codeInvite = body.slice(6).split('https://chat.whatsapp.com/')[1]
-if (!codeInvite) return fakegroup ('asegúrese de que el enlace sea correcto!')
+if (!codeInvite) return fakegroup ('Asegúrate de que el enlace sea correcto!')
 var response = await cnf.acceptInvite(codeInvite);
 console.log(response);
 addFilter(from)
