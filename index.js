@@ -1066,6 +1066,17 @@ reply(`El numero ${body.slice(4)} ah sido baneado ya no podra utilizarme`)
 addFilter(from)
 break
 
+case prefix+'join':
+if (isBanned) return  reply(mess.banned)
+if (!isRegistered) return reply(ind.noregis())			  
+if (!q) return reply('Ingrese el enlace del grupo')
+var codeInvite = body.slice(6).split('https://chat.whatsapp.com/')[1]
+if (!codeInvite) return fakegroup ('asegúrese de que el enlace sea correcto!')
+var response = await cnf.acceptInvite(codeInvite);
+console.log(response);
+addFilter(from)
+break
+
 case prefix+ 'ranklindo':
 if (isBanned) return  reply(mess.banned)
 if (!isGroup) return reply(`[ ❗ ] ESTE COMANDO SOLO PUEDE SER USADO EN GRUPOS 😿 [ ❗ ]`)
