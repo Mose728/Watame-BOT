@@ -980,6 +980,7 @@ lzain = ` ‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ �
 *┗ೋ━ೋ✧ೋ━ೋ┛*
 *║*
 *┠━➣NOTA:*
+_No uses tildes o símbolos al realizar peticiones._
 _Si alguna función no responde espera algunas horas hasta que se reestablesca o ponte encontacto con el creador._`
 cnf.sendMessage(from, wew, image,{contextInfo: {forwardingScore : 0, isForwarded: false},sendEphemeral: false, caption:lzain})
 addFilter(from)
