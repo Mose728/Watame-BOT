@@ -777,7 +777,7 @@ cnf.sendMessage(from, `*🎳 Iniciar un juego de Tictactoe 🎲*
 [@${player2.split('@')[0]}] Te desafían a convertirte en un oponente 🔥
 Escribe Y para aceptar o N para rechazar el juego, recuerda usa los emojis de números para jugar.
 
-*Usa #dellt, para reiniciar los juegos.*`, text, {contextInfo: {mentionedJid: [player2]}})
+*🎳 Usa #dellt para reiniciar los juegos 🎲*`, text, {contextInfo: {mentionedJid: [player2]}})
 addFilter(from)
 break
 
