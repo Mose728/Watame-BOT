@@ -2139,7 +2139,7 @@ teks += `@${_.split('@')[0]}\n`
 mentions(teks, mentioned, true)
 cnf.groupDemoteAdmin(from, mentioned)
 } else {
-mentions(`Pedido recibido, ya no eres admin ~ UnU @${mentioned[0].split('@')[0]}`, mentioned, true)
+mentions(`Pedido recibido, ya no eres admin ~ UnU @${mentioned[0].split('@')[0]}`)
 cnf.groupDemoteAdmin(from, mentioned)
 }
 addFilter(from)
