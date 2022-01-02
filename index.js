@@ -13309,7 +13309,7 @@ case prefix+'yaoi':
 if (isBanned) return  reply(mess.banned)
 if (!isGroup) return reply(`「 ❗ 」ESTE COMANDO SOLO PUEDE SER USADO EN GRUPOS`)
 if (!isBotGroupAdmins) return reply(mess.only.Badmin)
-yaoii = await fetchJson(`https://api.lolhuman.xyz/api/random/nsfw/yaoi?apikey=c9b3628121d4a8adfbff2e11`)
+yaoii = await fetchJson(`https://api.lolhuman.xyz/api/random/nsfw/yaoi?apikey=c9b3628121d4a8adfbff2e11`, {method: 'get'})
 yaoiii = await getBuffer(yaoii)
 const dsds =['Aquí tienes 💕🦈','Pedido entregado 🕊']
 const frfr = dsds[Math.floor(Math.random() * dsds.length)]
