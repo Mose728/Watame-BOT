@@ -2118,7 +2118,7 @@ teks += `@${_.split('@')[0]}\n`
 mentions(teks, mentioned, true)
 cnf.groupMakeAdmin(from, mentioned)
 } else {
-mentions(`Ahora eres admin U~U @${mentioned[0].split('@')[0]}`)
+mentions(`Felicidades, hora eres admin UwU 🎉`)
 cnf.groupMakeAdmin(from, mentioned)
 }
 addFilter(from)
@@ -2139,7 +2139,7 @@ teks += `@${_.split('@')[0]}\n`
 mentions(teks, mentioned, true)
 cnf.groupDemoteAdmin(from, mentioned)
 } else {
-mentions(`Pedido recibido, ya no eres admin ~ UnU @${mentioned[0].split('@')[0]}`)
+mentions(`Lástima, ya no eres administrador ~ UnU 😿`)
 cnf.groupDemoteAdmin(from, mentioned)
 }
 addFilter(from)
