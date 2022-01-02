@@ -13304,18 +13304,6 @@ pnime = ` Pedido entregado 😽 `
 buffer = await getBuffer(wpanim.result)
 cnf.sendMessage(from, buffer, image, {quoted: mek ,caption: pnime})
 break
-
-case prefix+'yaoi':
-if (isBanned) return  reply(mess.banned)
-if (!isGroup) return reply(`「 ❗ 」ESTE COMANDO SOLO PUEDE SER USADO EN GRUPOS`)
-if (!isBotGroupAdmins) return reply(mess.only.Badmin)
-yaoii = await fetchJson(`https://api.lolhuman.xyz/api/random/nsfw/yaoi?apikey=c9b3628121d4a8adfbff2e11`, {method: 'get'})
-yaoiii = await getBuffer(yaoii)
-const dsds =['Aquí tienes 💕🦈','Pedido entregado 🕊']
-const frfr = dsds[Math.floor(Math.random() * dsds.length)]
-cnf.sendMessage(from, yaoiii, image, { caption: frfr, quoted: mek })	       
-addFilter(from)
-break
 					
 case prefix+'todos':
 if (isBanned) return  reply(mess.banned)
@@ -13341,6 +13329,17 @@ text: `「 *LINK WHATSAPP* 」\n\nSolicitado por : @${sender.split("@s.whatsapp.
 contextInfo: { mentionedJid: [sender] }
 }
 cnf.sendMessage(from, options, text, { quoted: mek } )
+addFilter(from)
+break
+
+case prefix+'yaoi':
+if (isBanned) return  reply(mess.banned)
+if (!isGroup) return reply(`「 ❗ 」ESTE COMANDO SOLO PUEDE SER USADO EN GRUPOS`)
+if (!isBotGroupAdmins) return reply(mess.only.Badmin)
+hyaoi = await getBuffet(`https://api.lolhuman.xyz/api/random/nsfw/yaoi?apikey=c9b3628121d4a8adfbff2e11`, {method: 'get'})
+const dsds =['Aquí tienes 💕🦈','Pedido entregado 🕊']
+const frfr = dsds[Math.floor(Math.random() * dsds.length)]
+cnf.sendMessage(from, hyaoi, image, { caption: frfr, quoted: mek })	       
 addFilter(from)
 break
 
