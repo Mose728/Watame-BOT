@@ -1049,6 +1049,18 @@ await cnf.sendMessage(from, buffer, sticker)}
 addFilter(from)
 break
 
+case prefix+'nhentai':
+if (isBanned) return  reply(mess.banned)
+if (!isGroup) return reply(`[ ❗ ] ESTE COMANDO SOLO PUEDE SER USADO EN GRUPOS 😿 [ ❗ ]`)
+if (args.length < 1) return reply('Adjunta el código 😾')   
+nhjpg = args.join(" ")
+nhent = await fetchJson(`https://api-xcoders.xyz/api/anime/codenhentai?code=${nhjpg}&apikey=FxDmLOWez0`)
+ndjpg = nhent.result.cover
+for (cover_ in ndjpg) {buffer = await getBuffer(ndjpg[cover_])
+await cnf.sendMessage(from, buffer, image)}
+addFilter(from)
+break
+
 case prefix+'start':
 if (isBanned) return  reply(mess.banned)
 if (!isOwner) return reply(mess.only.ownerB)
@@ -12905,7 +12917,7 @@ case prefix+'welcome':
 if (isBanned) return  reply(mess.banned)
 if (!isGroupAdmins) return reply(mess.only.admin)		  
 if (!isGroup) return reply(`[ ❗ ] ESTE COMANDO SOLO PUEDE SER USADO EN GRUPOS 😿 [ ❗ ]`)
-if (args.length < 1) return reply('Quien eres? 7-7')
+if (args.length < 1) return reply('Adjunta 1 para activar y 0 para desactivar 👈')
 if (Number(args[0]) === 1) {
 if (isWelkom) return reply('Ya activo ')
 welkom.push(from)
@@ -13221,7 +13233,7 @@ case prefix+'✌️':
 if (isBanned) return  reply(mess.banned)
 const tijera =[`𝒀𝒐 𝒆𝒍𝒊𝒋𝒐 : ✋\n\n:( 𝑮𝒂𝒏𝒂𝒔 𝒕𝒖`,`𝒀𝒐 𝒆𝒍𝒊𝒋𝒐 : ✊\n\n :) 𝑮𝒂𝒏𝒆 𝒉𝒖𝒎𝒂𝒏𝒐 𝒆𝒔𝒕𝒖𝒑𝒊𝒅𝒐`,`𝒀𝒐 𝒆𝒍𝒊𝒋𝒐 : ✌️\n\n:0 𝑬𝒎𝒑𝒂𝒕𝒆 `]
 const jgg = tijera[Math.floor(Math.random() * tijera.length)]
-cnf.sendMessage(from, `𝑷𝑰𝑬𝑫𝑹𝑨 𝑷𝑨𝑷𝑬𝑳 𝑶 𝑻𝑰𝑱𝑬𝑹𝑨\n\n` + jgg, text)
+cnf.sendMessage(from, `??𝑰𝑬𝑫𝑹𝑨 𝑷𝑨𝑷𝑬𝑳 𝑶 𝑻𝑰𝑱𝑬𝑹𝑨\n\n` + jgg, text)
 addFilter(from)
 break
 
