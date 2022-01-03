@@ -1019,7 +1019,7 @@ if (isBanned) return  reply(mess.banned)
 if (args.length < 1) return reply('Coloca el nombre de la aplicación😾')
 plays = args.join(" ")
 playtore = await fetchJson(`https://api.lolhuman.xyz/api/apkdownloader?apikey=c9b3628121d4a8adfbff2e11&package=${plays}`)
-infoplays = `❒═════❬ *SPOTIFY* ❭═════╾❒
+infoplays = `❒═════❬ *PLAY STORE* ❭═════╾❒
 ├‣ *Nombre* : 
 ┴
 ${playtore.result.apk_name}
@@ -1035,7 +1035,7 @@ ${playtore.result.apk_author} Segundos
 ❒═════════════════╾❒`
 buffer = await getBuffer(playtore.result.apk_icon)
 dsplayx = await getBuffer(playtore.result.apk_link)
-cnf.sendMessage(from, buffer, image, {quoted: freply, caption: infoplays })
+cnf.sendMessage(from, dsplayx, image, {quoted: freply, caption: infoplays })
 cnf.sendMessage(from, dsplayx, document, {mimetype: 'document/pdf', filename: `${playtore.result.apk_name}.apk`})
 addFilter(from)
 break
