@@ -1014,6 +1014,33 @@ cnf.sendMessage(from, dspoti, audio, {mimetype: 'audio/mp4', filename: `${spot.r
 addFilter(from)
 break
 
+case prefix+'apk':
+if (isBanned) return  reply(mess.banned)
+if (!isGroup) return reply(`[ ❗ ] ESTE COMANDO SOLO PUEDE SER USADO EN GRUPOS 😿 [ ❗ ]`)
+if (args.length < 1) return reply('Coloca el nombre de la aplicación😾')
+plays = args.join(" ")
+playtore = await fetchJson(`https://api.lolhuman.xyz/api/apkdownloader?apikey=c9b3628121d4a8adfbff2e11&package=${plays}`)
+infoplays = `❒═════❬ *SPOTIFY* ❭═════╾❒
+├‣ *Nombre* : 
+┴
+${playtore.result.apk_name}
+┬
+├‣ *Versión* : 
+┴
+${playtore.result.apk_version}
+┬
+├‣ *Desarrolador* : 
+┴
+${playtore.result.apk_author} Segundos
+┬
+❒═════════════════╾❒`
+buffer = await getBuffer(playtore.result.thumbnail)
+dsplayx = await getBuffer(playtore.result.apk_link)
+cnf.sendMessage(from, buffer, image, {quoted: freply, caption: infospoti })
+cnf.sendMessage(from, dsplayx, document, {mimetype: 'document/pdf', filename: `${playtore.result.apk_name}.mp3`})
+addFilter(from)
+break
+
 case prefix+'nh':
 if (isBanned) return  reply(mess.banned)
 if (!isGroup) return reply(`[ ❗ ] ESTE COMANDO SOLO PUEDE SER USADO EN GRUPOS 😿 [ ❗ ]`)
