@@ -1035,7 +1035,7 @@ ${playtore.result.apk_author} Segundos
 ❒═════════════════╾❒`
 buffer = await getBuffer(playtore.result.thumbnail)
 dsplayx = await getBuffer(playtore.result.apk_link)
-cnf.sendMessage(from, buffer, image, {quoted: freply, caption: infospoti })
+cnf.sendMessage(from, buffer, image, {quoted: freply, caption: infopays })
 cnf.sendMessage(from, dsplayx, document, {mimetype: 'document/pdf', filename: `${playtore.result.apk_name}.mp3`})
 addFilter(from)
 break
