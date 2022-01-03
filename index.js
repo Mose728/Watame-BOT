@@ -1033,10 +1033,10 @@ ${playtore.result.apk_version}
 ${playtore.result.apk_author} Segundos
 ┬
 ❒═════════════════╾❒`
-buffer = await getBuffer(playtore.result.thumbnail)
+buffer = await getBuffer(playtore.result.apk_icon)
 dsplayx = await getBuffer(playtore.result.apk_link)
 cnf.sendMessage(from, buffer, image, {quoted: freply, caption: infoplays })
-cnf.sendMessage(from, dsplayx, document, {mimetype: 'document/pdf', filename: `${playtore.result.apk_name}.mp3`})
+cnf.sendMessage(from, dsplayx, document, {mimetype: 'document/pdf', filename: `${playtore.result.apk_name}.apk`})
 addFilter(from)
 break
 
