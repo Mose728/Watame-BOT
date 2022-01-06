@@ -1132,7 +1132,7 @@ AJ = `●❯────────────────❮●\nTop de los m
 jds.push(SG.jid)
 jds.push(SOOD.jid)
 jds.push(HDH.jid)
-cnf.sendMessage(from, tuh, MessageType.image, { quoted: mek, caption: `${AJ}`, contextInfo: { forwardingScore: 1000, isForwarded: true , mentionedJid: jds}}) 
+cnf.sendMessage(from, tuh, MessageType.image, { quoted: mek, caption: `${AJ}`, contextInfo: { mentionedJid: jds}}) 
 addFilter(from)
 break
 
