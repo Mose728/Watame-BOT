@@ -1151,7 +1151,7 @@ D11 = `●❯────────────────❮●\nTop de los 
 jds.push(F11.jid)
 jds.push(G22.jid)
 jds.push(H33.jid)
-cnf.sendMessage(from, tuh, MessageType.image, { quoted: mek, caption: `${D11}`, contextInfo: { forwardingScore: 1000, isForwarded: true , mentionedJid: jds}})
+cnf.sendMessage(from, tuh, MessageType.image, { quoted: mek, caption: `${D11}`, contextInfo: { mentionedJid: jds}})
 addFilter(from)
 break
 
@@ -1170,7 +1170,7 @@ AJ = `●❯────────────────❮●\nTop de los m
 jds.push(SSG.jid)
 jds.push(SSOOD.jid)
 jds.push(HDDDH.jid)
-cnf.sendMessage(from, tuh, MessageType.image, { quoted: mek, caption: `${AJ}`, contextInfo: { forwardingScore: 1000, isForwarded: true , mentionedJid: jds}})
+cnf.sendMessage(from, tuh, MessageType.image, { quoted: mek, caption: `${AJ}`, contextInfo: { mentionedJid: jds}})
 addFilter(from)
 break
 
@@ -1189,7 +1189,7 @@ D11 = `●❯────────────────❮●\nTop de los 
 jds.push(F111.jid)
 jds.push(G222.jid)
 jds.push(H333.jid)
-cnf.sendMessage(from, tuh, MessageType.image, { quoted: mek, caption: `${D11}`, contextInfo: { forwardingScore: 1000, isForwarded: true , mentionedJid: jds}})
+cnf.sendMessage(from, tuh, MessageType.image, { quoted: mek, caption: `${D11}`, contextInfo: { mentionedJid: jds}})
 addFilter(from)
 break
 
