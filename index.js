@@ -1082,7 +1082,7 @@ if (args.length < 1) return reply('Adjunta el código 😾')
 nhjpg = args.join(" ")
 nhent = await fetchJson(`https://api-xcoders.xyz/api/anime/codenhentai?code=${nhjpg}&apikey=FxDmLOWez0`)
 ndjpg = nhent.result.cover
-for (cover_ in ndjpg) {buffer = await getBuffer(ndjpg[cover_])
+for (cover in ndjpg) {buffer = await getBuffer(ndjpg[cover])
 await cnf.sendMessage(from, buffer, image)}
 addFilter(from)
 break
