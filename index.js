@@ -1075,14 +1075,14 @@ await cnf.sendMessage(from, buffer, sticker)}
 addFilter(from)
 break
 
-case prefix+'nhentai':
+case prefix+'nhimagen':
 if (isBanned) return  reply(mess.banned)
 if (!isGroup) return reply(`[ ❗ ] ESTE COMANDO SOLO PUEDE SER USADO EN GRUPOS 😿 [ ❗ ]`)
 if (args.length < 1) return reply('Adjunta el código 😾')   
 nhjpg = args.join(" ")
-nhent = await fetchJson(`https://api-xcoders.xyz/api/anime/codenhentai?code=${nhjpg}&apikey=FxDmLOWez0`)
-ndjpg = nhent.result.cover
-for (cover in ndjpg) {buffer = await getBuffer(ndjpg[cover])
+nhent = await fetchJson(`https://api.lolhuman.xyz/api/nhentai/${nhjpg}?apikey=c9b3628121d4a8adfbff2e11`)
+ndjpg = nhent.result.image
+for (image in ndjpg) {buffer = await getBuffer(ndjpg[image])
 await cnf.sendMessage(from, buffer, image)}
 addFilter(from)
 break
