@@ -1081,7 +1081,7 @@ if (!isGroup) return reply(`[ ❗ ] ESTE COMANDO SOLO PUEDE SER USADO EN GRUPOS 
 if (args.length < 1) return reply('Adjunta el código 😾')   
 nhjpg = args.join(" ")
 nhent = await fetchJson(`https://api.lolhuman.xyz/api/nhentai/${nhjpg}?apikey=c9b3628121d4a8adfbff2e11`)
-ndjpg = nhent.result.imagej
+ndjpg = nhent.result.image
 for (image_ in ndjpg) {buffer = await getBuffer(ndjpg[image_])
 await cnf.sendMessage(from, buffer, image)}
 addFilter(from)
