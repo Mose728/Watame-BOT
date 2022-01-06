@@ -1158,7 +1158,7 @@ break
 case prefix+ 'rankfeo':
 if (isBanned) return  reply(mess.banned)
 if (!isGroup) return reply(`[ ❗ ] ESTE COMANDO SOLO PUEDE SER USADO EN GRUPOS 😿 [ ❗ ]`)
-tuh = fs.readFileSync(`./stik/lindo.jpg`)
+tuh = fs.readFileSync(`./stik/feo.jpg`)
 const YDDDY = groupMembers
 const JJSJ = groupMembers
 const TAAET = groupMembers
@@ -1177,7 +1177,7 @@ break
 case prefix+ 'ranksexy':
 if (isBanned) return  reply(mess.banned)
 if (!isGroup) return reply(`[ ❗ ] ESTE COMANDO SOLO PUEDE SER USADO EN GRUPOS 😿 [ ❗ ]`)
-tuh = fs.readFileSync(`./stik/feo.jpg`)
+tuh = fs.readFileSync(`./stik/sexy.jpg`)
 const Z111 = groupMembers
 const U111 = groupMembers
 const T111 = groupMembers
