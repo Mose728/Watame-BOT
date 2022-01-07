@@ -1082,9 +1082,7 @@ ${nhent.result.info.artists}
 ${nhent.result.info.tags}
 ┬
 ❒═════════════════╾❒`
-bufferhent = await getBuffer(nhent.result.read)
-for (tags in infoh) {buffer = await getBuffer(infoh[tags])
-await cnf.sendMessage(from, bufferhent, image)}
+cnf.sendMessage(from, text, {quoted: freply, caption: infoh })
 for (image_ in ndjpg) {buffer = await getBuffer(ndjpg[image_])
 await cnf.sendMessage(from, buffer, image)}
 addFilter(from)
