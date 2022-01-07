@@ -1079,7 +1079,7 @@ ${nhent.result.info.artists}
 ┬
 ├‣ *Tags* : 
 ┴
-${nhent.result.info.[tags_]}
+${nhent.result.info.tags}
 ┬
 ❒═════════════════╾❒`
 cnf.sendMessage(from, infoh, text,{quoted : mek})
