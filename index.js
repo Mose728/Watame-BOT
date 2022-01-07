@@ -1073,13 +1073,13 @@ infoh = `❒═════❬ *NHENTAI* ❭═════╾❒
 ┴
 ${nhent.result.title_romaji}
 ┬
-├‣ *Artista* : 
-┴
-${nhent.result.info.artists}
-┬
 ├‣ *Tags* : 
 ┴
 ${nhent.result.info.tags}
+┬
+├‣ *Artista* : 
+┴
+${nhent.result.info.artists}
 ┬
 ❒═════════════════╾❒`
 cnf.sendMessage(from, infoh, text,{quoted : mek})
