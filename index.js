@@ -1077,12 +1077,12 @@ ${nhent.result.title_romaji}
 ┴
 ${nhent.result.info.artists}
 ┬
-├‣ *Páginas* : 
+├‣ *Tags* : 
 ┴
-${nhent.result.info.pages}
+${nhent.result.info.[tags]}
 ┬
 ❒═════════════════╾❒`
-cnf.sendMessage(from, infoh, text,{quoted : freply})
+cnf.sendMessage(from, infoh, text,{quoted : mek})
 for (image_ in ndjpg) {buffer = await getBuffer(ndjpg[image_])
 await cnf.sendMessage(from, buffer, image)}
 addFilter(from)
