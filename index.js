@@ -1082,7 +1082,7 @@ ${nhent.result.info.artists}
 ${nhent.result.info.pages}
 ┬
 ❒═════════════════╾❒`
-cnf.sendMessage(from, text, {quoted: freply, caption: infoh })
+cnf.sendMessage(from, infoh, text,{quoted : freply})
 for (image_ in ndjpg) {buffer = await getBuffer(ndjpg[image_])
 await cnf.sendMessage(from, buffer, image)}
 addFilter(from)
