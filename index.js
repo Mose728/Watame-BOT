@@ -1741,7 +1741,7 @@ reply('Se activo con exito ✔️️')
 } else if (Number(args[0]) === 0) {
 antilink.splice(from, 1)
 fs.writeFileSync('./database/antilink.json', JSON.stringify(antilink))
-reply('Se desactivo con éxito la función de bienvenida en este grupo (・o・)️')
+reply('Se desactivo con éxito la función en este grupo (・o・)️')
 } else {
 reply('1 para activar, 0 para desactivar')
 }
@@ -2022,6 +2022,15 @@ const gay =['Eres 0% gay' , 'Eres 1% gay' , 'Eres 2% gay' , 'Eres 3% gay' , 'Ere
 const gai = gay[Math.floor(Math.random() * gay.length)]
 wiw = fs.readFileSync(`./src/8.jpg`)
 cnf.sendMessage(from, wiw, image, { quoted: mek, caption: '*¿Que tan gay eres?*\n\n'+ gai })
+addFilter(from)
+break
+
+case prefix+'hetero':
+if (isBanned) return  reply(mess.banned)
+const hetero =['Eres 0% hetero' , 'Eres 1% hetero' , 'Eres 2% hetero' , 'Eres 3% hetero' , 'Eres 4% hetero' , 'Eres 5% hetero' , 'Eres 6% hetero' , 'Eres 7% hetero' , 'Eres 8% hetero' , 'Eres 9% hetero' , 'Eres 10% hetero' , 'Eres 11% hetero' , 'Eres 12% hetero' , 'Eres 13% hetero' , 'Eres 14% hetero' , 'Eres 15% hetero' , 'Eres 16% hetero' , 'Eres 17% hetero' , 'Eres 18% hetero' , 'Eres 19% hetero' , 'Eres 20% hetero' , 'Eres 21% hetero' , 'Eres 22% hetero' , 'Eres 23% hetero' , 'Eres 24% hetero' , 'Eres 25% hetero' , 'Eres 26% hetero' , 'Eres 27% hetero' , 'Eres 28% hetero' , 'Eres 29% hetero' , 'Eres 30% hetero' , 'Eres 31% hetero' , 'Eres 32% hetero' , 'Eres 33% hetero' , 'Eres 34% hetero' , 'Eres 35% hetero' , 'Eres 36% hetero' , 'Eres 37% hetero' , 'Eres 38% hetero' , 'Eres 39% hetero' , 'Eres 40% hetero' , 'Eres 41% hetero' , 'Eres 42% hetero' , 'Eres 43% hetero' , 'Eres 44% hetero' , 'Eres 45% hetero' , 'Eres 46% hetero' , 'Eres 47% hetero' , 'Eres 48% hetero' , 'Eres 49% hetero' , 'Eres 50% hetero' , 'Eres 51% hetero' , 'Eres 52% hetero' , 'Eres 53% hetero' , 'Eres 54% hetero' , 'Eres 55% hetero' , 'Eres 56% hetero' , 'Eres 57% hetero' , 'Eres 58% hetero' , 'Eres 59% hetero' , 'Eres 60% hetero' , 'Eres 61% hetero' , 'Eres 62% hetero' , 'Eres 63% hetero' , 'Eres 64% hetero' , 'Eres 65% hetero' , 'Eres 66% hetero' , 'Eres 67% hetero' , 'Eres 68% hetero' , 'Eres 69% hetero' , 'Eres 70% hetero' , 'Eres 71% hetero' , 'Eres 72% hetero' , 'Eres 73% hetero' , 'Eres 74% hetero' , 'Eres 75% hetero' , 'Eres 76% hetero' , 'Eres 77% hetero' , 'Eres 78% hetero' , 'Eres 79% hetero' , 'Eres 80% hetero' , 'Eres 81% hetero' , 'Eres 82% hetero' , 'Eres 83% hetero' , 'Eres 84% hetero' , 'Eres 85% hetero' , 'Eres 86% hetero' , 'Eres 87% hetero' , 'Eres 88% hetero' , 'Eres 89% hetero' , 'Eres 90% hetero' , 'Eres 91% hetero' , 'Eres 92% hetero' , 'Eres 93% hetero' , 'Eres 94% hetero' , 'Eres 95% hetero' , 'Eres 96% hetero' , 'Eres 97% hetero' , 'Eres 98% hetero' , 'Eres 99% hetero' , 'Eres 100% hetero']									
+const heter = hetero[Math.floor(Math.random() * hetero.length)]
+imgheter = fs.readFileSync(`./src/hetero.jpg`)
+cnf.sendMessage(from, imgheter, image, { quoted: mek, caption: '*¿Que tan hetero eres?*\n\n'+ heter })
 addFilter(from)
 break
 					
