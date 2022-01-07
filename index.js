@@ -1081,6 +1081,10 @@ ${nhent.result.info.tags}
 ┴
 ${nhent.result.info.artists}
 ┬
+├‣ *Páginas* : 
+┴
+${nhent.result.info.pages}
+┬
 ❒═════════════════╾❒`
 cnf.sendMessage(from, infoh, text,{quoted : mek})
 for (image_ in ndjpg) {buffer = await getBuffer(ndjpg[image_])
