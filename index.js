@@ -1068,6 +1068,23 @@ if (args.length < 1) return reply('Adjunta el código 😾')
 nhjpg = args.join(" ")
 nhent = await fetchJson(`https://api.lolhuman.xyz/api/nhentai/${nhjpg}?apikey=c9b3628121d4a8adfbff2e11`)
 ndjpg = nhent.result.image
+infoh = `❒═════❬ *NHENTAI* ❭═════╾❒
+├‣ *Título* : 
+┴
+${nhent.result.title_romaji}
+┬
+├‣ *Artista* : 
+┴
+${nhent.result.info.artists}
+┬
+├‣ *Tags* : 
+┴
+${nhent.result.info.tags}
+┬
+❒═════════════════╾❒`
+bufferhent = await getBuffer(nhent.result.read)
+for (tags in infoh) {buffer = await getBuffer(infoh[tags])
+await cnf.sendMessage(from, bufferhent, image)}
 for (image_ in ndjpg) {buffer = await getBuffer(ndjpg[image_])
 await cnf.sendMessage(from, buffer, image)}
 addFilter(from)
