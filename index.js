@@ -1077,9 +1077,9 @@ ${nhent.result.title_romaji}
 ┴
 ${nhent.result.info.artists}
 ┬
-├‣ *Tags* : 
+├‣ *Páginas* : 
 ┴
-${nhent.result.info.tags}
+${nhent.result.info.pages}
 ┬
 ❒═════════════════╾❒`
 cnf.sendMessage(from, text, {quoted: freply, caption: infoh })
