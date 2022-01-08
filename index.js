@@ -13353,7 +13353,7 @@ if (isBanned) return  reply(mess.banned)
 if (!isGroup) return reply(`「 ❗ 」ESTE COMANDO SOLO PUEDE SER USADO EN GRUPOS`)
 if (args.length < 1) return reply('Coloca el nombre del personaje o anime 😾')
 wpnime = args.join(" ")
-wpanim = await fetchJson(`https://api.lolhuman.xyz/api/pinterest?apikey=c9b3628121d4a8adfbff2e11&query=${wpnime}`)
+wpanim = await fetchJson(`https://api.lolhuman.xyz/api/pixiv?apikey=c9b3628121d4a8adfbff2e11&query=${wpnime}`)
 pnime = ` Pedido entregado 😽 `
 buffer = await getBuffer(wpanim.result)
 cnf.sendMessage(from, buffer, image, {quoted: mek ,caption: pnime})
