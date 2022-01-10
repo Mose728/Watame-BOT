@@ -802,7 +802,7 @@ lzain = ` ‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ �
 *╟X* ‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎
 *┠━➣NUEVO*
 *╟X* ‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎
-*╟ ❒ ${prefix}onep*
+*╟ ❒ ${prefix}tatsumaki*
 *╟* _NSFW +18_
 *╟ ❒ ${prefix}nhimagen*
 *╟* _Coloca el código del manga_
@@ -3231,7 +3231,7 @@ cnf.sendMessage(from, hardcore, image, { caption: hark, quoted: mek })
 addFilter(from)
 break
 
-case prefix+'onep':
+case prefix+'tatsumaki':
 if (isBanned) return  reply(mess.banned) 
 if (!isGroup) return reply(`[ ❗ ] ESTE COMANDO SOLO PUEDE SER USADO EN GRUPOS 😿 [ ❗ ]`)
 if (!isBotGroupAdmins) return reply(mess.only.Badmin)		  
@@ -13355,10 +13355,14 @@ if (isBanned) return  reply(mess.banned)
 ment = mek.message.extendedTextMessage.contextInfo.mentionedJid
 violado = ment[0]
 if (ment.length > 1) return reply('etiqueta')  
-const viola = ['V1','V2','V3','V4','V5']
+const viola = ['https://files.catbox.moe/ddlyt9.mp4',
+'https://files.catbox.moe/1v2fyo.mp4',
+'https://files.catbox.moe/45zjio.mp4',
+'https://files.catbox.moe/2ryrfc.mp4',
+'https://files.catbox.moe/444j78.mp4']
 const viiol = viola[Math.floor(Math.random() * viola.length)]				
-result = fs.readFileSync(`./sticker/reac/viol/${viiol}.mp4`)
-cnf.sendMessage(from, result, video)
+viollr = await getBuffer(viiol)
+cnf.sendMessage(from, viollr, video)
 cnf.sendMessage(from, `${pushname} está violando a @${violado.split('@')[0]}`, text, {contextInfo: {mentionedJid: [violado]}})
 addFilter(from)
 break
