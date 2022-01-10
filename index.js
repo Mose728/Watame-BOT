@@ -13359,7 +13359,8 @@ const viola = ['https://files.catbox.moe/ddlyt9.mp4',
 'https://files.catbox.moe/1v2fyo.mp4',
 'https://files.catbox.moe/45zjio.mp4',
 'https://files.catbox.moe/2ryrfc.mp4',
-'https://files.catbox.moe/444j78.mp4']
+'https://files.catbox.moe/444j78.mp4',
+'https://files.catbox.moe/ezkkzl.mp4']
 const viiol = viola[Math.floor(Math.random() * viola.length)]				
 viollr = await getBuffer(viiol)
 cnf.sendMessage(from, viollr, video)
