@@ -13464,7 +13464,7 @@ break
 case prefix+'play2':  
 if (args.length < 1) return reply('Coloca el enlace del video!')
 play = args.join(" ")
-anu = await fetchJson(`https://api.zeks.me/api/ytplaymp4?apikey=apivinz&q=${pay}`)
+anu = await fetchJson(`https://api.zeks.me/api/ytplaymp4?apikey=apivinz&q=${play}`)
 if (anu.error) return reply(anu.error)
 infomp3 = `❒═════❬ *𝐏𝐋𝐀𝐘2* ❭═════╾❒
 ├‣ *Nombre* : 
