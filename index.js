@@ -13438,7 +13438,7 @@ case prefix+'play':
 if (isBanned) return  reply(mess.banned)          	  
 if (args.length < 1) return reply('Coloca el enlace de la canción!')
 play = body.slice(6)
-anu = await fetchJson(`https://api.zeks.xyz/api/ytplaymp3?q=${play}&apikey=oCHDwj8ggZGBGjU5WIaK5Rctu6c`)
+anu = await fetchJson(`https://api.zeks.me/api/ytplaymp3?apikey=apivinz&q=${play}`)
 if (anu.error) return reply(anu.error)
 infomp3 = `❒═════❬ *𝐏𝐋𝐀𝐘* ❭═════╾❒
 ├‣ *Nombre* : 
@@ -13464,7 +13464,7 @@ break
 case prefix+'play2':  
 if (args.length < 1) return reply('Coloca el enlace del video!')
 play = args.join(" ")
-anu = await fetchJson(`https://api.zeks.xyz/api/ytplaymp4?q=${play}&apikey=oCHDwj8ggZGBGjU5WIaK5Rctu6c`)
+anu = await fetchJson(`https://api.zeks.me/api/ytplaymp4?apikey=apivinz&q=${pay}`)
 if (anu.error) return reply(anu.error)
 infomp3 = `❒═════❬ *𝐏𝐋𝐀𝐘2* ❭═════╾❒
 ├‣ *Nombre* : 
