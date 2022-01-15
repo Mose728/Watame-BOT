@@ -13294,9 +13294,9 @@ break
           
 case prefix+'tts':
 if (isBanned) return  reply(mess.banned)          
-if (args.length < 1) return jere.sendMessage(from, '¿Dónde está el código de idioma??', text, {quoted: mek})
+if (args.length < 1) return reply(`¿Dónde está el código de idioma?`)
 const gtts = require('./lib/gtts')(args[0])
-if (args.length < 2) return jere.sendMessage(from, '¿Y el texto U.U?', text, {quoted: mek})
+if (args.length < 2) return reply(`¿Y el texto U.U?`)
 dtt = body.slice(7)
 ranm = getRandom('.mp3')
 dtt.length > 600
