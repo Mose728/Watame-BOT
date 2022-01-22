@@ -829,7 +829,7 @@ lzain = ` ‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ �
 *╟ ❒ ${prefix}nhimagen*
 *╟* _Adjunta el código de manga_
 *╟ ❒ ${prefix}telesticker*
-*╟* _Descarga los stickers de Telegram_
+*╟* _Descarga stickers de Telegram_
 *╟ ❒ ${prefix}play (audio)*
 *╟ ❒ ${prefix}play2 (video)*
 *╟* _Descargas con el enlace de Youtube_
